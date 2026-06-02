@@ -6,12 +6,7 @@ const base = lang === 'fi' ? '/fi' : lang === 'sv' ? '/sv' : '/en';
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="footer-logo">
-          <img src="/assets/images/foundation_clinic_logo.png" alt="Foundation Clinic" style="height: 32px; width: auto; filter: brightness(0) invert(1);" />
-        </div>
-        <p class="footer-tagline">
-          { lang === 'fi' ? 'Henkilökohtaista, ennaltaehkäisevää ja jatkuvaa. Juuri kuten hoidon kuuluukin olla.' : lang === 'sv' ? 'Förebyggande, personlig och samordnad. Precis som vård borde vara.' : 'Preventive, personalised, and coordinated. Just the way healthcare should be.' }
-        </p>
+        <img src="/assets/images/foundation-clinic-icon-white.png" alt="Foundation Clinic" style="height: 44px; width: auto;" />
       </div>
       <div>
         <div class="footer-heading">{ lang === 'fi' ? 'Hoito' : lang === 'sv' ? 'Vård' : 'Care' }</div>
@@ -39,7 +34,7 @@ const base = lang === 'fi' ? '/fi' : lang === 'sv' ? '/sv' : '/en';
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">© 2025 Foundation Clinic. { lang === 'fi' ? 'Kaikki oikeudet pidätetään.' : lang === 'sv' ? 'Alla rättigheter reserverade.' : 'All rights reserved.' }</span>
+      <span class="footer-copy">© 2026 Foundation Clinic. { lang === 'fi' ? 'Kaikki oikeudet pidätetään.' : lang === 'sv' ? 'Alla rättigheter reserverade.' : 'All rights reserved.' }</span>
       <div class="footer-legal">
         <a href={`${base}/legal/privacy-policy`}>{ lang === 'fi' ? 'Tietosuojakäytännöt' : lang === 'sv' ? 'Sekretesspolicy' : 'Privacy policy' }</a>
         <a href={`${base}/legal/terms-of-service`}>{ lang === 'fi' ? 'Käyttöehdot' : lang === 'sv' ? 'Användarvillkor' : 'Terms of service' }</a>

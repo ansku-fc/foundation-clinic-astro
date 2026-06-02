@@ -1,6 +1,5 @@
 /* ============================================================
    Foundation Clinic — Design System
-   Based on official brand guidelines
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Belleza&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
@@ -291,51 +290,6 @@ section { padding: var(--s-20) 0; }
 .btn-ghost { background: transparent; color: var(--fg-2); border: 1px solid var(--t-15); }
 .btn-ghost:hover { background: var(--bg-sunken); color: var(--fg-1); }
 
-/* ── Standard hero (inner pages) ─────────────────────────── */
-.hero {
-  padding-top: calc(var(--nav-height) + var(--s-20));
-  padding-bottom: var(--s-20);
-  background: var(--bg-sunken);
-  min-height: 88vh;
-  display: flex;
-  align-items: center;
-}
-.hero-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--s-8);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--s-16);
-  align-items: center;
-}
-.hero-content h1 {
-  font-family: var(--font-display);
-  font-size: clamp(2.4rem, 5.5vw, var(--display-m));
-  font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: var(--display-tracking);
-  margin-bottom: var(--s-6);
-}
-.hero-content .lead {
-  font-size: var(--body-lg);
-  color: var(--fg-2);
-  margin-bottom: var(--s-8);
-  max-width: 520px;
-}
-.hero-cta { display: flex; gap: var(--s-3); flex-wrap: wrap; }
-.hero-image img {
-  width: 100%;
-  aspect-ratio: 4/5;
-  object-fit: cover;
-  border-radius: var(--radius-2xl);
-  box-shadow: var(--shadow-3);
-}
-@media (max-width: 900px) {
-  .hero-inner { grid-template-columns: 1fr; gap: var(--s-10); }
-  .hero { min-height: auto; }
-}
-
 /* ── Full-bleed hero ──────────────────────────────────────── */
 .hero-fullbleed {
   position: relative;
@@ -344,7 +298,69 @@ section { padding: var(--s-20) 0; }
   flex-direction: column;
   overflow: hidden;
 }
-/* ── Subpage hero (60vh full-bleed) ───────────────────────── */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 75%;
+  background-repeat: no-repeat;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(46,31,20,0.92) 0%,
+    rgba(46,31,20,0.45) 45%,
+    rgba(46,31,20,0.15) 100%
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 10;
+  margin-top: auto;
+  padding: 0 var(--s-8) var(--s-16);
+  max-width: var(--max-width);
+  width: 100%;
+  align-self: center;
+}
+.hero-eyebrow {
+  font-size: var(--caption);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(201,187,169,0.85);
+  margin-bottom: var(--s-5);
+  font-family: var(--font-body);
+  display: block;
+}
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 4.2rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--cream);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--s-6);
+  max-width: 680px;
+}
+.hero-lead {
+  font-size: var(--body-lg);
+  color: rgba(253,246,238,0.75);
+  line-height: 1.65;
+  max-width: 520px;
+  margin-bottom: var(--s-8);
+}
+.hero-cta { display: flex; gap: var(--s-3); flex-wrap: wrap; }
+.hero-btn-primary { background: var(--cream); color: var(--espresso); }
+.hero-btn-primary:hover { background: var(--ivory); transform: translateY(-1px); box-shadow: var(--shadow-2); }
+.hero-btn-outline { background: transparent; color: var(--cream); border: 1.5px solid rgba(253,246,238,0.45); }
+.hero-btn-outline:hover { border-color: var(--cream); background: rgba(253,246,238,0.08); }
+@media (max-width: 768px) {
+  .hero-content { padding: 0 var(--s-5) var(--s-16); }
+  .hero-headline { font-size: clamp(2.2rem, 8vw, 3rem); }
+}
+
+/* ── Subpage hero (60vh) ──────────────────────────────────── */
 .hero-subpage {
   position: relative;
   height: 60vh;
@@ -364,12 +380,7 @@ section { padding: var(--s-20) 0; }
 .hero-subpage .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(46,31,20,0.88) 0%,
-    rgba(46,31,20,0.35) 50%,
-    rgba(46,31,20,0.05) 100%
-  );
+  background: linear-gradient(to top, rgba(46,31,20,0.88) 0%, rgba(46,31,20,0.35) 50%, rgba(46,31,20,0.05) 100%);
 }
 .hero-subpage .hero-content {
   position: relative;
@@ -410,23 +421,8 @@ section { padding: var(--s-20) 0; }
   .hero-subpage { height: 50vh; }
   .hero-subpage .hero-content { padding: 0 var(--s-5) var(--s-12); }
 }
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background-size: 100%;
-  background-position: center 75%;
-  background-repeat: no-repeat;
-}
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(46,31,20,0.92) 0%,
-    rgba(46,31,20,0.45) 45%,
-    rgba(46,31,20,0.15) 100%
-  );
-}
+
+/* ── Hero nav (used inside full-bleed hero) ───────────────── */
 .hero-nav {
   position: relative;
   z-index: 10;
@@ -459,17 +455,9 @@ section { padding: var(--s-20) 0; }
   gap: var(--s-4);
   flex-shrink: 0;
 }
-.lang-switcher-light {
-  background: rgba(253,246,238,0.12);
-}
-.lang-switcher-light a {
-  color: rgba(253,246,238,0.6);
-}
-.lang-switcher-light a.active {
-  background: rgba(253,246,238,0.15);
-  color: var(--cream);
-  box-shadow: none;
-}
+.lang-switcher-light { background: rgba(253,246,238,0.12); }
+.lang-switcher-light a { color: rgba(253,246,238,0.6); }
+.lang-switcher-light a.active { background: rgba(253,246,238,0.15); color: var(--cream); box-shadow: none; }
 .hero-nav-cta {
   font-family: var(--font-body);
   font-size: var(--body-sm);
@@ -482,68 +470,14 @@ section { padding: var(--s-20) 0; }
   white-space: nowrap;
 }
 .hero-nav-cta:hover { opacity: 0.88; }
-.hero-content {
-  position: relative;
-  z-index: 10;
-  margin-top: auto;
-  padding: 0 var(--s-8) var(--s-16);
-  max-width: var(--max-width);
-  width: 100%;
-  align-self: center;
-}
-.hero-eyebrow {
-  font-size: var(--caption);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(201,187,169,0.85);
-  margin-bottom: var(--s-5);
-  font-family: var(--font-body);
-}
-.hero-headline {
-  font-family: var(--font-display);
-  font-size: clamp(2.8rem, 6vw, 4.2rem);
-  font-weight: 400;
-  line-height: 1.05;
-  color: var(--cream);
-  letter-spacing: -0.02em;
-  margin-bottom: var(--s-6);
-  max-width: 680px;
-}
-.hero-lead {
-  font-size: var(--body-lg);
-  color: rgba(253,246,238,0.75);
-  line-height: 1.65;
-  max-width: 520px;
-  margin-bottom: var(--s-8);
-}
-.hero-btn-primary {
-  background: var(--cream);
-  color: var(--espresso);
-}
-.hero-btn-primary:hover {
-  background: var(--ivory);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-2);
-}
-.hero-btn-outline {
-  background: transparent;
-  color: var(--cream);
-  border: 1.5px solid rgba(253,246,238,0.45);
-}
-.hero-btn-outline:hover {
-  border-color: var(--cream);
-  background: rgba(253,246,238,0.08);
-}
 @media (max-width: 768px) {
   .hero-nav-links { display: none; }
-  .hero-content { padding: 0 var(--s-5) var(--s-16); }
-  .hero-headline { font-size: clamp(2.2rem, 8vw, 3rem); }
 }
 
 /* ── Section variants ─────────────────────────────────────── */
-.section-ivory   { background: var(--ivory); }
-.section-cream   { background: var(--bg-surface); }
-.section-sunken  { background: var(--bg-sunken); }
+.section-ivory    { background: var(--ivory); }
+.section-cream    { background: var(--bg-surface); }
+.section-sunken   { background: var(--bg-sunken); }
 .section-espresso { background: var(--espresso); color: var(--cream); }
 .section-espresso h1,
 .section-espresso h2,
@@ -590,6 +524,110 @@ section { padding: var(--s-20) 0; }
   .split { grid-template-columns: 1fr; gap: var(--s-10); }
   .split.reverse { direction: ltr; }
 }
+
+/* ── Who we are ───────────────────────────────────────────── */
+.who-we-are {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 64px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px var(--s-8);
+}
+.who-we-are-image {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  height: 600px;
+}
+.who-we-are-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.who-we-are-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  padding: 0;
+}
+
+.who-we-are-content h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.who-we-are-content > p {
+  color: var(--fg-2);
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+.who-we-are-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.who-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--t-15);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+}
+.who-card h4 {
+  font-family: var(--font-body);
+  font-size: var(--caption);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-2);
+  margin-bottom: 6px;
+}
+.who-card p {
+  font-size: 13px;
+  color: var(--fg-3);
+  margin: 0;
+  line-height: 1.6;
+}
+@media (max-width: 860px) {
+  .who-we-are {
+    grid-template-columns: 1fr;
+    padding: 48px var(--s-5);
+    gap: 40px;
+  }
+  .who-we-are-image { height: 400px; }
+}
+@media (max-width: 560px) {
+  .who-we-are-cards { grid-template-columns: 1fr; }
+}
+
+/* ── What we do grid ──────────────────────────────────────── */
+.what-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--s-5);
+}
+.what-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--t-15);
+  border-radius: var(--radius-lg);
+  padding: var(--s-8) var(--s-6);
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  overflow: hidden;
+  transition: border-color var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
+}
+.what-card:hover { border-color: var(--t-30); box-shadow: var(--shadow-2); }
+.what-card h3 { font-size: var(--h4); margin: 0; }
+.what-card p { font-size: var(--body-sm); color: var(--fg-3); margin: 0; line-height: 1.65; }
+@media (max-width: 900px) { .what-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .what-grid { grid-template-columns: 1fr; } }
 
 /* ── Pricing ──────────────────────────────────────────────── */
 .pricing-grid {
@@ -696,8 +734,9 @@ section { padding: var(--s-20) 0; }
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: var(--s-12);
   margin-bottom: var(--s-12);
+  align-items: start;
 }
-.footer-logo { font-family: var(--font-display); font-size: 1.2rem; color: var(--cream); margin-bottom: var(--s-4); }
+.footer-logo { font-family: var(--font-display); font-size: 3rem; color: var(--cream); margin-bottom: var(--s-4); }
 .footer-tagline { font-size: var(--body-sm); color: var(--t-50); line-height: 1.65; max-width: 240px; }
 .footer-heading { font-size: var(--caption); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--t-50); margin-bottom: var(--s-4); }
 .footer-links { display: flex; flex-direction: column; gap: var(--s-2); }
@@ -751,18 +790,14 @@ section { padding: var(--s-20) 0; }
   transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out);
 }
 .fade-up.visible { opacity: 1; transform: none; }
+
 /* ── Page transitions ─────────────────────────────────────── */
 @keyframes pageFadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-body {
-  animation: pageFadeIn var(--dur-slow) var(--ease-out) both;
-}
+body { animation: pageFadeIn var(--dur-slow) var(--ease-out) both; }
 
-body {
-  animation: pageFadeIn var(--dur-slow) var(--ease-out) both;
-}
 /* ── WhatsApp button ──────────────────────────────────────── */
 .whatsapp-btn {
   position: fixed;
@@ -787,16 +822,63 @@ body {
   font-weight: 500;
   white-space: nowrap;
 }
-.whatsapp-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(46,31,20,0.14);
+.whatsapp-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(46,31,20,0.14); }
+.whatsapp-label { font-size: var(--body-sm); font-weight: 500; color: var(--espresso); }
+.whatsapp-btn svg { color: #25D366; flex-shrink: 0; }
+.what-card-image {
+  width: calc(100% + var(--s-6) * 2);
+  margin-left: calc(-1 * var(--s-6));
+  margin-right: calc(-1 * var(--s-6));
+  margin-top: calc(-1 * var(--s-8));
+  margin-bottom: 0;
+  height: 200px;
+  overflow: hidden;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
-.whatsapp-label {
-  font-size: var(--body-sm);
-  font-weight: 500;
-  color: var(--espresso);
+
+.what-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
-.whatsapp-btn svg {
-  color: #25D366;
-  flex-shrink: 0;
+.pricing-features li {
+  font-size: 10px;
+}
+/* ── CTA full-bleed ───────────────────────────────────────── */
+.cta-fullbleed {
+  position: relative;
+  padding: var(--s-24) 0;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.cta-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  filter: blur(0,5px);
+  transform: scale(1.02);
+}
+
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(46,31,20,0.65);
+}
+
+.cta-content {
+  position: relative;
+  z-index: 10;
+}
+
+.cta-fullbleed h2 {
+  color: var(--cream);
+}
+
+.cta-fullbleed p {
+  color: rgba(253,246,238,0.75);
 }

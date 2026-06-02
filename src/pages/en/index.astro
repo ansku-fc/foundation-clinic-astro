@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 ---
 <Base title="Personal Medical Care" description="Experience continuous, dedicated medical care tailored to you.">
 
+  <!-- HERO -->
   <section class="hero-fullbleed">
     <div class="hero-bg" style="background-image: url('/assets/images/hero-bg.jpg');"></div>
     <div class="hero-overlay"></div>
@@ -17,89 +18,93 @@ import Base from '../../layouts/Base.astro';
     </div>
   </section>
 
-  <section class="section-ivory">
-    <div class="container">
-      <div class="text-center fade-up" style="margin-bottom: 64px;">
-        <span class="eyebrow">Our approach</span>
-        <h2>Great care starts with a doctor who knows you.</h2>
-        <p class="lead" style="margin-top: 16px;">Most people have never had a doctor who truly knows them. At Foundation, one doctor takes full responsibility — from everyday acute appointments to preventive care and specialist coordination.</p>
+  <!-- WHO WE ARE -->
+  <section style="background: var(--ivory); padding: 0;">
+    <div class="who-we-are">
+      <div class="who-we-are-image">
+        <img src="/assets/images/stilllife-figs.jpg" alt="Foundation Clinic" />
       </div>
-      <div class="card-grid">
-        <div class="card fade-up">
-          <div style="font-size: 1.5rem; margin-bottom: 16px;">⬡</div>
-          <h4 style="margin-bottom: 8px;">Membership model</h4>
-          <p style="font-size: var(--body-sm);">Guaranteed access to your doctor, data-driven prevention, and seamless coordination of care — instead of isolated appointments.</p>
+      <div class="who-we-are-content fade-up">
+        <span class="eyebrow">Who we are</span>
+        <h2 style="margin-top: 0;">We take full responsibility of your health.</h2>
+        <p>Healthcare has always been built around appointments.<br>Foundation is built around you.</p>
+        <div class="who-we-are-cards">
+          <div class="who-card">
+            <h4>Monthly membership</h4>
+            <p>Direct access to your personal doctor, in Finland and abroad.</p>
+          </div>
+          <div class="who-card">
+            <h4>Coordinated care</h4>
+            <p>Acute care, specialist referrals and diagnostics seamlessly through us.</p>
+          </div>
+          <div class="who-card">
+            <h4>Easy access</h4>
+            <p>Appointments at the clinic, at home, or through our network abroad.</p>
+          </div>
+          <div class="who-card">
+            <h4>Data-driven health</h4>
+            <p>Your history, results and treatments in one continuous health record.</p>
+          </div>
         </div>
-        <div class="card fade-up" style="animation-delay: 0.08s">
-          <div style="font-size: 1.5rem; margin-bottom: 16px;">⬡</div>
-          <h4 style="margin-bottom: 8px;">Coordinated care</h4>
-          <p style="font-size: var(--body-sm);">Specialist referrals, diagnostics, and treatment decisions brought together in one coherent plan by your dedicated doctor.</p>
-        </div>
-        <div class="card fade-up" style="animation-delay: 0.16s">
-          <div style="font-size: 1.5rem; margin-bottom: 16px;">⬡</div>
-          <h4 style="margin-bottom: 8px;">Care anywhere</h4>
-          <p style="font-size: var(--body-sm);">Clinic visits, remote appointments, home visits, and international care coordination — healthcare that fits around your life.</p>
-        </div>
-        <div class="card fade-up" style="animation-delay: 0.24s">
-          <div style="font-size: 1.5rem; margin-bottom: 16px;">⬡</div>
-          <h4 style="margin-bottom: 8px;">Your medical data</h4>
-          <p style="font-size: var(--body-sm);">All your history, lab results, and consultations in one continuous record — so you never have to tell your story from the beginning again.</p>
-        </div>
-      </div>
-      <div style="text-align: center; margin-top: 48px;">
-        <a href="/en/our-approach" class="btn btn-outline">Learn about our approach</a>
       </div>
     </div>
   </section>
 
-<section class="section-sunken">
+  <!-- WHAT WE DO -->
+  <section class="section-sunken" style="padding-top: var(--s-20); padding-bottom: var(--s-20);">
     <div class="container">
-      <div class="fade-up" style="margin-bottom: 64px;">
-        <span class="eyebrow">Services</span>
-        <h2>Health for your whole life.</h2>
-        <p class="lead" style="margin-top: 16px; max-width: 560px;">Patients come to us for different reasons, but they share one need: a doctor who understands their health in context and follows their care over time.</p>
+      <div class="fade-up" style="margin-bottom: 56px;">
+        <span class="eyebrow">What we do</span>
+        <h2 style="margin-top: 0;">Health for your whole life.</h2>
+        <p class="lead" style="margin-top: 16px;">Whether you're managing a condition, optimizing your health, or raising a family - your doctor is there for all of it.</p>
       </div>
-      <div class="split fade-up" style="margin-bottom: 80px;">
-        <div class="split-image">
-          <img src="https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/6971fab5aaba75a1d791e909_oleg-kukharuk-pU2XzuGa9ro-unsplash%20(1).jpg" alt="Performance and prevention" />
-        </div>
-        <div class="split-content">
-          <span class="eyebrow">Performance & prevention</span>
-          <h3>Staying healthy, staying ahead.</h3>
+      <div class="what-grid">
+        <div class="what-card fade-up">
+          <div class="what-card-image">
+            <img src="/assets/images/open-water-swimmers.jpg" alt="Performance & prevention" />
+          </div>
+          <span class="eyebrow">01</span>
+          <h3 style="white-space: nowrap;">Performance &amp; prevention</h3>
           <p>Through regular consultations, laboratory testing, and ongoing monitoring, we identify early changes and manage risks proactively.</p>
-          <a href="/en/our-services" class="btn btn-ghost" style="margin-top: 24px;">Learn more</a>
+          <a href="/en/our-services" class="btn btn-ghost" style="margin-top: auto;">Learn more</a>
         </div>
-      </div>
-      <div class="split reverse fade-up" style="margin-bottom: 80px;">
-        <div class="split-image">
-          <img src="https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/69c1164a7313ff3a7daadc19_foundation-clinic-who7.webp" alt="Healthy aging" />
-        </div>
-        <div class="split-content">
-          <span class="eyebrow">Healthy aging</span>
-          <h3>Peace of mind for the years ahead.</h3>
+        <div class="what-card fade-up" style="animation-delay: 0.08s">
+          <div class="what-card-image">
+            <img src="/assets/images/elderly-man-profile-sunset.jpg" alt="Healthy aging" />
+          </div>
+          <span class="eyebrow">02</span>
+          <h3>Healthy aging</h3>
           <p>Health needs often become more complex with age. Your doctor acts as the main point of contact, ensuring your care remains clear and consistent.</p>
-          <a href="/en/our-services" class="btn btn-ghost" style="margin-top: 24px;">Learn more</a>
+          <a href="/en/our-services" class="btn btn-ghost" style="margin-top: auto;">Learn more</a>
         </div>
-      </div>
-      <div class="split fade-up">
-        <div class="split-image">
-          <img src="https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/69c1164b3d23e55291cebba7_foundation-clinic-who11.webp" alt="Children and families" />
+        <div class="what-card fade-up" style="animation-delay: 0.16s">
+          <div class="what-card-image">
+            <img src="/assets/images/child-arm-bandaids.jpg" alt="Children & families" />
+          </div>
+          <span class="eyebrow">03</span>
+          <h3>Children &amp; families</h3>
+          <p>We support families with both preventive care and everyday medical concerns, complementing Finland's neuvola system with continuous personal care.</p>
+          <a href="/en/our-services" class="btn btn-ghost" style="margin-top: auto;">Learn more</a>
         </div>
-        <div class="split-content">
-          <span class="eyebrow">Children & families</span>
-          <h3>One doctor for you and your whole family.</h3>
-          <p>We support families with both preventive care and everyday medical concerns, complementing Finland's neuvola system.</p>
-          <a href="/en/our-services" class="btn btn-ghost" style="margin-top: 24px;">Learn more</a>
+        <div class="what-card fade-up" style="animation-delay: 0.24s">
+          <div class="what-card-image">
+            <img src="/assets/images/woman-coast-sunset.jpg" alt="Complex health needs" />
+          </div>
+          <span class="eyebrow">04</span>
+          <h3>Complex health needs</h3>
+          <p>For patients managing chronic conditions or navigating specialist care, we provide coordination, continuity, and a doctor who knows the full picture.</p>
+          <a href="/en/our-services" class="btn btn-ghost" style="margin-top: auto;">Learn more</a>
         </div>
       </div>
     </div>
   </section>
 
+<!-- MEMBERSHIPS -->
   <section class="section-ivory">
     <div class="container">
       <div class="text-center fade-up" style="margin-bottom: 64px;">
         <span class="eyebrow">Memberships</span>
-        <h2>Relationship for the long term.</h2>
+        <h2>Your most important subscription.</h2>
       </div>
       <div class="pricing-grid">
         <div class="pricing-card fade-up">
@@ -107,10 +112,10 @@ import Base from '../../layouts/Base.astro';
           <div class="price">€99</div>
           <div class="price-label">per month</div>
           <ul class="pricing-features">
-            <li>Named doctor, 9am–5pm Mon–Fri</li>
+            <li>Direct access to personal doctor</li>
+            <li>Doctor-led health assessment at onboarding</li>
+            <li>1 remote appointment / month</li>
             <li>Prescription renewals</li>
-            <li>1 remote consultation / month</li>
-            <li>Influenza vaccination</li>
           </ul>
           <a href="/en/contact" class="btn btn-outline" style="width: 100%; justify-content: center;">Get started</a>
         </div>
@@ -119,11 +124,12 @@ import Base from '../../layouts/Base.astro';
           <div class="price">€199</div>
           <div class="price-label">per month</div>
           <ul class="pricing-features">
-            <li>Named doctor, 9am–5pm Mon–Fri</li>
-            <li>Annual health review</li>
-            <li>3 remote consultations / month</li>
-            <li>1 in-person consultation / month</li>
-            <li>Referrals & care coordination</li>
+            <li>Direct access to personal doctor</li>
+            <li>Annual doctor-led health assessment with laboratory panel</li>
+            <li>3 remote appointments / month</li>
+            <li>1 in-person appointment / month</li>
+            <li>Prescription renewals</li>
+            <li>Care coordination, referrals & scheduling</li>
           </ul>
           <a href="/en/contact" class="btn" style="width: 100%; justify-content: center; background: var(--cream); color: var(--espresso);">Get started</a>
         </div>
@@ -132,12 +138,12 @@ import Base from '../../layouts/Base.astro';
           <div class="price">€399</div>
           <div class="price-label">per month</div>
           <ul class="pricing-features">
-            <li>Named doctor, 9am–5pm Mon–Fri</li>
-            <li>Biannual health reviews</li>
-            <li>5 remote consultations / month</li>
-            <li>3 in-person consultations / month</li>
-            <li>Referrals & care coordination</li>
-            <li>External invoice management</li>
+            <li>Direct access to personal doctor</li>
+            <li>Bi-annual doctor-led health assessment with laboratory panel</li>
+            <li>5 remote appointments / month</li>
+            <li>3 in-person appointments / month</li>
+            <li>Prescription renewals</li>
+            <li>Care coordination, referrals & scheduling</li>
           </ul>
           <a href="/en/contact" class="btn btn-outline" style="width: 100%; justify-content: center;">Get started</a>
         </div>
@@ -146,20 +152,23 @@ import Base from '../../layouts/Base.astro';
           <div class="price">€49</div>
           <div class="price-label">per month</div>
           <ul class="pricing-features">
-            <li>Named doctor, 9am–5pm Mon–Fri</li>
-            <li>2 remote consultations / month</li>
-            <li>Influenza vaccination</li>
+            <li>Direct access to personal doctor</li>
+            <li>2 remote appointments / month</li>
+            <li>Prescription renewals</li>
           </ul>
           <a href="/en/contact" class="btn btn-outline" style="width: 100%; justify-content: center;">Get started</a>
         </div>
       </div>
-      <p style="font-size: var(--body-sm); color: var(--fg-3); margin-top: 24px; text-align: center;">Onboarding consultation €599. <a href="/en/memberships" style="color: var(--fg-2); text-decoration: underline;">Full details →</a></p>
+      <p style="font-size: var(--body-sm); color: var(--fg-3); margin-top: 24px; text-align: center;">Onboarding consultation €599. 24/7 doctor availability from €899/mo. <a href="/en/memberships" style="color: var(--fg-2); text-decoration: underline;">Full details →</a></p>
     </div>
   </section>
 
-  <section class="section-espresso">
-    <div class="container">
-      <div class="text-center fade-up" style="max-width: 600px; margin: 0 auto;">
+<!-- CTA -->
+  <section class="cta-fullbleed">
+    <div class="cta-bg" style="background-image: url('/assets/images/river-evening.jpg'); background-size: cover; background-position: center;"></div>
+    <div class="cta-overlay"></div>
+    <div class="container cta-content fade-up">
+      <div style="max-width: 600px; margin: 0 auto; text-align: center;">
         <h2>Contact us to explore how we can support your long-term health.</h2>
         <p style="margin-top: 16px; margin-bottom: 32px;">We answer all emails within 24 hours.</p>
         <a href="/en/contact" class="btn" style="background: var(--cream); color: var(--espresso);">Get in touch</a>
