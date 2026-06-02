@@ -1,0 +1,80 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="Kontakta oss" lang="sv">
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Kontakta oss</span>
+      <h1>Hör av dig – vi hjälper dig gärna.</h1>
+      <p class="lead" style="margin-top: 16px;">Vi svarar på alla e-postmeddelanden inom 24 timmar.</p>
+    </div>
+  </section>
+
+  <section class="section-ivory">
+    <div class="container">
+      <div class="split fade-up">
+        <div>
+          <span class="eyebrow">Skicka ett meddelande</span>
+          <h2 style="margin-bottom: 32px;">Kom i kontakt.</h2>
+          <form class="contact-form" action="https://formspree.io/f/hello@foundation.clinic" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first-name">Förnamn</label>
+                <input type="text" id="first-name" name="first_name" placeholder="Anna" required />
+              </div>
+              <div class="form-group">
+                <label for="last-name">Efternamn</label>
+                <input type="text" id="last-name" name="last_name" placeholder="Virtanen" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">E-post</label>
+              <input type="email" id="email" name="email" placeholder="anna@exempel.fi" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Telefon (valfritt)</label>
+              <input type="tel" id="phone" name="phone" placeholder="+358 40 123 4567" />
+            </div>
+            <div class="form-group">
+              <label for="interest">Jag är intresserad av</label>
+              <select id="interest" name="interest">
+                <option value="">Välj ett alternativ</option>
+                <option value="membership">Att bli medlem</option>
+                <option value="family">Familjemedlemskap</option>
+                <option value="corporate">Företagssamarbete</option>
+                <option value="other">Annat</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Meddelande</label>
+              <textarea id="message" name="message" placeholder="Berätta vad du letar efter..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Skicka meddelande</button>
+            <p style="font-size: var(--caption); color: var(--fg-3); margin-top: 12px; text-align: center;">Vi återkommer inom 24 timmar.</p>
+          </form>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <span class="eyebrow">Direkt kontakt</span>
+          <div style="padding: 20px 24px; background: var(--bg-surface); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
+            <p style="font-size: var(--caption); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--fg-3); margin-bottom: 6px;">E-post</p>
+            <a href="mailto:hello@foundation.clinic" style="font-size: var(--body); color: var(--teal); font-weight: 500;">hello@foundation.clinic</a>
+          </div>
+          <div style="padding: 20px 24px; background: var(--bg-surface); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
+            <p style="font-size: var(--caption); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--fg-3); margin-bottom: 6px;">Telefon</p>
+            <a href="tel:+358407268383" style="font-size: var(--body); color: var(--fg-1); font-weight: 500;">+358 40 726 8383</a>
+          </div>
+          <div style="padding: 20px 24px; background: var(--bg-surface); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
+            <p style="font-size: var(--caption); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--fg-3); margin-bottom: 6px;">Adress</p>
+            <p style="font-size: var(--body); color: var(--fg-1);">Ratakatu 29 a 4<br>00120 Helsingfors, Finland</p>
+          </div>
+          <div style="padding: 20px 24px; background: var(--bg-surface); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
+            <p style="font-size: var(--caption); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--fg-3); margin-bottom: 6px;">Öppettider</p>
+            <p style="font-size: var(--body); color: var(--fg-1);">Måndag–Fredag<br>9:00–17:00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Base>

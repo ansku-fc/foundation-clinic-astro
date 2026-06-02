@@ -1,0 +1,47 @@
+---
+const { lang = 'en' } = Astro.props;
+const base = lang === 'fi' ? '/fi' : lang === 'sv' ? '/sv' : '';
+---
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href={`${base}/`} class="nav-logo">
+      <img src="/assets/images/foundation_clinic_logo.png" alt="Foundation Clinic" style="height: 36px; width: auto;" />
+    </a>
+    <div class="nav-links">
+      <a href={`${base}/our-approach`}>{ lang === 'fi' ? 'Toimintatapamme' : lang === 'sv' ? 'Förhållningssätt' : 'Approach' }</a>
+      <a href={`${base}/our-services`}>{ lang === 'fi' ? 'Palvelumme' : lang === 'sv' ? 'Tjänster' : 'Services' }</a>
+      <a href={`${base}/memberships`}>{ lang === 'fi' ? 'Jäsenyydet' : lang === 'sv' ? 'Medlemskap' : 'Memberships' }</a>
+      <a href={`${base}/partners`}>{ lang === 'fi' ? 'Yhteistyökumppanit' : lang === 'sv' ? 'Partners' : 'Partners' }</a>
+      <a href={`${base}/about-us`}>{ lang === 'fi' ? 'Tietoa meistä' : lang === 'sv' ? 'Om oss' : 'About us' }</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <a href="/" class={lang === 'en' ? 'active' : ''}>EN</a>
+        <a href="/fi/" class={lang === 'fi' ? 'active' : ''}>FI</a>
+        <a href="/sv/" class={lang === 'sv' ? 'active' : ''}>SV</a>
+      </div>
+      <a href={`${base}/contact`} class="nav-cta">
+        { lang === 'fi' ? 'Ota yhteyttä' : lang === 'sv' ? 'Kontakta oss' : 'Become a member' }
+      </a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <a href={`${base}/our-approach`}>{ lang === 'fi' ? 'Toimintatapamme' : lang === 'sv' ? 'Förhållningssätt' : 'Approach' }</a>
+  <a href={`${base}/our-services`}>{ lang === 'fi' ? 'Palvelumme' : lang === 'sv' ? 'Tjänster' : 'Services' }</a>
+  <a href={`${base}/memberships`}>{ lang === 'fi' ? 'Jäsenyydet' : lang === 'sv' ? 'Medlemskap' : 'Memberships' }</a>
+  <a href={`${base}/partners`}>{ lang === 'fi' ? 'Yhteistyökumppanit' : lang === 'sv' ? 'Partners' : 'Partners' }</a>
+  <a href={`${base}/about-us`}>{ lang === 'fi' ? 'Tietoa meistä' : lang === 'sv' ? 'Om oss' : 'About us' }</a>
+  <a href={`${base}/contact`}>{ lang === 'fi' ? 'Ota yhteyttä' : lang === 'sv' ? 'Kontakta oss' : 'Contact' }</a>
+</div>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav?.classList.toggle('scrolled', window.scrollY > 20));
+  document.getElementById('hamburger')?.addEventListener('click', () =>
+    document.getElementById('nav-mobile')?.classList.toggle('open'));
+</script>

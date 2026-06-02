@@ -1,0 +1,56 @@
+---
+const { lang = 'en' } = Astro.props;
+const base = lang === 'fi' ? '/fi' : lang === 'sv' ? '/sv' : '';
+---
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="/assets/images/foundation_clinic_logo.png" alt="Foundation Clinic" style="height: 32px; width: auto; filter: brightness(0) invert(1);" />
+        </div>
+        <p class="footer-tagline">
+          { lang === 'fi' ? 'Henkilökohtaista, ennaltaehkäisevää ja jatkuvaa. Juuri kuten hoidon kuuluukin olla.' : lang === 'sv' ? 'Förebyggande, personlig och samordnad. Precis som vård borde vara.' : 'Preventive, personalised, and coordinated. Just the way healthcare should be.' }
+        </p>
+      </div>
+      <div>
+        <div class="footer-heading">{ lang === 'fi' ? 'Hoito' : lang === 'sv' ? 'Vård' : 'Care' }</div>
+        <ul class="footer-links">
+          <li><a href={`${base}/our-approach`}>{ lang === 'fi' ? 'Toimintatapamme' : lang === 'sv' ? 'Förhållningssätt' : 'Our approach' }</a></li>
+          <li><a href={`${base}/our-services`}>{ lang === 'fi' ? 'Palvelumme' : lang === 'sv' ? 'Tjänster' : 'Services' }</a></li>
+          <li><a href={`${base}/memberships`}>{ lang === 'fi' ? 'Jäsenyydet' : lang === 'sv' ? 'Medlemskap' : 'Memberships' }</a></li>
+          <li><a href={`${base}/partners`}>{ lang === 'fi' ? 'Yhteistyökumppanit' : lang === 'sv' ? 'Partners' : 'Partners' }</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">{ lang === 'fi' ? 'Klinikka' : lang === 'sv' ? 'Klinik' : 'Clinic' }</div>
+        <ul class="footer-links">
+          <li><a href={`${base}/about-us`}>{ lang === 'fi' ? 'Tietoa meistä' : lang === 'sv' ? 'Om oss' : 'About us' }</a></li>
+          <li><a href={`${base}/contact`}>{ lang === 'fi' ? 'Ota yhteyttä' : lang === 'sv' ? 'Kontakta oss' : 'Contact' }</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">{ lang === 'fi' ? 'Yhteystiedot' : lang === 'sv' ? 'Kontakt' : 'Contact' }</div>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@foundation.clinic">hello@foundation.clinic</a></li>
+          <li><a href="tel:+358407268383">+358 40 726 8383</a></li>
+          <li style="color: var(--t-50); font-size: var(--body-sm); margin-top: 8px;">Ratakatu 29 a 4<br>00120 Helsinki</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 Foundation Clinic. { lang === 'fi' ? 'Kaikki oikeudet pidätetään.' : lang === 'sv' ? 'Alla rättigheter reserverade.' : 'All rights reserved.' }</span>
+      <div class="footer-legal">
+        <a href={`${base}/legal/privacy-policy`}>{ lang === 'fi' ? 'Tietosuojakäytännöt' : lang === 'sv' ? 'Sekretesspolicy' : 'Privacy policy' }</a>
+        <a href={`${base}/legal/terms-of-service`}>{ lang === 'fi' ? 'Käyttöehdot' : lang === 'sv' ? 'Användarvillkor' : 'Terms of service' }</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
