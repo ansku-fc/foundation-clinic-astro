@@ -1,6 +1,6 @@
 ---
 const { lang = 'en' } = Astro.props;
-const base = lang === 'fi' ? '/fi' : lang === 'sv' ? '/sv' : '';
+const base = lang === 'fi' ? '/fi' : lang === 'sv' ? '/sv' : '/en';
 ---
 <nav class="nav" id="nav">
   <div class="nav-inner">
@@ -16,7 +16,7 @@ const base = lang === 'fi' ? '/fi' : lang === 'sv' ? '/sv' : '';
     </div>
     <div class="nav-right">
       <div class="lang-switcher">
-        <a href="/" class={lang === 'en' ? 'active' : ''}>EN</a>
+        <a href="/en/" class={lang === 'en' ? 'active' : ''}>EN</a>
         <a href="/fi/" class={lang === 'fi' ? 'active' : ''}>FI</a>
         <a href="/sv/" class={lang === 'sv' ? 'active' : ''}>SV</a>
       </div>

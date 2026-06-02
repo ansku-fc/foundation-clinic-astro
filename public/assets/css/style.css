@@ -344,6 +344,72 @@ section { padding: var(--s-20) 0; }
   flex-direction: column;
   overflow: hidden;
 }
+/* ── Subpage hero (60vh full-bleed) ───────────────────────── */
+.hero-subpage {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+.hero-subpage .hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero-subpage .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(46,31,20,0.88) 0%,
+    rgba(46,31,20,0.35) 50%,
+    rgba(46,31,20,0.05) 100%
+  );
+}
+.hero-subpage .hero-content {
+  position: relative;
+  z-index: 10;
+  padding: 0 var(--s-8) var(--s-16);
+  max-width: var(--max-width);
+  width: 100%;
+  align-self: center;
+  margin-top: 0;
+}
+.hero-subpage .hero-eyebrow {
+  font-size: var(--caption);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(201,187,169,0.85);
+  margin-bottom: var(--s-3);
+  font-family: var(--font-body);
+  display: block;
+}
+.hero-subpage .hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.08;
+  color: var(--cream);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--s-4);
+  max-width: 680px;
+}
+.hero-subpage .hero-lead {
+  font-size: var(--body-lg);
+  color: rgba(253,246,238,0.72);
+  line-height: 1.65;
+  max-width: 520px;
+  margin-bottom: 0;
+}
+@media (max-width: 768px) {
+  .hero-subpage { height: 50vh; }
+  .hero-subpage .hero-content { padding: 0 var(--s-5) var(--s-12); }
+}
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -687,10 +753,50 @@ section { padding: var(--s-20) 0; }
 .fade-up.visible { opacity: 1; transform: none; }
 /* ── Page transitions ─────────────────────────────────────── */
 @keyframes pageFadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+body {
+  animation: pageFadeIn var(--dur-slow) var(--ease-out) both;
 }
 
 body {
   animation: pageFadeIn var(--dur-slow) var(--ease-out) both;
+}
+/* ── WhatsApp button ──────────────────────────────────────── */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  height: 48px;
+  padding: 0 18px 0 14px;
+  background: rgba(253,246,238,0.88);
+  color: var(--espresso);
+  border-radius: 999px;
+  border: 1px solid rgba(46,31,20,0.08);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  box-shadow: 0 2px 12px rgba(46,31,20,0.10), 0 1px 4px rgba(46,31,20,0.06);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: var(--font-body);
+  font-size: var(--body-sm);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(46,31,20,0.14);
+}
+.whatsapp-label {
+  font-size: var(--body-sm);
+  font-weight: 500;
+  color: var(--espresso);
+}
+.whatsapp-btn svg {
+  color: #25D366;
+  flex-shrink: 0;
 }

@@ -1,6 +1,6 @@
 ---
 const { lang = 'en' } = Astro.props;
-const base = lang === 'fi' ? '/fi' : lang === 'sv' ? '/sv' : '';
+const base = lang === 'fi' ? '/fi' : lang === 'sv' ? '/sv' : '/en';
 ---
 <footer class="footer">
   <div class="container">
@@ -33,7 +33,7 @@ const base = lang === 'fi' ? '/fi' : lang === 'sv' ? '/sv' : '';
         <div class="footer-heading">{ lang === 'fi' ? 'Yhteystiedot' : lang === 'sv' ? 'Kontakt' : 'Contact' }</div>
         <ul class="footer-links">
           <li><a href="mailto:hello@foundation.clinic">hello@foundation.clinic</a></li>
-          <li><a href="tel:+358407268383">+358 40 726 8383</a></li>
+          <li><a href="tel:+358449025885">+358 44 902 5885</a></li>
           <li style="color: var(--t-50); font-size: var(--body-sm); margin-top: 8px;">Ratakatu 29 a 4<br>00120 Helsinki</li>
         </ul>
       </div>
