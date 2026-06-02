@@ -3,18 +3,16 @@ import Base from '../../layouts/Base.astro';
 ---
 <Base title="Henkilökohtaista lääkäripalvelua" lang="fi">
 
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-content fade-up">
-        <h1>Henkilökohtaista ja jatkuvaa hoitoa, oman lääkärisi koordinoimana.</h1>
-        <p class="lead">Foundation Clinic on yksityinen lääkäriklinikka, jonka toiminnan perustana ovat pitkäaikaiset hoitosuhteet. Meillä sinulla on oma lääkäri, joka koordinoi kaiken kiireisestä hoidosta erikoislääkärilähetteisiin ja ennaltaehkäisevään terveyssuunnitteluun.</p>
-        <div class="hero-cta">
-          <a href="/fi/contact" class="btn btn-primary">Ota yhteyttä</a>
-          <a href="/fi/our-approach" class="btn btn-outline">Lue lisää</a>
-        </div>
-      </div>
-      <div class="hero-image fade-up">
-        <img src="https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/69b65ef0a1b7fdcf151bb3b0_8845d255d71df6aa9bf473e5559b5e48_Interior_dark_2.webp" alt="Foundation Clinic" width="600" height="750" />
+  <section class="hero-fullbleed">
+    <div class="hero-bg" style="background-image: url('/assets/images/hero.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Ratakatu 29 a 4 · Helsinki</p>
+      <h1 class="hero-headline">Oma lääkärisi,<br>joka tuntee sinut nimeltä.</h1>
+      <p class="hero-lead">Sinulle räätälöityä akuuttia ja ennaltaehkäisevää hoitoa.<br>Aina tavoitettavissasi, Suomessa ja ulkomailla.</p>
+      <div class="hero-cta">
+        <a href="/fi/contact" class="btn hero-btn-primary">Ota yhteyttä</a>
+        <a href="/fi/our-approach" class="btn hero-btn-outline">Lue lisää</a>
       </div>
     </div>
   </section>
@@ -45,117 +43,4 @@ import Base from '../../layouts/Base.astro';
         <div class="card fade-up" style="animation-delay: 0.24s">
           <div style="font-size: 1.5rem; margin-bottom: 16px;">⬡</div>
           <h4 style="margin-bottom: 8px;">Terveysprofiilisi</h4>
-          <p style="font-size: var(--body-sm);">Koko terveyshistoriasi, laboratoriovastauksesi ja lääkärikäyntisi yhdessä jatkuvasti päivittyvässä profiilissa.</p>
-        </div>
-      </div>
-      <div style="text-align: center; margin-top: 48px;">
-        <a href="/fi/our-approach" class="btn btn-outline">Lue lisää toimintatavastamme</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sunken">
-    <div class="container">
-      <div class="fade-up" style="margin-bottom: 64px;">
-        <span class="eyebrow">Palvelumme</span>
-        <h2>Terveyttä läpi elämän.</h2>
-        <p class="lead" style="margin-top: 16px; max-width: 560px;">Kaikkia asiakkaitamme yhdistää tarve löytää lääkäri, joka katsoo terveyttä kokonaisuutena ja pitkäjänteisesti.</p>
-      </div>
-      <div class="split fade-up" style="margin-bottom: 80px;">
-        <div class="split-image">
-          <img src="https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/6971fab5aaba75a1d791e909_oleg-kukharuk-pU2XzuGa9ro-unsplash%20(1).jpg" alt="Suorituskyky ja ennaltaehkäisy" />
-        </div>
-        <div class="split-content">
-          <span class="eyebrow">Suorituskyky ja ennaltaehkäisy</span>
-          <h3>Pysy terveenä, pysy edellä.</h3>
-          <p>Säännöllisen yhteydenpidon, laboratoriotutkimusten ja seurannan avulla pystymme havaitsemaan varhaiset muutokset ja tukemaan terveyttäsi.</p>
-          <a href="/fi/our-services" class="btn btn-ghost" style="margin-top: 24px;">Lue lisää</a>
-        </div>
-      </div>
-      <div class="split reverse fade-up">
-        <div class="split-image">
-          <img src="https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/69c1164b3d23e55291cebba7_foundation-clinic-who11.webp" alt="Lapset ja perheet" />
-        </div>
-        <div class="split-content">
-          <span class="eyebrow">Lapset ja perheet</span>
-          <h3>Oma lääkäri koko perheellesi.</h3>
-          <p>Mallimme täydentää Suomen neuvolajärjestelmää tarjoamalla taatun pääsyn omalle lääkärille.</p>
-          <a href="/fi/our-services" class="btn btn-ghost" style="margin-top: 24px;">Lue lisää</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-ivory">
-    <div class="container">
-      <div class="text-center fade-up" style="margin-bottom: 64px;">
-        <span class="eyebrow">Jäsenyydet</span>
-        <h2>Rakennamme pitkäaikaisia potilassuhteita.</h2>
-      </div>
-      <div class="pricing-grid">
-        <div class="pricing-card fade-up">
-          <div class="pricing-tier">Taso 1</div>
-          <div class="price">€99</div>
-          <div class="price-label">/ kk</div>
-          <ul class="pricing-features">
-            <li>Nimetty omalääkäri</li>
-            <li>Reseptien uusiminen</li>
-            <li>1 etävastaanotto / kk</li>
-            <li>Influenssarokotus</li>
-          </ul>
-          <a href="/fi/contact" class="btn btn-outline" style="width: 100%; justify-content: center;">Aloita</a>
-        </div>
-        <div class="pricing-card featured fade-up" style="animation-delay: 0.08s">
-          <div class="pricing-tier">Taso 2</div>
-          <div class="price">€199</div>
-          <div class="price-label">/ kk</div>
-          <ul class="pricing-features">
-            <li>Nimetty omalääkäri</li>
-            <li>Vuosittainen terveystarkastus</li>
-            <li>3 etävastaanottoa / kk</li>
-            <li>1 klinikkakäynti / kk</li>
-            <li>Lähetteet ja koordinointi</li>
-          </ul>
-          <a href="/fi/contact" class="btn" style="width: 100%; justify-content: center; background: var(--cream); color: var(--espresso);">Aloita</a>
-        </div>
-        <div class="pricing-card fade-up" style="animation-delay: 0.16s">
-          <div class="pricing-tier">Taso 3</div>
-          <div class="price">€399</div>
-          <div class="price-label">/ kk</div>
-          <ul class="pricing-features">
-            <li>Nimetty omalääkäri</li>
-            <li>Puolivuosittainen terveystarkastus</li>
-            <li>5 etävastaanottoa / kk</li>
-            <li>3 klinikkakäyntiä / kk</li>
-            <li>Lähetteet ja koordinointi</li>
-            <li>Laskujen hallinta</li>
-          </ul>
-          <a href="/fi/contact" class="btn btn-outline" style="width: 100%; justify-content: center;">Aloita</a>
-        </div>
-        <div class="pricing-card fade-up" style="animation-delay: 0.24s">
-          <div class="pricing-tier">Lapset</div>
-          <div class="price">€49</div>
-          <div class="price-label">/ kk</div>
-          <ul class="pricing-features">
-            <li>Nimetty omalääkäri</li>
-            <li>2 etävastaanottoa / kk</li>
-            <li>Influenssarokotus</li>
-          </ul>
-          <a href="/fi/contact" class="btn btn-outline" style="width: 100%; justify-content: center;">Aloita</a>
-        </div>
-      </div>
-      <p style="font-size: var(--body-sm); color: var(--fg-3); margin-top: 24px; text-align: center;">Alkukartoitus €599. <a href="/fi/memberships" style="color: var(--fg-2); text-decoration: underline;">Katso täydet tiedot →</a></p>
-    </div>
-  </section>
-
-  <section class="section-espresso">
-    <div class="container">
-      <div class="text-center fade-up" style="max-width: 600px; margin: 0 auto;">
-        <h2>Ota yhteyttä – me hoidamme loput.</h2>
-        <p style="margin-top: 16px; margin-bottom: 32px;">Vastaamme kaikkiin sähköposteihin vuorokaudessa.</p>
-        <a href="/fi/contact" class="btn" style="background: var(--cream); color: var(--espresso);">Ota yhteyttä</a>
-      </div>
-    </div>
-  </section>
-
-</Base>
+          <p style="font-size: var(--body-sm);">Koko terveyshistoriasi, laboratoriovastauksesi ja lääkärikäynt
