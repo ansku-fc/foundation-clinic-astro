@@ -233,6 +233,7 @@ section { padding: var(--s-20) 0; }
   flex-direction: column;
   gap: 5px;
   padding: var(--s-2);
+  margin-left: auto;
 }
 .nav-hamburger span {
   display: block;
