@@ -906,3 +906,76 @@ body { animation: pageFadeIn var(--dur-slow) var(--ease-out) both; }
   font-weight: 600;
   font-size: var(--body-sm);
 }
+/* ── Mobile nav controls ──────────────────────────────────── */
+.nav-mobile-controls {
+  display: none;
+  align-items: center;
+  gap: var(--s-3);
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  .nav-mobile-controls { display: flex; }
+  .lang-switcher-desktop { display: none; }
+  .nav-cta-full { display: none; }
+  .nav-cta-short { display: inline; }
+}
+
+@media (min-width: 769px) {
+  .nav-cta-full { display: inline; }
+  .nav-cta-short { display: none; }
+}
+
+.lang-switcher-mobile {
+  position: relative;
+}
+
+.lang-current {
+  font-family: var(--font-body);
+  font-size: var(--caption);
+  font-weight: 600;
+  color: var(--fg-2);
+  background: var(--bg-sunken);
+  border: none;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.lang-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--bg-elevated);
+  border: 1px solid var(--t-15);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-3);
+  overflow: hidden;
+  z-index: 200;
+  min-width: 60px;
+}
+
+.lang-dropdown.open { display: block; }
+
+.lang-dropdown a {
+  display: block;
+  font-size: var(--body-sm);
+  font-weight: 500;
+  color: var(--fg-2);
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--t-08);
+}
+
+.lang-dropdown a:last-child { border-bottom: none; }
+.lang-dropdown a.active { color: var(--fg-1); font-weight: 600; }
+.lang-dropdown a:hover { background: var(--bg-sunken); }
+
+/* ── WhatsApp mobile position ─────────────────────────────── */
+@media (max-width: 768px) {
+  .whatsapp-btn {
+    bottom: auto;
+    top: calc(var(--nav-height) + 8px);
+    right: 16px;
+  }
+}

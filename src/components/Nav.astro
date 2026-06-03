@@ -1,6 +1,7 @@
 ---
 const { lang = 'en' } = Astro.props;
 const base = lang === 'fi' ? '/fi' : lang === 'sv' ? '/sv' : '/en';
+const langLabel = lang === 'fi' ? 'FI' : lang === 'sv' ? 'SV' : 'EN';
 ---
 <nav class="nav" id="nav">
   <div class="nav-inner">
@@ -15,18 +16,29 @@ const base = lang === 'fi' ? '/fi' : lang === 'sv' ? '/sv' : '/en';
       <a href={`${base}/about-us`}>{ lang === 'fi' ? 'Tietoa meistä' : lang === 'sv' ? 'Om oss' : 'About us' }</a>
     </div>
     <div class="nav-right">
-      <div class="lang-switcher">
+      <div class="lang-switcher lang-switcher-desktop">
         <a href="/en/" class={lang === 'en' ? 'active' : ''}>EN</a>
         <a href="/fi/" class={lang === 'fi' ? 'active' : ''}>FI</a>
         <a href="/sv/" class={lang === 'sv' ? 'active' : ''}>SV</a>
       </div>
-      <a href={`${base}/contact`} class="nav-cta nav-cta-desktop">
-        { lang === 'fi' ? 'Ota yhteyttä' : lang === 'sv' ? 'Kontakta oss' : 'Become a member' }
+      <a href={`${base}/contact`} class="nav-cta">
+        <span class="nav-cta-full">{ lang === 'fi' ? 'Ota yhteyttä' : lang === 'sv' ? 'Kontakta oss' : 'Become a member' }</span>
+        <span class="nav-cta-short">{ lang === 'fi' ? 'Liity' : lang === 'sv' ? 'Gå med' : 'Join' }</span>
       </a>
     </div>
-    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-mobile-controls">
+      <div class="lang-switcher-mobile" id="lang-switcher-mobile">
+        <button class="lang-current" id="lang-toggle">{langLabel}</button>
+        <div class="lang-dropdown" id="lang-dropdown">
+          <a href="/en/" class={lang === 'en' ? 'active' : ''}>EN</a>
+          <a href="/fi/" class={lang === 'fi' ? 'active' : ''}>FI</a>
+          <a href="/sv/" class={lang === 'sv' ? 'active' : ''}>SV</a>
+        </div>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -46,4 +58,12 @@ const base = lang === 'fi' ? '/fi' : lang === 'sv' ? '/sv' : '/en';
   window.addEventListener('scroll', () => nav?.classList.toggle('scrolled', window.scrollY > 20));
   document.getElementById('hamburger')?.addEventListener('click', () =>
     document.getElementById('nav-mobile')?.classList.toggle('open'));
+  document.getElementById('lang-toggle')?.addEventListener('click', () =>
+    document.getElementById('lang-dropdown')?.classList.toggle('open'));
+  document.addEventListener('click', (e) => {
+    const switcher = document.getElementById('lang-switcher-mobile');
+    if (switcher && !switcher.contains(e.target as Node)) {
+      document.getElementById('lang-dropdown')?.classList.remove('open');
+    }
+  });
 </script>
