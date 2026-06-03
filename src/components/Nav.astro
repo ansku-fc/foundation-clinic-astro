@@ -5,7 +5,7 @@ const base = lang === 'fi' ? '/fi' : lang === 'sv' ? '/sv' : '/en';
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href={`${base}/`} class="nav-logo">
-      <img src="/assets/images/foundation_clinic_logo.png" alt="Foundation Clinic" style="height: 44px; width: auto;" />
+      <img src="/assets/images/foundation_clinic_logo.png" alt="Foundation Clinic" style="height: 36px; width: auto;" />
     </a>
     <div class="nav-links">
       <a href={`${base}/our-approach`}>{ lang === 'fi' ? 'Toimintatapamme' : lang === 'sv' ? 'Förhållningssätt' : 'Approach' }</a>
@@ -20,7 +20,7 @@ const base = lang === 'fi' ? '/fi' : lang === 'sv' ? '/sv' : '/en';
         <a href="/fi/" class={lang === 'fi' ? 'active' : ''}>FI</a>
         <a href="/sv/" class={lang === 'sv' ? 'active' : ''}>SV</a>
       </div>
-      <a href={`${base}/contact`} class="nav-cta">
+      <a href={`${base}/contact`} class="nav-cta nav-cta-desktop">
         { lang === 'fi' ? 'Ota yhteyttä' : lang === 'sv' ? 'Kontakta oss' : 'Become a member' }
       </a>
     </div>
@@ -36,7 +36,9 @@ const base = lang === 'fi' ? '/fi' : lang === 'sv' ? '/sv' : '/en';
   <a href={`${base}/memberships`}>{ lang === 'fi' ? 'Jäsenyydet' : lang === 'sv' ? 'Medlemskap' : 'Memberships' }</a>
   <a href={`${base}/partners`}>{ lang === 'fi' ? 'Yhteistyökumppanit' : lang === 'sv' ? 'Partners' : 'Partners' }</a>
   <a href={`${base}/about-us`}>{ lang === 'fi' ? 'Tietoa meistä' : lang === 'sv' ? 'Om oss' : 'About us' }</a>
-  <a href={`${base}/contact`}>{ lang === 'fi' ? 'Ota yhteyttä' : lang === 'sv' ? 'Kontakta oss' : 'Contact' }</a>
+  <a href={`${base}/contact`} class="nav-mobile-cta">
+    { lang === 'fi' ? 'Ota yhteyttä' : lang === 'sv' ? 'Kontakta oss' : 'Become a member' }
+  </a>
 </div>
 
 <script>
