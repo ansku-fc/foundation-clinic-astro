@@ -21,10 +21,9 @@ const langLabel = lang === 'fi' ? 'FI' : lang === 'sv' ? 'SV' : 'EN';
         <a href="/fi/" class={lang === 'fi' ? 'active' : ''}>FI</a>
         <a href="/sv/" class={lang === 'sv' ? 'active' : ''}>SV</a>
       </div>
-      <a href={`${base}/contact`} class="nav-cta">
-        <span class="nav-cta-full">{ lang === 'fi' ? 'Ota yhteyttä' : lang === 'sv' ? 'Kontakta oss' : 'Become a member' }</span>
-        <span class="nav-cta-short">{ lang === 'fi' ? 'Liity' : lang === 'sv' ? 'Gå med' : 'Join' }</span>
-      </a>
+    <a href={`${base}/contact`} class="nav-cta nav-cta-desktop-only">
+  <span>{ lang === 'fi' ? 'Ota yhteyttä' : lang === 'sv' ? 'Kontakta oss' : 'Contact us' }</span>
+</a>
     </div>
     <div class="nav-mobile-controls">
       <div class="lang-switcher-mobile" id="lang-switcher-mobile">
