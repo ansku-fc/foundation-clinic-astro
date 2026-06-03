@@ -475,6 +475,7 @@ section { padding: var(--s-20) 0; }
   .hero-headline { font-size: clamp(2.2rem, 8vw, 3rem); }
   .hero-btn-primary,
   .hero-btn-outline { padding: 10px 18px; font-size: 13px; }
+  .hero-cta { margin-bottom: 72px; }
 }
 
 /* ============================================================
