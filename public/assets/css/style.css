@@ -915,10 +915,15 @@ body { animation: pageFadeIn var(--dur-slow) var(--ease-out) both; }
 }
 
 @media (max-width: 768px) {
-  .nav-mobile-controls { display: flex; }
-  .lang-switcher-desktop { display: none; }
-  .nav-cta-full { display: none; }
-  .nav-cta-short { display: inline; }
+  .whatsapp-btn {
+    bottom: 28px;
+    top: auto;
+    right: 16px;
+    padding: 0 12px;
+    width: 48px;
+    justify-content: center;
+  }
+  .whatsapp-label { display: none; }
 }
 
 @media (min-width: 769px) {
