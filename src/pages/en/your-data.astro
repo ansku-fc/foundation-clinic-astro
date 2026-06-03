@@ -1,0 +1,188 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="Your Data" description="How we collect, store and use your health data at Foundation Clinic.">
+
+  <section class="hero-subpage">
+    <div class="hero-bg" style="background-image: url('/assets/images/river-evening.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Your data</span>
+      <h1 class="hero-headline">Your data, your story.</h1>
+      <p class="hero-lead">Our technology brings your health data together and gives your doctor a complete and timely picture of you.</p>
+    </div>
+  </section>
+
+  <!-- ONE CONTINUOUS RECORD -->
+  <section class="section-ivory">
+    <div class="container">
+      <div class="split fade-up">
+        <div class="split-content">
+          <span class="eyebrow">One continuous health record</span>
+          <h2>Patterns instead of data points.</h2>
+          <p>Most people's health data is scattered across clinics, labs, systems, and often countries.</p>
+          <p style="margin-top: 16px;">With your consent, we collect and integrate your data from previous providers, laboratory systems, imaging centres, and specialists into a single and up-to-date longitudinal record.</p>
+        </div>
+        <div class="split-image">
+          <img src="/assets/images/dashboard_3.png" alt="Foundation Clinic health data dashboard" style="width:100%;height:100%;object-fit:contain;object-position:center;background:#fff;border-radius:var(--radius-2xl);" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- WHAT WE STORE -->
+<section class="section-sunken">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom: 56px;">
+      <span class="eyebrow">What we store</span>
+      <h2>A complete picture of your health.</h2>
+      <p class="lead" style="margin-top: 16px; max-width: 560px;">Everything your doctor needs to understand your health in full context — not just today.</p>
+    </div>
+    <div class="what-grid fade-up" style="grid-template-columns: repeat(4, 1fr);">
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/><path d="M9 12h6M9 16h4"/></svg>
+        <h3>Laboratory results</h3>
+        <p>Results from all labs stored as longitudinal trends - with optimal and reference ranges tracked over time.</p>
+      </div>
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        <h3>Health dimensions</h3>
+        <p>Nine health dimensions scored and monitored continuously - from cardiovascular to mental health and cancer risk.</p>
+      </div>
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <h3>Diagnoses & episodes</h3>
+        <p>Active and past diagnoses, linked to medications and care episodes, with ICD-10 coding throughout.</p>
+      </div>
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><path d="M10.5 20.5 3.5 13.5a5 5 0 0 1 7.07-7.07l7 7a5 5 0 0 1-7.07 7.07z"/><line x1="8.5" y1="11.5" x2="15.5" y2="11.5"/></svg>
+        <h3>Medications</h3>
+        <p>Current and past prescriptions, dosages, renewal history, and indication - always linked to your diagnoses.</p>
+      </div>
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <h3>Documents & imaging</h3>
+        <p>Specialist reports, referral letters, imaging results, and discharge summaries all in one searchable archive.</p>
+      </div>
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <h3>Visits & care plans</h3>
+        <p>Consultation notes, visit summaries, and your personalised annual care plan reviewed and updated by your doctor.</p>
+      </div>
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <h3>Biometrics</h3>
+        <p>Height, weight, BMI, blood pressure, and other clinical measurements tracked longitudinally over time.</p>
+      </div>
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <h3>International records</h3>
+        <p>Health data from abroad integrated into your record. Your full story is available regardless of where care was received.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW YOUR DOCTOR USES IT -->
+<section class="section-ivory">
+  <div class="container">
+    <div class="split reverse fade-up" style="align-items: flex-start; grid-template-columns: 1fr 1.4fr;">
+      <div class="split-image" style="overflow: visible; min-width: 520px;">
+        <img src="/assets/images/dashboard_5.png" alt="Doctor reviewing patient data" style="width: 100%; height: auto; object-fit: unset;" />
+      </div>
+      <div class="split-content">
+        <span class="eyebrow">How your doctor uses it</span>
+        <h2>Full picture instead of just details.</h2>
+        <p>Your doctor reviews your complete record before every consultation. Our platform tracks trends across time, so early changes are identified before they become problems.</p>
+        <p style="margin-top: 16px;">We proactively reach out when it's time for a check-up, lab test, or specialist appointment. When something needs attention, your care team is alerted.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STANDARDS & COMPLIANCE -->
+<section class="section-cream">
+  <div class="container">
+    <div class="fade-up" style="max-width: 720px; margin: 0 auto;">
+      <span class="eyebrow">Standards & compliance</span>
+      <h2>Built to the highest standards.</h2>
+      <p style="margin-top: 20px;">Foundation Clinic is ISO 9001:2015 certified. As we build our clinical software platform, we are developing it from the ground up in accordance with the regulatory frameworks that will govern its certification - so that compliance is built in, not bolted on.</p>
+      <div style="margin-top: 40px; border: 1px solid var(--t-15); border-radius: var(--radius-xl); overflow: hidden;">
+        <table style="width: 100%; border-collapse: collapse; font-size: var(--body-sm);">
+          <thead>
+            <tr style="background: var(--surface-2); border-bottom: 1px solid var(--t-15);">
+              <th style="padding: 12px 20px; text-align: left; font-weight: 500; color: var(--fg-2); width: 200px;">Standard</th>
+              <th style="padding: 12px 20px; text-align: left; font-weight: 500; color: var(--fg-2);">What it covers</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--t-15);">
+              <td style="padding: 14px 20px; font-weight: 500; color: var(--fg-2); white-space: nowrap;">ISO 9001:2015</td>
+              <td style="padding: 14px 20px; color: var(--fg-3); line-height: 1.6;">Quality management: Clinical processes, patient care workflows, and continuous improvement.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--t-15);">
+              <td style="padding: 14px 20px; font-weight: 500; color: var(--fg-2); white-space: nowrap;">IEC 62304</td>
+              <td style="padding: 14px 20px; color: var(--fg-3); line-height: 1.6;">Medical device software lifecycle: Design, development, testing, and maintenance.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--t-15);">
+              <td style="padding: 14px 20px; font-weight: 500; color: var(--fg-2); white-space: nowrap;">EU MDR 2017/745</td>
+              <td style="padding: 14px 20px; color: var(--fg-3); line-height: 1.6;">EU Medical Device Regulation: Applied where our software meets the definition of a medical device.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--t-15);">
+              <td style="padding: 14px 20px; font-weight: 500; color: var(--fg-2); white-space: nowrap;">EU AI Act</td>
+              <td style="padding: 14px 20px; color: var(--fg-3); line-height: 1.6;">AI-assisted features classified and developed per EU AI Act, with mandatory doctor review for all clinical suggestions.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--t-15);">
+              <td style="padding: 14px 20px; font-weight: 500; color: var(--fg-2); white-space: nowrap;">GDPR & Finnish law</td>
+              <td style="padding: 14px 20px; color: var(--fg-3); line-height: 1.6;">Patient data processed in compliance with GDPR, the Finnish Data Protection Act, and the Finnish Act on Patient Records.</td>
+            </tr>
+            <tr>
+              <td style="padding: 14px 20px; font-weight: 500; color: var(--fg-2); white-space: nowrap;">HL7 FHIR & LOINC</td>
+              <td style="padding: 14px 20px; color: var(--fg-3); line-height: 1.6;">International interoperability standards, ensuring your health record can travel with you across systems and borders.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- YOUR RIGHTS -->
+  <section class="section-sunken">
+    <div class="container">
+      <div class="fade-up" style="max-width: 720px; margin: 0 auto;">
+        <span class="eyebrow">Your rights</span>
+        <h2>Your data belongs to you.</h2>
+        <p style="margin-top: 20px;">You can request a full export of your health data at any time. We store your data in accordance with Finnish law, EU GDPR, and applicable health data regulations. We never sell or share your data with third parties for commercial purposes.</p>
+        <div style="margin-top: 48px; display: flex; flex-direction: column; gap: 0;">
+          <div style="padding: 24px 0; border-bottom: 1px solid var(--t-15); display: grid; grid-template-columns: 200px 1fr; gap: 24px;">
+            <div style="font-size: var(--body-sm); font-weight: 500; color: var(--fg-2);">Right of access</div>
+            <div style="font-size: var(--body-sm); color: var(--fg-3); line-height: 1.7;">You have the right to access all personal and health data we hold about you at any time.</div>
+          </div>
+          <div style="padding: 24px 0; border-bottom: 1px solid var(--t-15); display: grid; grid-template-columns: 200px 1fr; gap: 24px;">
+            <div style="font-size: var(--body-sm); font-weight: 500; color: var(--fg-2);">Right to portability</div>
+            <div style="font-size: var(--body-sm); color: var(--fg-3); line-height: 1.7;">You can request a full export of your health record in a structured, machine-readable format.</div>
+          </div>
+          <div style="padding: 24px 0; border-bottom: 1px solid var(--t-15); display: grid; grid-template-columns: 200px 1fr; gap: 24px;">
+            <div style="font-size: var(--body-sm); font-weight: 500; color: var(--fg-2);">Right to erasure</div>
+            <div style="font-size: var(--body-sm); color: var(--fg-3); line-height: 1.7;">Subject to legal retention requirements for medical records under Finnish law, you may request deletion of your personal data.</div>
+          </div>
+          <div style="padding: 24px 0; border-bottom: 1px solid var(--t-15); display: grid; grid-template-columns: 200px 1fr; gap: 24px;">
+            <div style="font-size: var(--body-sm); font-weight: 500; color: var(--fg-2);">Consent</div>
+            <div style="font-size: var(--body-sm); color: var(--fg-3); line-height: 1.7;">We collect and process your health data only with your explicit consent. You can withdraw consent at any time.</div>
+          </div>
+          <div style="padding: 24px 0; display: grid; grid-template-columns: 200px 1fr; gap: 24px;">
+            <div style="font-size: var(--body-sm); font-weight: 500; color: var(--fg-2);">Data storage</div>
+            <div style="font-size: var(--body-sm); color: var(--fg-3); line-height: 1.7;">Your data is stored on secure servers within the EU, in compliance with GDPR and Finnish health data legislation.</div>
+          </div>
+        </div>
+        <div style="margin-top: 40px;">
+          <a href="/en/legal/privacy-policy" class="btn btn-outline">Read our privacy policy</a>
+          <a href="/en/contact" class="btn btn-ghost" style="margin-left: 12px;">Contact us about your data</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Base>

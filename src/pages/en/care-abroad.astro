@@ -1,0 +1,98 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="Care Abroad" description="Your Finnish doctor, anywhere in the world.">
+
+  <style is:global>
+    .hero-subpage .hero-overlay {
+      background: linear-gradient(to top, rgba(46,31,20,0.87) 0%, rgba(46,31,20,0.55) 50%, rgba(46,31,20,0.25) 100%);
+    }
+
+    .what-card {
+      padding-top: var(--s-8) !important;
+    }
+  </style>
+
+  <section class="hero-subpage">
+    <div class="hero-bg" style="background-image: url('/assets/images/paris3.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Care abroad</span>
+      <h1 class="hero-headline">Paris, Helsinki, Tampere or Tokyo.</h1>
+      <p class="hero-lead">Your Finnish doctor, anywhere in the world.</p>
+    </div>
+  </section>
+
+<!-- THREE PILLARS -->
+<section class="section-ivory">
+  <div class="container">
+    <div class="what-grid fade-up" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="what-card" style="padding-top: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg>
+        <h3>Personal doctor</h3>
+        <p>Your dedicated doctor knows your medical history, your family and your life situation, and is reachable via WhatsApp or by phone — wherever you are.</p>
+      </div>
+      <div class="what-card" style="padding-top: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <h3>Care coordination</h3>
+        <p>We act as the link between you and your local doctor. We find the best local specialists, handle referrals and appointments, share your health records with the professionals treating you, and keep you continuously informed.</p>
+      </div>
+      <div class="what-card" style="padding-top: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <h3>Insurance & documents</h3>
+        <p>We help you make full use of your local health insurance. We write the necessary statements, medical certificates and referrals in a format your insurer and employer will accept.</p>
+      </div>
+    </div>
+
+<!-- Country flags -->
+<div style="display: flex; align-items: center; gap: var(--s-8); margin-top: var(--s-10); padding-top: var(--s-8); border-top: 1px solid var(--t-15);">
+  <span style="font-size: var(--caption); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-4);">Available in</span>
+  <div style="display: flex; align-items: center; gap: var(--s-6); flex-wrap: wrap;">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="font-size: 20px;">🇩🇪</span>
+      <span style="font-size: var(--body-sm); color: var(--fg-2);">Germany</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="font-size: 20px;">🇭🇰</span>
+      <span style="font-size: var(--body-sm); color: var(--fg-2);">Hong Kong</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="font-size: 20px;">🇪🇸</span>
+      <span style="font-size: var(--body-sm); color: var(--fg-2);">Spain</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="font-size: 20px;">🇨🇭</span>
+      <span style="font-size: var(--body-sm); color: var(--fg-2);">Switzerland</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="font-size: 20px;">🇬🇧</span>
+      <span style="font-size: var(--body-sm); color: var(--fg-2);">United Kingdom</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="font-size: 20px;">🇺🇸</span>
+      <span style="font-size: var(--body-sm); color: var(--fg-2);">United States</span>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+  <!-- MEMBERSHIP CTA -->
+  <section class="section-fullbleed-image" style="min-height: 480px; padding: var(--s-24) 0;">
+    <div class="fullbleed-bg" style="background-image: url('/assets/images/malaga.jpg'); background-position: center 40%;"></div>
+    <div class="fullbleed-overlay"></div>
+    <div class="fullbleed-content">
+      <div style="max-width: 520px;">
+        <span class="eyebrow" style="color: rgba(255,255,255,0.6);">Membership</span>
+        <h2 style="color: #FDF6EE;">We tailor your membership by country and to your needs.</h2>
+        <div style="margin-top: 24px; margin-bottom: 32px;">
+          <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 6px;">Monthly membership from</div>
+          <div style="font-family: 'Belleza', Georgia, serif; font-size: 3rem; color: #FDF6EE; line-height: 1;">€99<span style="font-size: 1rem; color: rgba(255,255,255,0.6); font-family: 'Plus Jakarta Sans', sans-serif; margin-left: 4px;">/mo</span></div>
+        </div>
+        <a href="/en/contact" class="btn btn-primary" style="background: #FDF6EE; color: #2E1F14;">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+</Base>

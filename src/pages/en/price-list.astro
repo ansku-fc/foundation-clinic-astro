@@ -1,0 +1,304 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="Price List" description="Foundation Clinic full price list.">
+
+<style is:global>
+@media print {
+  .nav, .whatsapp-btn, .footer { display: none !important; }
+  body { background: white !important; }
+  .price-list-page { padding: 24px !important; }
+  .pl-heading { break-after: avoid; }
+  .price-list-header-bar .btn { display: none !important; }
+}
+</style>
+
+<div class="price-list-page" style="max-width: 760px; margin: 0 auto; padding: calc(var(--nav-height) + var(--s-12)) var(--s-8) var(--s-20);">
+
+<!-- Header bar -->
+<div class="price-list-header-bar" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--s-12);">
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <img src="/assets/images/foundation_clinic_logo.png" alt="Foundation Clinic" style="height: 36px; width: 108px; display: block;" />
+    <div>
+      <h1 style="font-size: clamp(1.8rem, 4vw, 2.4rem); margin: 0;">Full price list</h1>
+      <p style="font-size: var(--caption); color: var(--fg-4); margin-top: 6px;">All prices VAT-exempt (0%) unless otherwise stated. Doctors operate as independent practitioners; prices are indicative.</p>
+    </div>
+  </div>
+  <button onclick="window.print()" class="btn btn-outline" style="flex-shrink: 0; display: flex; align-items: center; gap: 8px;">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download PDF
+  </button>
+</div>
+
+  <!-- Memberships -->
+  <div class="pl-section" style="margin-bottom: var(--s-10);">
+    <h2 class="pl-heading">Memberships</h2>
+    <div class="pl-row"><span class="pl-label">Onboarding consultation</span><span class="pl-price">€599</span></div>
+    <div class="pl-row"><span class="pl-label">Tier 1</span><span class="pl-price">€99 / mo</span></div>
+    <div class="pl-row"><span class="pl-label">Tier 2</span><span class="pl-price">€199 / mo</span></div>
+    <div class="pl-row"><span class="pl-label">Tier 3</span><span class="pl-price">€399 / mo</span></div>
+    <div class="pl-row"><span class="pl-label">Children</span><span class="pl-price">€49 / mo</span></div>
+  </div>
+
+  <!-- Consultations -->
+  <div class="pl-section" style="margin-bottom: var(--s-10);">
+    <h2 class="pl-heading">Consultations</h2>
+    <p class="pl-note" style="margin-bottom: 12px;">Base prices apply Mon–Fri 7–21. Time-based surcharges apply outside these hours.</p>
+    <p class="pl-subheading">In-person, video & phone consultations</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; margin-bottom: 16px;">
+      <span class="pl-th">Duration</span><span class="pl-th" style="text-align: right;">Mon–Fri</span><span class="pl-th" style="text-align: right;">Sat 7–18</span><span class="pl-th" style="text-align: right;">Sat / Sun / night</span>
+      <span class="pl-td">10 min</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€118</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€154</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€236</span>
+      <span class="pl-td">20 min</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€145</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€188</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€289</span>
+      <span class="pl-td">30 min</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€198</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€257</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€395</span>
+      <span class="pl-td">45 min</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€234</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€304</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€467</span>
+      <span class="pl-td" style="border-bottom: none;">60 min</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500; border-bottom: none;">€289</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500; border-bottom: none;">€375</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500; border-bottom: none;">€577</span>
+    </div>
+    <p class="pl-subheading">Chat consultation (acute)</p>
+    <div class="pl-row"><span class="pl-label">Doctor consultation (Mon–Fri)</span><span class="pl-price">€56</span></div>
+    <div class="pl-row"><span class="pl-label">Doctor consultation (Sat–Sun)</span><span class="pl-price">€72</span></div>
+    <div class="pl-row"><span class="pl-label">Prescription renewals</span><span class="pl-price">€36</span></div>
+    <p class="pl-subheading" style="margin-top: 16px;">Time-based surcharges</p>
+    <p class="pl-note">Weekdays 21–7: +100% · Saturday 7–18: +30% · Saturday after 18: +100% · Sundays & public holidays: +100%</p>
+    <p class="pl-subheading" style="margin-top: 16px;">Service fees</p>
+    <div class="pl-row"><span class="pl-label">Doctor service fee</span><span class="pl-price">€39.90</span></div>
+    <div class="pl-row"><span class="pl-label">Nurse service fee</span><span class="pl-price">€9.50</span></div>
+    <p class="pl-note" style="margin-top: 8px;">Service fees apply to non-membership consultations and cover administrative and digital services.</p>
+  </div>
+
+  <!-- Home visits -->
+  <div class="pl-section" style="margin-bottom: var(--s-10);">
+    <h2 class="pl-heading">Home visits</h2>
+    <div class="pl-row"><span class="pl-label">Doctor home visits (Helsinki & Espoo)</span><span class="pl-price">By duration incl. travel (min. 1h)</span></div>
+    <div class="pl-row"><span class="pl-label">Nurse home visits (Helsinki & Espoo)</span><span class="pl-price">€175 / h incl. travel</span></div>
+    <div class="pl-row"><span class="pl-label">Other home visits</span><span class="pl-price">Price on request</span></div>
+  </div>
+
+  <!-- 24/7 -->
+  <div class="pl-section" style="margin-bottom: var(--s-10);">
+    <h2 class="pl-heading">24/7 doctor availability</h2>
+    <div class="pl-row"><span class="pl-label">First adult</span><span class="pl-price">€899 / mo</span></div>
+    <div class="pl-row"><span class="pl-label">Second adult or children from same household</span><span class="pl-price">€299 / mo</span></div>
+  </div>
+
+  <!-- Extended lab packages -->
+  <div class="pl-section" style="margin-bottom: var(--s-10);">
+    <h2 class="pl-heading">Extended laboratory packages</h2>
+    <div class="pl-row"><span class="pl-label">Extended blood count</span><span class="pl-price">€199</span></div>
+    <div class="pl-row"><span class="pl-label">Heart and circulation</span><span class="pl-price">€99</span></div>
+    <div class="pl-row"><span class="pl-label">Heart and circulation, extended</span><span class="pl-price">€199</span></div>
+    <div class="pl-row"><span class="pl-label">Nutrition</span><span class="pl-price">€99</span></div>
+    <div class="pl-row"><span class="pl-label">Performance, women</span><span class="pl-price">€99</span></div>
+    <div class="pl-row"><span class="pl-label">Performance, men</span><span class="pl-price">€99</span></div>
+  </div>
+
+  <!-- Individual lab tests -->
+  <div class="pl-section" style="margin-bottom: var(--s-10);">
+    <h2 class="pl-heading">Individual laboratory tests</h2>
+    <p class="pl-subheading">Sample collection</p>
+    <div class="pl-row"><span class="pl-label">At home or office (Helsinki & Espoo)</span><span class="pl-price">from €99</span></div>
+    <div class="pl-row"><span class="pl-label">At Foundation Clinic</span><span class="pl-price">from €49</span></div>
+    <p class="pl-subheading" style="margin-top: 16px;">Tests</p>
+    <div style="display: grid; grid-template-columns: 1fr auto auto;">
+      <span class="pl-th">Marker</span><span class="pl-th" style="padding: 6px 16px;">Code</span><span class="pl-th" style="text-align: right;">From</span>
+      <span class="pl-td">Alanine aminotransferase (ALT)</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-ALAT</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€39.90</span>
+      <span class="pl-td">Alkaline phosphatase (ALP)</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-AFOS</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€39.90</span>
+      <span class="pl-td">Aspartate aminotransferase (AST)</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-ASAT</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€39.90</span>
+      <span class="pl-td">Amylase</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-Amyl</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€39.90</span>
+      <span class="pl-td">Vitamin B12</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-B12-Vit</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€74.90</span>
+      <span class="pl-td">Bilirubin</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-Bil</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€39.90</span>
+      <span class="pl-td">C-reactive protein (CRP)</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-CRP</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€52.90</span>
+      <span class="pl-td">Vitamin D (25-OH)</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-D-25</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€97.90</span>
+      <span class="pl-td">Ferritin</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-Ferrit</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€74.90</span>
+      <span class="pl-td">Serum iron</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">fS-Fe</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€58.10</span>
+      <span class="pl-td">Transferrin saturation</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">fS-TrFeSat</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€62.80</span>
+      <span class="pl-td">Transferrin</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">fS-Transf</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€50.10</span>
+      <span class="pl-td">Fasting glucose</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">fP-Gluk</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€39.90</span>
+      <span class="pl-td">Gamma-glutamyltransferase (GGT)</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-GT</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€40.90</span>
+      <span class="pl-td">HbA1c</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">B-HbA1c</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€77.90</span>
+      <span class="pl-td">Potassium</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-K</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€42.20</span>
+      <span class="pl-td">Calcium</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-Ca</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€39.90</span>
+      <span class="pl-td">ESR</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">B-La</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€51.90</span>
+      <span class="pl-td">Lipid panel</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-Lipidit</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€93.90</span>
+      <span class="pl-td">Sodium</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-Na</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€39.90</span>
+      <span class="pl-td">Full blood count</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">B-PVK+T</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€55.90</span>
+      <span class="pl-td">Hemoglobin</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">B-Hb</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€26.90</span>
+      <span class="pl-td">Testosterone (total & free) + SHBG</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-Testo</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€110.90</span>
+      <span class="pl-td">TSH</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-TSH</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€79.90</span>
+      <span class="pl-td">Free thyroxine (fT4)</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-T4-V</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€87.90</span>
+      <span class="pl-td">Thyroid panel</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-KIPA</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€89.00</span>
+      <span class="pl-td">High-sensitivity CRP</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-hs-CRP</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€74.90</span>
+      <span class="pl-td">Lipoprotein(a)</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">fS-Lipo(a)</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€127.00</span>
+      <span class="pl-td">Apolipoprotein A1</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">fS-LipoA1</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€156.00</span>
+      <span class="pl-td">Apolipoprotein B</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">fS-LipoB</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€156.00</span>
+      <span class="pl-td">Homocysteine</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">P-Hcyst</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€99.20</span>
+      <span class="pl-td">Creatinine</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-Krea</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€51.50</span>
+      <span class="pl-td">Cystatin C</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-KysC</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€87.90</span>
+      <span class="pl-td">Magnesium</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-Mg</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€45.70</span>
+      <span class="pl-td">PSA</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-PSA</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€89.90</span>
+      <span class="pl-td">Oestradiol</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-Estradioli</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€99.20</span>
+      <span class="pl-td">FSH</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-FSH</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€99.90</span>
+      <span class="pl-td">Prolactin</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-PRL</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€94.20</span>
+      <span class="pl-td">Folate</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">fS-Folaat</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€72.90</span>
+      <span class="pl-td">HIV test</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">S-HivAgAb</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€67.90</span>
+      <span class="pl-td">Calprotectin</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px;">F-Calpro</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500;">€149.90</span>
+      <span class="pl-td" style="border-bottom: none;">Urine dipstick</span><span class="pl-td" style="color: var(--fg-3); padding: 8px 16px; border-bottom: none;">U-KemSeul</span><span class="pl-td" style="text-align: right; color: var(--fg-1); font-weight: 500; border-bottom: none;">€49.90</span>
+    </div>
+  </div>
+
+  <!-- Imaging -->
+  <div class="pl-section" style="margin-bottom: var(--s-10);">
+    <h2 class="pl-heading">Imaging</h2>
+    <p class="pl-subheading">MRI</p>
+    <div class="pl-row"><span class="pl-label">Head</span><span class="pl-price">from €454</span></div>
+    <div class="pl-row"><span class="pl-label">Cervical, thoracic or lumbar spine</span><span class="pl-price">from €454</span></div>
+    <div class="pl-row"><span class="pl-label">Upper abdomen</span><span class="pl-price">from €454</span></div>
+    <div class="pl-row"><span class="pl-label">Extended upper abdomen</span><span class="pl-price">from €679</span></div>
+    <div class="pl-row"><span class="pl-label">Joint or extremity (e.g. knee, ankle)</span><span class="pl-price">from €454</span></div>
+    <div class="pl-row"><span class="pl-label">Shoulder</span><span class="pl-price">from €717</span></div>
+    <div class="pl-row"><span class="pl-label">Prostate, extended</span><span class="pl-price">from €679</span></div>
+    <div class="pl-row"><span class="pl-label">Breast, extended</span><span class="pl-price">from €707</span></div>
+    <div class="pl-row"><span class="pl-label">Cardiac, extended</span><span class="pl-price">from €879</span></div>
+    <p class="pl-subheading" style="margin-top: 16px;">X-ray</p>
+    <div class="pl-row"><span class="pl-label">Chest X-ray</span><span class="pl-price">from €169</span></div>
+    <div class="pl-row"><span class="pl-label">Sinuses</span><span class="pl-price">from €165</span></div>
+    <div class="pl-row"><span class="pl-label">Extremities</span><span class="pl-price">from €184</span></div>
+    <div class="pl-row"><span class="pl-label">Mammography + ultrasound</span><span class="pl-price">from €332</span></div>
+    <p class="pl-subheading" style="margin-top: 16px;">Ultrasound</p>
+    <div class="pl-row"><span class="pl-label">Thyroid</span><span class="pl-price">from €351</span></div>
+    <div class="pl-row"><span class="pl-label">Joint ultrasound</span><span class="pl-price">from €369</span></div>
+    <div class="pl-row"><span class="pl-label">Upper or lower abdomen</span><span class="pl-price">from €359</span></div>
+    <div class="pl-row"><span class="pl-label">Extended abdominal</span><span class="pl-price">from €489</span></div>
+    <p class="pl-subheading" style="margin-top: 16px;">CT</p>
+    <div class="pl-row"><span class="pl-label">Head</span><span class="pl-price">from €530</span></div>
+    <div class="pl-row"><span class="pl-label">Spine</span><span class="pl-price">from €619</span></div>
+    <div class="pl-row"><span class="pl-label">Abdomen</span><span class="pl-price">from €695</span></div>
+    <div class="pl-row"><span class="pl-label">Coronary arteries</span><span class="pl-price">from €935</span></div>
+  </div>
+
+  <!-- Clinical physiology & fitness -->
+  <div class="pl-section" style="margin-bottom: var(--s-10);">
+    <h2 class="pl-heading">Clinical physiology & fitness testing</h2>
+    <p class="pl-subheading">Clinical physiology</p>
+    <div class="pl-row"><span class="pl-label">ECG (12-lead)</span><span class="pl-price">from €99</span></div>
+    <div class="pl-row"><span class="pl-label">Spirometry</span><span class="pl-price">from €30</span></div>
+    <p class="pl-subheading" style="margin-top: 16px;">Fitness testing (incl. 25.5% VAT)</p>
+    <div class="pl-row"><span class="pl-label">Individualised VO₂max, lactate & ventilation thresholds, with clinician assessment</span><span class="pl-price">€500</span></div>
+    <div class="pl-row"><span class="pl-label">VO₂max, lactate & ventilation thresholds</span><span class="pl-price">€295</span></div>
+    <div class="pl-row"><span class="pl-label">VO₂max, ventilation thresholds</span><span class="pl-price">€275</span></div>
+    <div class="pl-row"><span class="pl-label">Maximal aerobic test, lactate thresholds</span><span class="pl-price">€250</span></div>
+    <div class="pl-row"><span class="pl-label">Submaximal 3–5 stage test (modified WHO)</span><span class="pl-price">€185</span></div>
+  </div>
+
+  <!-- Vaccinations -->
+  <div class="pl-section" style="margin-bottom: var(--s-10);">
+    <h2 class="pl-heading">Vaccinations</h2>
+    <p class="pl-note" style="margin-bottom: 12px;">Prices include 14% VAT.</p>
+    <div class="pl-row"><span class="pl-label">Bexsero (meningococcal B)</span><span class="pl-price">€151.70</span></div>
+    <div class="pl-row"><span class="pl-label">Boostrix (dTpa booster)</span><span class="pl-price">€39.67</span></div>
+    <div class="pl-row"><span class="pl-label">Fluenz (nasal flu)</span><span class="pl-price">€41.27</span></div>
+    <div class="pl-row"><span class="pl-label">Gardasil 9 (HPV)</span><span class="pl-price">€228.82</span></div>
+    <div class="pl-row"><span class="pl-label">Nimenrix (meningococcal ACWY)</span><span class="pl-price">€74.08</span></div>
+    <div class="pl-row"><span class="pl-label">Prevenar 20 (pneumococcal)</span><span class="pl-price">€96.50</span></div>
+    <div class="pl-row"><span class="pl-label">Shingrix (shingles)</span><span class="pl-price">€246.75</span></div>
+    <div class="pl-row"><span class="pl-label">Ticovac (tick-borne encephalitis)</span><span class="pl-price">€36.94</span></div>
+    <div class="pl-row"><span class="pl-label">Ticovac Jr.</span><span class="pl-price">€33.62</span></div>
+    <div class="pl-row"><span class="pl-label">Vaxigrip (flu)</span><span class="pl-price">€8.33</span></div>
+  </div>
+
+  <!-- Genetic testing -->
+  <div class="pl-section" style="margin-bottom: var(--s-10);">
+    <h2 class="pl-heading">Genetic testing</h2>
+    <div class="pl-row"><span class="pl-label">HERTTA cardiovascular screening (CREST)</span><span class="pl-price">€160</span></div>
+    <div class="pl-row"><span class="pl-label">Pharmacogenetics panel</span><span class="pl-price">€389</span></div>
+    <div class="pl-row"><span class="pl-label">Stockholm3 prostate test</span><span class="pl-price">€400</span></div>
+    <div class="pl-row"><span class="pl-label">Lactose intolerance test</span><span class="pl-price">€110.90</span></div>
+    <div class="pl-row"><span class="pl-label">Broad preventive gene panel (181 genes)</span><span class="pl-price">€900</span></div>
+    <div class="pl-row"><span class="pl-label">Broad cancer predisposition panel (62 genes)</span><span class="pl-price">€800</span></div>
+    <div class="pl-row"><span class="pl-label">Targeted single-gene test</span><span class="pl-price">€900</span></div>
+  </div>
+
+  <!-- Cancellation & other fees -->
+  <div class="pl-section" style="margin-bottom: var(--s-10);">
+    <h2 class="pl-heading">Cancellation & other fees</h2>
+    <p class="pl-note">Appointments may be cancelled free of charge up to 24 hours in advance. Late cancellations or no-shows may be charged the full appointment fee.</p>
+    <p class="pl-subheading" style="margin-top: 16px;">Billed separately in addition to consultation fees</p>
+    <p class="pl-note">Procedures performed during the visit · Medical certificates and prescriptions · Phone contacts · Laboratory tests, biopsies and tissue samples · Prescription renewals · Assistive devices · Vaccinations · Imaging</p>
+    <p class="pl-subheading" style="margin-top: 16px;">Kela reimbursements (Finnish social insurance)</p>
+    <div class="pl-row"><span class="pl-label">In-person appointment</span><span class="pl-price">€30.00</span></div>
+    <div class="pl-row"><span class="pl-label">Video appointment</span><span class="pl-price">€25.00</span></div>
+    <div class="pl-row"><span class="pl-label">Phone / chat appointment</span><span class="pl-price">€8.00</span></div>
+    <div class="pl-row"><span class="pl-label">Medical certificate B</span><span class="pl-price">€9.00–€15.00</span></div>
+    <div class="pl-row"><span class="pl-label">Medical certificate A or D</span><span class="pl-price">€5.00</span></div>
+  </div>
+
+</div>
+
+<style is:global>
+  .pl-heading {
+    font-family: 'Belleza', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--fg-1);
+    margin: 0 0 12px;
+    padding-bottom: 10px;
+    border-bottom: 1.5px solid var(--t-15);
+  }
+  .pl-subheading {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fg-3);
+    margin: 0 0 6px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .pl-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--t-08);
+    gap: 16px;
+  }
+  .pl-row:last-child { border-bottom: none; }
+  .pl-label {
+    font-size: 13px;
+    color: var(--fg-2);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.5;
+    flex: 1;
+  }
+  .pl-price {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--fg-1);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .pl-th {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fg-3);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--t-15);
+  }
+  .pl-td {
+    font-size: 13px;
+    color: var(--fg-2);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--t-08);
+  }
+  .pl-note {
+    font-size: 12px;
+    color: var(--fg-3);
+    line-height: 1.6;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+</style>
+
+</Base>

@@ -9,11 +9,21 @@ const langLabel = lang === 'fi' ? 'FI' : lang === 'sv' ? 'SV' : 'EN';
       <img src="/assets/images/foundation_clinic_logo.png" alt="Foundation Clinic" style="height: 36px; width: auto;" />
     </a>
     <div class="nav-links">
-      <a href={`${base}/our-approach`}>{ lang === 'fi' ? 'Toimintatapamme' : lang === 'sv' ? 'Förhållningssätt' : 'Approach' }</a>
-      <a href={`${base}/our-services`}>{ lang === 'fi' ? 'Palvelumme' : lang === 'sv' ? 'Tjänster' : 'Services' }</a>
-      <a href={`${base}/memberships`}>{ lang === 'fi' ? 'Jäsenyydet' : lang === 'sv' ? 'Medlemskap' : 'Memberships' }</a>
-      <a href={`${base}/partners`}>{ lang === 'fi' ? 'Yhteistyökumppanit' : lang === 'sv' ? 'Partners' : 'Partners' }</a>
-      <a href={`${base}/about-us`}>{ lang === 'fi' ? 'Tietoa meistä' : lang === 'sv' ? 'Om oss' : 'About us' }</a>
+      <a href={`${base}/our-services`}>{ lang === 'fi' ? 'Palvelumme' : lang === 'sv' ? 'Tjänster' : 'Our Services' }</a>
+      <a href={`${base}/memberships`}>{ lang === 'fi' ? 'Jäsenyys' : lang === 'sv' ? 'Medlemskap' : 'Membership' }</a>
+      <a href={`${base}/locations`}>{ lang === 'fi' ? 'Sijainnit' : lang === 'sv' ? 'Platser' : 'Locations' }</a>
+      <div class="nav-dropdown-wrap" id="about-dropdown-wrap">
+        <button class="nav-dropdown-btn" id="about-toggle">
+          { lang === 'fi' ? 'Tietoa meistä' : lang === 'sv' ? 'Om oss' : 'About Us' }
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nav-dropdown" id="about-dropdown">
+          <a href={`${base}/our-approach`}>{ lang === 'fi' ? 'Toimintatapamme' : lang === 'sv' ? 'Förhållningssätt' : 'Our Approach' }</a>
+          <a href={`${base}/your-data`}>{ lang === 'fi' ? 'Tietosi' : lang === 'sv' ? 'Din data' : 'Health Data' }</a>
+          <a href={`${base}/care-abroad`}>{ lang === 'fi' ? 'Hoito ulkomailla' : lang === 'sv' ? 'Vård utomlands' : 'Care Abroad' }</a>
+          <a href={`${base}/about-us`}>{ lang === 'fi' ? 'Tiimimme' : lang === 'sv' ? 'Vårt team' : 'Meet the Team' }</a>
+        </div>
+      </div>
     </div>
     <div class="nav-right">
       <div class="lang-switcher lang-switcher-desktop">
@@ -21,9 +31,9 @@ const langLabel = lang === 'fi' ? 'FI' : lang === 'sv' ? 'SV' : 'EN';
         <a href="/fi/" class={lang === 'fi' ? 'active' : ''}>FI</a>
         <a href="/sv/" class={lang === 'sv' ? 'active' : ''}>SV</a>
       </div>
-    <a href={`${base}/contact`} class="nav-cta nav-cta-desktop-only">
-  <span>{ lang === 'fi' ? 'Ota yhteyttä' : lang === 'sv' ? 'Kontakta oss' : 'Contact us' }</span>
-</a>
+      <a href={`${base}/contact`} class="nav-cta nav-cta-desktop-only">
+        <span>{ lang === 'fi' ? 'Ota yhteyttä' : lang === 'sv' ? 'Kontakta oss' : 'Contact Us' }</span>
+      </a>
     </div>
     <div class="nav-mobile-controls">
       <div class="lang-switcher-mobile" id="lang-switcher-mobile">
@@ -42,13 +52,15 @@ const langLabel = lang === 'fi' ? 'FI' : lang === 'sv' ? 'SV' : 'EN';
 </nav>
 
 <div class="nav-mobile" id="nav-mobile">
-  <a href={`${base}/our-approach`}>{ lang === 'fi' ? 'Toimintatapamme' : lang === 'sv' ? 'Förhållningssätt' : 'Approach' }</a>
-  <a href={`${base}/our-services`}>{ lang === 'fi' ? 'Palvelumme' : lang === 'sv' ? 'Tjänster' : 'Services' }</a>
-  <a href={`${base}/memberships`}>{ lang === 'fi' ? 'Jäsenyydet' : lang === 'sv' ? 'Medlemskap' : 'Memberships' }</a>
-  <a href={`${base}/partners`}>{ lang === 'fi' ? 'Yhteistyökumppanit' : lang === 'sv' ? 'Partners' : 'Partners' }</a>
-  <a href={`${base}/about-us`}>{ lang === 'fi' ? 'Tietoa meistä' : lang === 'sv' ? 'Om oss' : 'About us' }</a>
+  <a href={`${base}/our-services`}>{ lang === 'fi' ? 'Palvelumme' : lang === 'sv' ? 'Tjänster' : 'Our Services' }</a>
+  <a href={`${base}/memberships`}>{ lang === 'fi' ? 'Jäsenyydet' : lang === 'sv' ? 'Medlemskap' : 'Pricing' }</a>
+  <a href={`${base}/locations`}>{ lang === 'fi' ? 'Sijainnit' : lang === 'sv' ? 'Platser' : 'Locations' }</a>
+  <a href={`${base}/our-approach`}>{ lang === 'fi' ? 'Toimintatapamme' : lang === 'sv' ? 'Förhållningssätt' : 'Our Approach' }</a>
+  <a href={`${base}/your-data`}>{ lang === 'fi' ? 'Tietosi' : lang === 'sv' ? 'Din data' : 'Health Data' }</a>
+  <a href={`${base}/care-abroad`}>{ lang === 'fi' ? 'Hoito ulkomailla' : lang === 'sv' ? 'Vård utomlands' : 'Care Abroad' }</a>
+  <a href={`${base}/about-us`}>{ lang === 'fi' ? 'Tiimimme' : lang === 'sv' ? 'Vårt team' : 'Meet the Team' }</a>
   <a href={`${base}/contact`} class="nav-mobile-cta">
-    { lang === 'fi' ? 'Ota yhteyttä' : lang === 'sv' ? 'Kontakta oss' : 'Become a member' }
+    { lang === 'fi' ? 'Ota yhteyttä' : lang === 'sv' ? 'Kontakta oss' : 'Contact Us' }
   </a>
 </div>
 
@@ -63,6 +75,14 @@ const langLabel = lang === 'fi' ? 'FI' : lang === 'sv' ? 'SV' : 'EN';
     const switcher = document.getElementById('lang-switcher-mobile');
     if (switcher && !switcher.contains(e.target as Node)) {
       document.getElementById('lang-dropdown')?.classList.remove('open');
+    }
+  });
+  document.getElementById('about-toggle')?.addEventListener('click', () =>
+    document.getElementById('about-dropdown')?.classList.toggle('open'));
+  document.addEventListener('click', (e) => {
+    const wrap = document.getElementById('about-dropdown-wrap');
+    if (wrap && !wrap.contains(e.target as Node)) {
+      document.getElementById('about-dropdown')?.classList.remove('open');
     }
   });
 </script>
