@@ -997,7 +997,7 @@ section { padding: var(--s-20) 0; }
 
 @media (max-width: 768px) {
   .whatsapp-btn {
-    bottom: 36px;
+    bottom: 88px;
     right: 16px;
     padding: 0 12px;
     width: 48px;
