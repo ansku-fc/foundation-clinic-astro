@@ -291,7 +291,6 @@ section { padding: var(--s-20) 0; }
 }
 .nav-cta:hover { opacity: 0.88; }
 
-.nav-dropdown-wrap { position: relative; }
 .nav-dropdown-btn {
   font-size: var(--body-sm);
   font-weight: 400;
@@ -308,30 +307,79 @@ section { padding: var(--s-20) 0; }
   transition: color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
 }
 .nav-dropdown-btn:hover { color: var(--fg-1); background: var(--bg-sunken); }
+
+/* ── Desktop About dropdown — full width mega menu ─────────── */
+.nav-dropdown-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 .nav-dropdown {
   display: none;
-  position: absolute;
-  top: calc(100% + 8px);
+  position: fixed;
+  top: var(--nav-height);
   left: 0;
-  background: var(--bg-elevated);
-  border: 1px solid var(--t-15);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-3);
-  overflow: hidden;
-  z-index: 200;
-  min-width: 180px;
+  right: 0;
+  background: rgba(253,250,247,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--t-15);
+  box-shadow: var(--shadow-4);
+  z-index: 99;
+  padding: var(--s-10) var(--s-8);
 }
 .nav-dropdown.open { display: block; }
-.nav-dropdown a {
-  display: block;
-  font-size: var(--body-sm);
-  color: var(--fg-2);
-  padding: 10px 16px;
-  border-bottom: none;
-  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+
+.nav-dropdown-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: var(--s-5);
 }
-.nav-dropdown a:last-child { border-bottom: none; }
-.nav-dropdown a:hover { background: var(--bg-sunken); color: var(--fg-1); }
+
+.nav-dropdown a {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  padding: var(--s-5) var(--s-5);
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+  background: none;
+  transition: background var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+.nav-dropdown a:hover {
+  background: var(--bg-sunken);
+  border-color: var(--t-15);
+}
+.nav-dropdown a .dd-title {
+  font-size: var(--body-sm);
+  font-weight: 500;
+  color: var(--fg-1);
+}
+.nav-dropdown a .dd-desc {
+  font-size: var(--caption);
+  color: var(--fg-3);
+  line-height: 1.5;
+}
+.dd-img {
+  width: 100%;
+  height: 120px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--s-3);
+}
+.dd-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--dur) var(--ease-out);
+}
+.nav-dropdown a:hover .dd-img img {
+  transform: scale(1.04);
+}
 
 /* Hamburger — hidden on desktop */
 .nav-hamburger {
@@ -582,7 +630,17 @@ section { padding: var(--s-20) 0; }
 
 @media (max-width: 768px) {
   .hero-subpage { height: 50vh; }
-  .hero-subpage .hero-content { padding: 0 var(--s-5) var(--s-12); }
+  .hero-subpage .hero-content {
+    padding: 0 var(--s-5) var(--s-12);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin-top: var(--nav-height);
+  }
+  .hero-subpage .hero-lead {
+    font-size: var(--body);
+  }
 }
 
 /* ============================================================
@@ -1107,4 +1165,154 @@ section { padding: var(--s-20) 0; }
     justify-content: center;
   }
   .whatsapp-label { display: none; }
+}
+The problem is clear — your mobile rules for .what-grid, .what-card, etc. are sitting outside the @media (max-width: 768px) block. They're applying on desktop too. Here's the corrected bottom section of your CSS to replace everything from /* Network portrait image */ onwards:
+css/* Network portrait image */
+.network-portrait {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+.network-portrait img {
+  width: 100%;
+  object-fit: cover;
+}
+.rights-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
+}
+.countries-grid {
+  display: flex;
+  align-items: center;
+  gap: var(--s-6);
+  flex-wrap: nowrap;
+}
+.hero-subpage .hero-bg {
+  background-position: center 40%;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-btn {
+    bottom: 28px;
+    right: 16px;
+    padding: 0 12px;
+    width: 48px;
+    justify-content: center;
+  }
+  .whatsapp-label { display: none; }
+  .locations-grid {
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+  }
+  .split {
+    grid-template-columns: 1fr !important;
+    gap: var(--s-8) !important;
+  }
+  #coordinated-care .split {
+    gap: 0 !important;
+  }
+  .approach-diagram {
+    display: none;
+  }
+  .approach-services-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .network-inner {
+    grid-template-columns: 1fr !important;
+    display: grid !important;
+  }
+  .network-portrait img {
+    aspect-ratio: 4/3 !important;
+    width: 100% !important;
+  }
+  .partners-list {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: var(--s-4) !important;
+    font-size: var(--caption) !important;
+  }
+  .partners-list div[style*="font-size: 12px"] {
+    font-size: 10px !important;
+    line-height: 1.8 !important;
+  }
+  #our-network-split {
+    display: flex !important;
+    flex-direction: column;
+  }
+  #our-network-split > div:first-child {
+    order: 1;
+  }
+  #our-network-split > div:last-child {
+    order: 2;
+  }
+  .membership-onboarding-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .membership-services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .membership-services-image {
+    display: none;
+  }
+  .service-card-inner {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .service-card-price {
+    text-align: left !important;
+  }
+  .service-card-price br {
+    display: none;
+  }
+  .tailored-cta {
+    margin: 0 !important;
+  }
+  .what-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .what-card {
+    padding: var(--s-5) !important;
+  }
+  .what-card h3 {
+    font-size: var(--body) !important;
+  }
+  .what-card p {
+    font-size: 11px !important;
+  }
+  .split-image img[alt="Doctor reviewing patient data"] {
+    width: 100% !important;
+    height: auto !important;
+    min-width: unset !important;
+  }
+  .compliance-table {
+    display: block !important;
+    overflow-x: auto !important;
+  }
+  .compliance-table td,
+  .compliance-table th {
+    white-space: normal !important;
+    padding: 10px 12px !important;
+  }
+  .compliance-table th:first-child,
+  .compliance-table td:first-child {
+    width: 120px !important;
+  }
+  .rights-row {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+  .countries-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: var(--s-3) !important;
+  }
+    .countries-grid span {
+    font-size: var(--caption) !important;
+  }
+  .hero-subpage .hero-bg {
+    background-position: center 38% !important;
+    background-size: 275% !important;
+  }
 }

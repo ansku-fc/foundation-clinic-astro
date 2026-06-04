@@ -3,8 +3,8 @@ import Base from '../../layouts/Base.astro';
 ---
 <Base title="Contact" description="Get in touch with Foundation Clinic.">
 
-<section class="hero-subpage">
-    <div class="hero-bg" style="background-image: url('https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/69b654aa5269f9cb772aecd8_FoundationClinic_interior_9.jpg');"></div>
+<section class="hero-subpage contact-hero">
+    <div class="hero-bg contact-hero-bg" style="background-image: url('/assets/images/avocados.jpg');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <span class="hero-eyebrow">Contact</span>
@@ -23,20 +23,20 @@ import Base from '../../layouts/Base.astro';
             <div class="form-row">
               <div class="form-group">
                 <label for="first-name">First name</label>
-                <input type="text" id="first-name" name="first_name" placeholder="Anna" required />
+                <input type="text" id="first-name" name="first_name" required />
               </div>
               <div class="form-group">
                 <label for="last-name">Last name</label>
-                <input type="text" id="last-name" name="last_name" placeholder="Virtanen" required />
+                <input type="text" id="last-name" name="last_name" required />
               </div>
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="anna@example.com" required />
+              <input type="email" id="email" name="email" required />
             </div>
             <div class="form-group">
               <label for="phone">Phone (optional)</label>
-              <input type="tel" id="phone" name="phone" placeholder="+358 40 123 4567" />
+              <input type="tel" id="phone" name="phone" />
             </div>
             <div class="form-group">
               <label for="interest">I'm interested in</label>
@@ -64,15 +64,11 @@ import Base from '../../layouts/Base.astro';
           </div>
           <div style="padding: 20px 24px; background: var(--bg-surface); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
             <p style="font-size: var(--caption); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--fg-3); margin-bottom: 6px;">Phone</p>
-            <a href="tel:+358407268383" style="font-size: var(--body); color: var(--fg-1); font-weight: 500;">+358 40 726 8383</a>
+            <a href="tel:+358407268383" style="font-size: var(--body); color: var(--fg-1); font-weight: 500;">+358 44 902 5885</a>
           </div>
           <div style="padding: 20px 24px; background: var(--bg-surface); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
             <p style="font-size: var(--caption); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--fg-3); margin-bottom: 6px;">Address</p>
             <p style="font-size: var(--body); color: var(--fg-1);">Ratakatu 29 a 4<br>00120 Helsinki, Finland</p>
-          </div>
-          <div style="padding: 20px 24px; background: var(--bg-surface); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
-            <p style="font-size: var(--caption); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--fg-3); margin-bottom: 6px;">Hours</p>
-            <p style="font-size: var(--body); color: var(--fg-1);">Monday – Friday<br>9:00 – 17:00</p>
           </div>
         </div>
       </div>

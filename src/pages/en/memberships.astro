@@ -17,6 +17,38 @@ import Base from '../../layouts/Base.astro';
   .pkg-row span {
     font-size: 12px !important;
   }
+  @media (max-width: 768px) {
+  .membership-onboarding-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .membership-services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .membership-services-image {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .service-card-inner {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .service-card-price {
+    text-align: left !important;
+  }
+}
+@media (max-width: 768px) {
+  .service-card-price br {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .tailored-cta {
+    margin: 0 !important;
+  }
+}
 
   /* Drawer */
   .price-drawer-overlay {
@@ -209,7 +241,7 @@ import Base from '../../layouts/Base.astro';
 
 <section class="section-cream">
   <div class="container">
-    <div class="fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;">
+    <div class="fade-up membership-onboarding-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;">
       <div>
         <span class="eyebrow">Onboarding</span>
         <h2 style="margin-bottom: var(--s-4);">Your care, from day one.</h2>
@@ -220,7 +252,7 @@ import Base from '../../layouts/Base.astro';
             <span style="font-size: var(--body-sm); color: var(--t-50);">one-time fee</span>
           </div>
           <p style="font-size: var(--caption); color: var(--t-50); line-height: 1.7; margin-bottom: var(--s-5);">*€100 discount if you have had laboratory tests done within the last 12 months.</p>
-          <p style="font-size: var(--caption); color: var(--t-30); line-height: 1.7;">Includes a doctor interview, review of your health data, clinical examination, and a comprehensive laboratory panel. The initial assessment can be carried out at our clinic or partially remotely, in which case samples are taken by our local partner.</p>
+          <p style="font-size: var(--caption); color: var(--t-30); line-height: 1.7;">Includes a doctor interview, review of your health data, clinical examination, and a comprehensive laboratory panel.</p>
         </div>
       </div>
       <div style="display: flex; flex-direction: column; gap: var(--s-6);">
@@ -322,40 +354,40 @@ import Base from '../../layouts/Base.astro';
 <!-- ADDITIONAL SERVICES -->
 <section class="section-cream">
   <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+    <div class="membership-services-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
       <div class="fade-up">
         <div style="margin-bottom: 48px;">
           <span class="eyebrow">Additional services</span>
           <h2>Beyond your membership.</h2>
         </div>
         <div style="display: flex; flex-direction: column; gap: 12px;">
-          <div style="display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 24px 28px; background: var(--bg-elevated); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
+          <div class="service-card-inner" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 24px 28px; background: var(--bg-elevated); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
             <div>
               <h3 style="font-size: var(--h4); margin-bottom: 6px;">24/7 doctor availability</h3>
-              <p style="font-size: var(--body-sm); color: var(--fg-3); margin: 0;">Round-the-clock access to your personal doctor, including evenings, weekends and holidays.</p>
+              <p style="font-size: var(--body-sm); color: var(--fg-3); margin: 0;">Round-the-clock access, including weekends and holidays.</p>
             </div>
-            <div style="text-align: right; flex-shrink: 0;">
+            <div class="service-card-price" style="text-align: right; flex-shrink: 0;">
               <div style="font-family: var(--font-display); font-size: 1.4rem; color: var(--fg-1);">€899</div>
-              <div style="font-size: var(--caption); color: var(--fg-3);">/ mo / adult</div>
-              <div style="font-size: var(--caption); color: var(--fg-3); margin-top: 4px;">€299 / mo / second family member</div>
+              <div style="font-size: var(--caption); color: var(--fg-3);">first member</div>
+              <div style="font-size: var(--caption); color: var(--fg-3); margin-top: 4px;">€299 second member</div>
             </div>
           </div>
-          <div style="display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 24px 28px; background: var(--bg-elevated); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
+          <div class="service-card-inner" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 24px 28px; background: var(--bg-elevated); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
             <div>
-              <h3 style="font-size: var(--h4); margin-bottom: 6px;">Specialist appointments and procedures</h3>
-              <p style="font-size: var(--body-sm); color: var(--fg-3); margin: 0;">All appointments, diagnostics and procedures carried out outside Foundation Clinic are billed directly based on our partners' price lists.</p>
+              <h3 style="font-size: var(--h4); margin-bottom: 6px;">Specialist appointments</h3>
+              <p style="font-size: var(--body-sm); color: var(--fg-3); margin: 0;">External consultations, diagnostics and procedures.</p>
             </div>
-            <div style="text-align: right; flex-shrink: 0;">
-              <div style="font-size: var(--caption); color: var(--fg-3);">Billed according to<br/>a separate price list.</div>
+            <div class="service-card-price" style="text-align: right; flex-shrink: 0;">
+              <div style="font-size: var(--caption); color: var(--fg-3);">Billed according to <br/>partners' price list.</div>
             </div>
           </div>
-          <div style="display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 24px 28px; background: var(--bg-elevated); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
+          <div class="service-card-inner" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 24px 28px; background: var(--bg-elevated); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
             <div>
               <h3 style="font-size: var(--h4); margin-bottom: 6px;">Doctor and nurse home visits</h3>
-              <p style="font-size: var(--body-sm); color: var(--fg-3); margin: 0;">Your doctor or nurse comes to you — at home, at the office, or wherever you need them.</p>
+              <p style="font-size: var(--body-sm); color: var(--fg-3); margin: 0;">Your doctor or nurse comes to you at home, at the office, or wherever you need them.</p>
             </div>
-            <div style="text-align: right; flex-shrink: 0;">
-              <div style="font-size: var(--caption); color: var(--fg-3);">Billed according to<br/>a separate price list.</div>
+            <div class="service-card-price" style="text-align: right; flex-shrink: 0;">
+              <div style="font-size: var(--caption); color: var(--fg-3);">Billed according to <br/>Foundation price list.</div>
             </div>
           </div>
         </div>
@@ -363,14 +395,14 @@ import Base from '../../layouts/Base.astro';
           <button onclick="openPriceDrawer()" class="btn btn-outline">Full price list →</button>
         </div>
       </div>
-      <div class="fade-up" style="overflow: hidden; border-radius: var(--radius-lg); height: 520px;">
+      <div class="fade-up membership-services-image" style="overflow: hidden; border-radius: var(--radius-lg); height: 520px;">
         <img src="https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/69c11723fbd8abfea21d153a_031354cd315326fa864ff8e5f33fe118_foundation-clinic-approach2.webp" alt="Foundation Clinic" style="width: 100%; height: 100%; object-fit: cover;" />
       </div>
     </div>
   </div>
 </section>
 
-<section style="position: relative; min-height: 400px; display: flex; align-items: center; justify-content: center; text-align: center; margin: 0 calc(-1 * var(--s-8)); padding: var(--s-24) var(--s-8);">
+<section class="tailored-cta" style="position: relative; min-height: 400px; display: flex; align-items: center; justify-content: center; text-align: center; margin: 0 calc(-1 * var(--s-8)); padding: var(--s-24) var(--s-8);">
   <div style="position: absolute; inset: 0; background-image: url('/assets/images/hikers-mountain-trail.jpg'); background-size: cover; background-position: center 85%;"></div>
   <div style="position: absolute; inset: 0; background: rgba(46,31,20,0.55);"></div>
   <div style="position: relative; z-index: 1; max-width: 560px;">

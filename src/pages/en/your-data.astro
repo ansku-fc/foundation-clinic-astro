@@ -87,7 +87,7 @@ import Base from '../../layouts/Base.astro';
 <section class="section-ivory">
   <div class="container">
     <div class="split reverse fade-up" style="align-items: flex-start; grid-template-columns: 1fr 1.4fr;">
-      <div class="split-image" style="overflow: visible; min-width: 520px;">
+      <div class="split-image" style="overflow: hidden;">
         <img src="/assets/images/dashboard_5.png" alt="Doctor reviewing patient data" style="width: 100%; height: auto; object-fit: unset;" />
       </div>
       <div class="split-content">
@@ -108,7 +108,7 @@ import Base from '../../layouts/Base.astro';
       <h2>Built to the highest standards.</h2>
       <p style="margin-top: 20px;">Foundation Clinic is ISO 9001:2015 certified. As we build our clinical software platform, we are developing it from the ground up in accordance with the regulatory frameworks that will govern its certification - so that compliance is built in, not bolted on.</p>
       <div style="margin-top: 40px; border: 1px solid var(--t-15); border-radius: var(--radius-xl); overflow: hidden;">
-        <table style="width: 100%; border-collapse: collapse; font-size: var(--body-sm);">
+        <table class="compliance-table" style="width: 100%; border-collapse: collapse; font-size: var(--body-sm);">
           <thead>
             <tr style="background: var(--surface-2); border-bottom: 1px solid var(--t-15);">
               <th style="padding: 12px 20px; text-align: left; font-weight: 500; color: var(--fg-2); width: 200px;">Standard</th>
@@ -156,30 +156,29 @@ import Base from '../../layouts/Base.astro';
         <h2>Your data belongs to you.</h2>
         <p style="margin-top: 20px;">You can request a full export of your health data at any time. We store your data in accordance with Finnish law, EU GDPR, and applicable health data regulations. We never sell or share your data with third parties for commercial purposes.</p>
         <div style="margin-top: 48px; display: flex; flex-direction: column; gap: 0;">
-          <div style="padding: 24px 0; border-bottom: 1px solid var(--t-15); display: grid; grid-template-columns: 200px 1fr; gap: 24px;">
+          <div class="rights-row" style="padding: 24px 0; border-bottom: 1px solid var(--t-15);">
             <div style="font-size: var(--body-sm); font-weight: 500; color: var(--fg-2);">Right of access</div>
             <div style="font-size: var(--body-sm); color: var(--fg-3); line-height: 1.7;">You have the right to access all personal and health data we hold about you at any time.</div>
           </div>
-          <div style="padding: 24px 0; border-bottom: 1px solid var(--t-15); display: grid; grid-template-columns: 200px 1fr; gap: 24px;">
+          <div class="rights-row" style="padding: 24px 0; border-bottom: 1px solid var(--t-15);">
             <div style="font-size: var(--body-sm); font-weight: 500; color: var(--fg-2);">Right to portability</div>
             <div style="font-size: var(--body-sm); color: var(--fg-3); line-height: 1.7;">You can request a full export of your health record in a structured, machine-readable format.</div>
           </div>
-          <div style="padding: 24px 0; border-bottom: 1px solid var(--t-15); display: grid; grid-template-columns: 200px 1fr; gap: 24px;">
+          <div class="rights-row" style="padding: 24px 0; border-bottom: 1px solid var(--t-15);">
             <div style="font-size: var(--body-sm); font-weight: 500; color: var(--fg-2);">Right to erasure</div>
             <div style="font-size: var(--body-sm); color: var(--fg-3); line-height: 1.7;">Subject to legal retention requirements for medical records under Finnish law, you may request deletion of your personal data.</div>
           </div>
-          <div style="padding: 24px 0; border-bottom: 1px solid var(--t-15); display: grid; grid-template-columns: 200px 1fr; gap: 24px;">
+          <div class="rights-row" style="padding: 24px 0; border-bottom: 1px solid var(--t-15);">
             <div style="font-size: var(--body-sm); font-weight: 500; color: var(--fg-2);">Consent</div>
             <div style="font-size: var(--body-sm); color: var(--fg-3); line-height: 1.7;">We collect and process your health data only with your explicit consent. You can withdraw consent at any time.</div>
           </div>
-          <div style="padding: 24px 0; display: grid; grid-template-columns: 200px 1fr; gap: 24px;">
+          <div class="rights-row" style="padding: 24px 0;">
             <div style="font-size: var(--body-sm); font-weight: 500; color: var(--fg-2);">Data storage</div>
             <div style="font-size: var(--body-sm); color: var(--fg-3); line-height: 1.7;">Your data is stored on secure servers within the EU, in compliance with GDPR and Finnish health data legislation.</div>
           </div>
         </div>
         <div style="margin-top: 40px;">
-          <a href="/en/legal/privacy-policy" class="btn btn-outline">Read our privacy policy</a>
-          <a href="/en/contact" class="btn btn-ghost" style="margin-left: 12px;">Contact us about your data</a>
+          <a href="/en/legal/privacy-policy" class="btn btn-outline">Privacy policy →</a>
         </div>
       </div>
     </div>

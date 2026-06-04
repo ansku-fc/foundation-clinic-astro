@@ -18,11 +18,29 @@ const langLabel = lang === 'fi' ? 'FI' : lang === 'sv' ? 'SV' : 'EN';
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="nav-dropdown" id="about-dropdown">
-          <a href={`${base}/our-approach`}>{ lang === 'fi' ? 'Toimintatapamme' : lang === 'sv' ? 'Förhållningssätt' : 'Our Approach' }</a>
-          <a href={`${base}/your-data`}>{ lang === 'fi' ? 'Tietosi' : lang === 'sv' ? 'Din data' : 'Health Data' }</a>
-          <a href={`${base}/care-abroad`}>{ lang === 'fi' ? 'Hoito ulkomailla' : lang === 'sv' ? 'Vård utomlands' : 'Care Abroad' }</a>
-          <a href={`${base}/about-us`}>{ lang === 'fi' ? 'Tiimimme' : lang === 'sv' ? 'Vårt team' : 'Meet the Team' }</a>
-        </div>
+  <div class="nav-dropdown-inner">
+    <a href={`${base}/our-approach`}>
+      <div class="dd-img"><img src="/assets/images/river-evening.jpg" alt="" /></div>
+      <span class="dd-title">{ lang === 'fi' ? 'Toimintatapamme' : lang === 'sv' ? 'Förhållningssätt' : 'Our Approach' }</span>
+      <span class="dd-desc">{ lang === 'fi' ? 'Miten hoidamme sinua' : lang === 'sv' ? 'Hur vi tar hand om dig' : 'How we think about healthcare.' }</span>
+    </a>
+    <a href={`${base}/your-data`}>
+      <div class="dd-img"><img src="/assets/images/data_abstract.jpg" alt="" /></div>
+      <span class="dd-title">{ lang === 'fi' ? 'Tietosi' : lang === 'sv' ? 'Din data' : 'Health Data' }</span>
+      <span class="dd-desc">{ lang === 'fi' ? 'Terveystietosi yhdessä paikassa' : lang === 'sv' ? 'Din hälsodata på ett ställe' : 'Your complete health record in one place.' }</span>
+    </a>
+    <a href={`${base}/care-abroad`}>
+      <div class="dd-img"><img src="/assets/images/swissair.jpg" alt="" /></div>
+      <span class="dd-title">{ lang === 'fi' ? 'Hoito ulkomailla' : lang === 'sv' ? 'Vård utomlands' : 'Care Abroad' }</span>
+      <span class="dd-desc">{ lang === 'fi' ? 'Lääkärisi seuraa sinua maailmalle' : lang === 'sv' ? 'Din läkare följer med dig' : 'Your personal doctor, available globally.' }</span>
+    </a>
+    <a href={`${base}/about-us`}>
+      <div class="dd-img"><img src="/assets/images/FoundationClinic_interior_7.jpg" alt="" /></div>
+      <span class="dd-title">{ lang === 'fi' ? 'Tiimimme' : lang === 'sv' ? 'Vårt team' : 'Meet the Team' }</span>
+      <span class="dd-desc">{ lang === 'fi' ? 'Lääkärit ja asiantuntijat' : lang === 'sv' ? 'Läkare och experter' : 'The people behind Foundation.' }</span>
+    </a>
+</div>
+</div>
       </div>
     </div>
     <div class="nav-right">
@@ -51,38 +69,185 @@ const langLabel = lang === 'fi' ? 'FI' : lang === 'sv' ? 'SV' : 'EN';
   </div>
 </nav>
 
-<div class="nav-mobile" id="nav-mobile">
-  <a href={`${base}/our-services`}>{ lang === 'fi' ? 'Palvelumme' : lang === 'sv' ? 'Tjänster' : 'Our Services' }</a>
-  <a href={`${base}/memberships`}>{ lang === 'fi' ? 'Jäsenyydet' : lang === 'sv' ? 'Medlemskap' : 'Pricing' }</a>
-  <a href={`${base}/locations`}>{ lang === 'fi' ? 'Sijainnit' : lang === 'sv' ? 'Platser' : 'Locations' }</a>
-  <a href={`${base}/our-approach`}>{ lang === 'fi' ? 'Toimintatapamme' : lang === 'sv' ? 'Förhållningssätt' : 'Our Approach' }</a>
-  <a href={`${base}/your-data`}>{ lang === 'fi' ? 'Tietosi' : lang === 'sv' ? 'Din data' : 'Health Data' }</a>
-  <a href={`${base}/care-abroad`}>{ lang === 'fi' ? 'Hoito ulkomailla' : lang === 'sv' ? 'Vård utomlands' : 'Care Abroad' }</a>
-  <a href={`${base}/about-us`}>{ lang === 'fi' ? 'Tiimimme' : lang === 'sv' ? 'Vårt team' : 'Meet the Team' }</a>
-  <a href={`${base}/contact`} class="nav-mobile-cta">
+<!-- MOBILE MENU OVERLAY -->
+<div class="nav-mobile-overlay" id="nav-mobile">
+  <div class="nav-mobile-header">
+    <a href={`${base}/`} class="nav-mobile-logo">
+  <img src="/assets/images/foundation_clinic_logo.png" alt="Foundation Clinic" style="height: 38px; width: auto; filter: brightness(0) invert(1);" />
+</a>
+    <button class="nav-mobile-close" id="nav-close" aria-label="Close menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <div class="nav-mobile-body">
+    <div class="nav-mobile-primary">
+      <a href={`${base}/our-services`} class="nav-mobile-item">
+        <span>{ lang === 'fi' ? 'Palvelumme' : lang === 'sv' ? 'Tjänster' : 'Our Services' }</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href={`${base}/memberships`} class="nav-mobile-item">
+        <span>{ lang === 'fi' ? 'Jäsenyydet' : lang === 'sv' ? 'Medlemskap' : 'Membership' }</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href={`${base}/locations`} class="nav-mobile-item">
+        <span>{ lang === 'fi' ? 'Sijainnit' : lang === 'sv' ? 'Platser' : 'Locations' }</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href={`${base}/our-approach`} class="nav-mobile-item">
+        <span>{ lang === 'fi' ? 'Toimintatapamme' : lang === 'sv' ? 'Förhållningssätt' : 'Our Approach' }</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <div class="nav-mobile-secondary">
+  <a href={`${base}/your-data`}>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    { lang === 'fi' ? 'Tietosi' : lang === 'sv' ? 'Din data' : 'Health Data' }
+  </a>
+  <a href={`${base}/care-abroad`}>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    { lang === 'fi' ? 'Hoito ulkomailla' : lang === 'sv' ? 'Vård utomlands' : 'Care Abroad' }
+  </a>
+  <a href={`${base}/about-us`}>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    { lang === 'fi' ? 'Tiimimme' : lang === 'sv' ? 'Vårt team' : 'Meet the Team' }
+  </a>
+  <a href={`${base}/contact`}>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
     { lang === 'fi' ? 'Ota yhteyttä' : lang === 'sv' ? 'Kontakta oss' : 'Contact Us' }
   </a>
 </div>
 
+    <a href={`${base}/contact`} class="nav-mobile-cta-btn">
+      { lang === 'fi' ? 'Ota yhteyttä' : lang === 'sv' ? 'Kontakta oss' : 'Contact Us' }
+    </a>
+  </div>
+</div>
+
+<style is:global>
+  .nav-mobile-overlay {
+    position: fixed;
+    inset: 0;
+    background: #1A1210;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .nav-mobile-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .nav-mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-mobile-close {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .nav-mobile-body {
+    flex: 1;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    overflow-y: auto;
+  }
+  .nav-mobile-primary {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-mobile-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    font-size: 20px;
+    font-family: 'Belleza', Georgia, serif;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .nav-mobile-item svg {
+    color: rgba(255,255,255,0.3);
+    flex-shrink: 0;
+  }
+  .nav-mobile-secondary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+  }
+  .nav-mobile-secondary a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+  .nav-mobile-secondary a:hover {
+    color: rgba(255,255,255,0.75);
+  }
+  .nav-mobile-cta-btn {
+    display: block;
+    background: #fff;
+    color: #1A1210;
+    text-align: center;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-top: auto;
+  }
+</style>
+
 <script>
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav?.classList.toggle('scrolled', window.scrollY > 20));
-  document.getElementById('hamburger')?.addEventListener('click', () =>
-    document.getElementById('nav-mobile')?.classList.toggle('open'));
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('nav-mobile');
+  const closeBtn = document.getElementById('nav-close');
+
+  hamburger?.addEventListener('click', () => {
+    mobileMenu?.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+  closeBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+
   document.getElementById('lang-toggle')?.addEventListener('click', () =>
     document.getElementById('lang-dropdown')?.classList.toggle('open'));
   document.addEventListener('click', (e) => {
     const switcher = document.getElementById('lang-switcher-mobile');
-    if (switcher && !switcher.contains(e.target as Node)) {
+    if (switcher && !switcher.contains(e.target as Node))
       document.getElementById('lang-dropdown')?.classList.remove('open');
-    }
   });
   document.getElementById('about-toggle')?.addEventListener('click', () =>
     document.getElementById('about-dropdown')?.classList.toggle('open'));
   document.addEventListener('click', (e) => {
     const wrap = document.getElementById('about-dropdown-wrap');
-    if (wrap && !wrap.contains(e.target as Node)) {
+    if (wrap && !wrap.contains(e.target as Node))
       document.getElementById('about-dropdown')?.classList.remove('open');
-    }
   });
 </script>
