@@ -1,23 +1,24 @@
 ---
 import Base from '../../layouts/Base.astro';
 ---
-<Base title="Palvelumme" lang="fi">
+<Base title="Palvelut" description="Terveyttä koko elämäsi ajan. Henkilökohtaista hoitoa jokaiseen elämänvaiheeseen." lang="fi">
 
-  <section class="hero-subpage">
-    <div class="hero-bg" style="background-image: url('https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/6971fab5aaba75a1d791e909_oleg-kukharuk-pU2XzuGa9ro-unsplash%20(1).jpg');"></div>
+<style is:global>
+  .hero-subpage .hero-bg {
+    background-position: 10% 70%;
+  }
+  .hero-subpage .hero-overlay {
+    background: linear-gradient(to top, rgba(46,31,20,0.88) 0%, rgba(46,31,20,0.4) 40%, rgba(46,31,20,0.1) 100%);
+  }
+</style>
+
+<section class="hero-subpage">
+  <div class="hero-bg" style="background-image: url('/assets/images/glass-of-water.jpg'); background-position: center 50%;"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <span class="hero-eyebrow">Palvelumme</span>
-      <h1 class="hero-headline">Terveyttä läpi elämän.</h1>
-      <p class="hero-lead">Jokainen hyötyy jatkuvuudesta, koordinoinnista ja pitkäaikaisesta suhteesta lääkäriinsä.</p>
-    </div>
-  </section>
-
-  <section class="section-ivory">
-    <div class="container">
-      <div class="max-prose fade-up">
-        <p style="font-size: var(--body-lg); color: var(--fg-1); line-height: 1.7;">Kaikkia asiakkaitamme yhdistää tarve löytää lääkäri, joka katsoo terveyttä kokonaisuutena ja pitkäjänteisesti.</p>
-      </div>
+      <span class="hero-eyebrow">Palvelut</span>
+      <h1 class="hero-headline">Oma lääkärisi jokaiseen elämänvaiheeseen.</h1>
+      <p class="hero-lead">Tavoitteesi on meidän tavoitteemme - oli se sitten huippusuoritus, perheesi hyvinvointi tai parempi elämänlaatu.</p>
     </div>
   </section>
 
@@ -25,14 +26,13 @@ import Base from '../../layouts/Base.astro';
     <div class="container">
       <div class="split fade-up">
         <div class="split-image">
-          <img src="https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/6971fab5aaba75a1d791e909_oleg-kukharuk-pU2XzuGa9ro-unsplash%20(1).jpg" alt="Suorituskyky ja ennaltaehkäisy" />
+          <img src="/assets/images/open-water-swimmers.jpg" alt="Suorituskyky ja ennaltaehkäisy" style="object-position: 70% 85%;" />
         </div>
         <div class="split-content">
           <span class="eyebrow">Suorituskyky ja ennaltaehkäisy</span>
-          <h2>Pysy terveenä, pysy edellä.</h2>
-          <p>Terveydenhuolto ei ole pelkästään sairauksien hoitamista. Sen tulisi olla elämäntapojesi ja tavoitteidesi ymmärtämistä sekä pitkäaikaista hyvinvointiasi tukevien päätösten tekemistä.</p>
-          <p style="margin-top: 16px;">Säännöllisen yhteydenpidon, laboratoriotutkimusten ja seurannan avulla pystymme havaitsemaan varhaiset muutokset ja hallitsemaan riskejä ennakoivasti.</p>
-          <a href="/fi/contact" class="btn btn-outline" style="margin-top: 28px;">Aloita hoitosuhde</a>
+          <h2>Pysy askeleen edellä.</h2>
+          <p>Tukeeko kehosi sisältä sitä, mitä vaadit siltä ulkoa? Säännöllinen testaus, jatkuva seuranta ja oma lääkärisi varmistavat että suorituskykysi perusta on kunnossa nyt ja vuosia eteenpäin.</p>
+          <a href="/fi/contact" class="btn btn-outline" style="margin-top: 28px;">→</a>
         </div>
       </div>
     </div>
@@ -42,13 +42,13 @@ import Base from '../../layouts/Base.astro';
     <div class="container">
       <div class="split reverse fade-up">
         <div class="split-image">
-          <img src="https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/69c1164a7313ff3a7daadc19_foundation-clinic-who7.webp" alt="Terve ikääntyminen" />
+          <img src="/assets/images/elderly-man-profile-sunset.jpg" alt="Terve ikääntyminen" />
         </div>
         <div class="split-content">
-          <span class="eyebrow">Terve ikääntyminen</span>
-          <h2>Mielenrauhaa sinulle ja läheisillesi.</h2>
-          <p>Terveyden tarpeet muuttuvat usein monimutkaisemmiksi iän myötä. Oma lääkärisi toimii pääasiallisena yhteyspisteenä varmistaen, että hoitosi pysyy selkeänä ja johdonmukaisena.</p>
-          <a href="/fi/contact" class="btn btn-outline" style="margin-top: 28px;">Aloita hoitosuhde</a>
+          <span class="eyebrow">Ikääntyneiden terveys ja elämänlaatu</span>
+          <h2>Ikäänny hyvin, elä huoletta.</h2>
+          <p>Iän myötä terveydenhoito usein monimutkaistuu ja hajautuu monelle taholle. Oma lääkärisi kantaa vastuun kokonaisuudesta ja pitää sinut ja läheisesi ajan tasalla lääkityksistäsi, tutkimuksistasi ja hoitosuunnitelmistasi.</p>
+          <a href="/fi/contact" class="btn btn-outline" style="margin-top: 28px;">→</a>
         </div>
       </div>
     </div>
@@ -58,14 +58,14 @@ import Base from '../../layouts/Base.astro';
     <div class="container">
       <div class="split fade-up">
         <div class="split-image">
-          <img src="https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/69c1164b3d23e55291cebba7_foundation-clinic-who11.webp" alt="Lapset ja perheet" />
+          <img src="/assets/images/child-arm-bandaids.jpg" alt="Lapset ja perheet" />
         </div>
         <div class="split-content">
-          <span class="eyebrow">Lapset ja perheet</span>
-          <h2>Oma lääkäri koko perheellesi.</h2>
-          <p>Mallimme täydentää Suomen neuvolajärjestelmää tarjoamalla taatun pääsyn omalle lääkärille tilanteissa, joissa perheet kaipaavat lisätukea.</p>
-          <p style="margin-top: 16px;">Lastenlääkärin ja hoitajan akuuttivastaanotot, tarkastukset ja rokotukset ovat saatavilla myös kotikäynteinä.</p>
-          <a href="/fi/contact" class="btn btn-outline" style="margin-top: 28px;">Aloita hoitosuhde</a>
+          <span class="eyebrow">Lasten ja nuorten hyvinvointi</span>
+          <h2>Yksi lääkäri sinulle ja koko perheellesi.</h2>
+          <p>Lapsiperheessä tilanteet yllättävät ja vastauksia tarvitaan nopeasti. Oma lääkärinne on helposti tavoitettavissa ja tulee tarvittaessa myös kotiin.</p>
+          <p style="margin-top: 16px;">Mallimme täydentää Suomen neuvolajärjestelmää tarjoamalla tukea pävittäisissä terveyshuolissa, akuuteissa sairauksissa ja monimutkaisemmissa tilanteissa.</p>
+          <a href="/fi/contact" class="btn btn-outline" style="margin-top: 28px;">→</a>
         </div>
       </div>
     </div>
@@ -75,25 +75,15 @@ import Base from '../../layouts/Base.astro';
     <div class="container">
       <div class="split reverse fade-up">
         <div class="split-image">
-          <img src="https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/69d6375ea03a61d5a2486655_artem-kovalev-fk3XUcfTAvk-unsplash.jpg" alt="Vaativan hoidon koordinointi" />
+          <img src="https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/69d6375ea03a61d5a2486655_artem-kovalev-fk3XUcfTAvk-unsplash.jpg" alt="Monimutkaiset terveystarpeet" />
         </div>
         <div class="split-content">
-          <span class="eyebrow">Vaativan hoidon koordinointi</span>
-          <h2>Luotettavaa lääketieteellistä tukea vaikeiden aikojen läpi.</h2>
-          <p>Vakavasti sairaat kohtaavat usein hajanaisen terveydenhuoltojärjestelmän. Potilastiedot ovat hajallaan ja kokonaisuuden hahmottaminen voi olla vaikeaa.</p>
-          <p style="margin-top: 16px;">Foundationilla lääkärisi koordinoi erikoislääkäriyhteistyötä ja varmistaa, että hoitosuunnitelma pysyy selkeänä. Tarvittaessa yhdistämme sinut parhaisiin asiantuntijoihin myös ulkomailla.</p>
-          <a href="/fi/contact" class="btn btn-outline" style="margin-top: 28px;">Aloita hoitosuhde</a>
+          <span class="eyebrow">Akuutit kriisit ja pitkäaikaissairaudet</span>
+          <h2>Luotettavaa tukea vaikeina aikoina.</h2>
+          <p>Kun pahin tapahtuu, tutun lääkärin läsnäolo tuo selkeyttä ja rauhaa. Lääkärisi toimii pääasiallisena yhteyshenkilönä hoitotiimisi välillä, Suomessa ja tarvittaessa kansainvälisesti.</p>
+          <p style="margin-top: 16px;">Hoitosuhde usein katkeaa kun akuutti vaihe on ohi, vaikka toipuminen on vasta alussa. Oma lääkärisi pysyy rinnallasi niin kauan kuin tarvitset.</p>
+          <a href="/fi/contact" class="btn btn-outline" style="margin-top: 28px;">→</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-espresso">
-    <div class="container">
-      <div class="text-center fade-up" style="max-width: 600px; margin: 0 auto;">
-        <h2>Ota yhteyttä – me hoidamme loput.</h2>
-        <p style="margin-top: 16px; margin-bottom: 32px;">Vastaamme kaikkiin sähköposteihin vuorokaudessa.</p>
-        <a href="/fi/contact" class="btn" style="background: var(--cream); color: var(--espresso);">Ota yhteyttä</a>
       </div>
     </div>
   </section>

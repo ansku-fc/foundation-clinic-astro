@@ -1,0 +1,95 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="Vård utomlands" description="Din finska läkare, var som helst i världen." lang="sv">
+
+  <style is:global>
+    .hero-subpage .hero-overlay {
+      background: linear-gradient(to top, rgba(46,31,20,0.87) 0%, rgba(46,31,20,0.55) 50%, rgba(46,31,20,0.25) 100%);
+    }
+
+    .what-card {
+      padding-top: var(--s-8) !important;
+    }
+  </style>
+
+  <section class="hero-subpage">
+    <div class="hero-bg" style="background-image: url('/assets/images/paris3.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Vård utomlands</span>
+      <h1 class="hero-headline">Paris, Helsingfors, Tammerfors eller Tokyo.</h1>
+      <p class="hero-lead">Din finska läkare, var som helst i världen.</p>
+    </div>
+  </section>
+
+<section class="section-ivory">
+  <div class="container">
+    <div class="what-grid fade-up" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="what-card" style="padding-top: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg>
+        <h3>Din egen läkare</h3>
+        <p>Din dedikerade läkare känner din sjukdomshistoria, din familj och din livssituation, och är nåbar via WhatsApp eller telefon — var du än befinner dig.</p>
+      </div>
+      <div class="what-card" style="padding-top: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <h3>Vårdkoordinering</h3>
+        <p>Vi fungerar som länken mellan dig och din lokala läkare. Vi hittar de bästa lokala specialisterna, hanterar remisser och tidsbokning, delar dina hälsouppgifter med de behandlande yrkespersonerna och håller dig kontinuerligt informerad.</p>
+      </div>
+      <div class="what-card" style="padding-top: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <h3>Försäkringar och dokument</h3>
+        <p>Vi hjälper dig att utnyttja din lokala sjukförsäkring fullt ut. Vi skriver de nödvändiga utlåtandena, intygen och remisserna i ett format som ditt försäkringsbolag och din arbetsgivare godkänner.</p>
+      </div>
+    </div>
+
+<div class="countries-section" style="margin-top: var(--s-10); padding-top: var(--s-8); border-top: 1px solid var(--t-15);">
+  <span style="font-size: var(--caption); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-4); display: block; margin-bottom: var(--s-4);">För närvarande tillgängligt i</span>
+  <div class="countries-grid">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="font-size: 20px;">🇩🇪</span>
+      <span style="font-size: var(--body-sm); color: var(--fg-2);">Tyskland</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="font-size: 20px;">🇭🇰</span>
+      <span style="font-size: var(--body-sm); color: var(--fg-2);">Hongkong</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="font-size: 20px;">🇪🇸</span>
+      <span style="font-size: var(--body-sm); color: var(--fg-2);">Spanien</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="font-size: 20px;">🇨🇭</span>
+      <span style="font-size: var(--body-sm); color: var(--fg-2);">Schweiz</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="font-size: 20px;">🇬🇧</span>
+      <span style="font-size: var(--body-sm); color: var(--fg-2);">Storbritannien</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="font-size: 20px;">🇺🇸</span>
+      <span style="font-size: var(--body-sm); color: var(--fg-2);">USA</span>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+  <section class="section-fullbleed-image" style="min-height: 480px; padding: var(--s-24) 0;">
+    <div class="fullbleed-bg" style="background-image: url('/assets/images/malaga.jpg'); background-position: center 40%;"></div>
+    <div class="fullbleed-overlay"></div>
+    <div class="fullbleed-content">
+      <div style="max-width: 520px;">
+        <span class="eyebrow" style="color: rgba(255,255,255,0.6);">Medlemskap</span>
+        <h2 style="color: #FDF6EE;">Vi skräddarsyr ditt medlemskap efter land och dina behov.</h2>
+        <div style="margin-top: 24px; margin-bottom: 32px;">
+          <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 6px;">Månadsmedlemskap från</div>
+          <div style="font-family: 'Belleza', Georgia, serif; font-size: 3rem; color: #FDF6EE; line-height: 1;">€99<span style="font-size: 1rem; color: rgba(255,255,255,0.6); font-family: 'Plus Jakarta Sans', sans-serif; margin-left: 4px;"></div>
+        </div>
+        <a href="/sv/contact" class="btn btn-primary" style="background: #FDF6EE; color: #2E1F14;">Kontakta oss</a>
+      </div>
+    </div>
+  </section>
+
+</Base>

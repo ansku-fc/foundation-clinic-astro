@@ -1,0 +1,186 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="Tietosi" description="Miten keräämme, tallennamme ja käytämme terveystietojasi Foundation Clinicillä." lang="fi">
+
+  <section class="hero-subpage">
+    <div class="hero-bg" style="background-image: url('/assets/images/river-evening.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Tietosi</span>
+      <h1 class="hero-headline">Sinun tietosi, sinun tarinasi.</h1>
+      <p class="hero-lead">Teknologiamme kokoaa terveystietosi yhteen ja antaa lääkärillesi aina ajantasaisen kuvan sinusta.</p>
+    </div>
+  </section>
+
+  <!-- YKSI JATKUVA REKISTERI -->
+  <section class="section-ivory">
+    <div class="container">
+      <div class="split fade-up">
+        <div class="split-content">
+          <span class="eyebrow">Jatkuva terveysrekisteri</span>
+          <h2>Trendejä datapisteiden sijaan.</h2>
+          <p>Usein terveysdata on hajallaan klinikoiden, laboratorioiden, järjestelmien, ja monesti myös maiden välillä.</p>
+          <p style="margin-top: 16px;">Suostumuksellasi keräämme ja integroimme tietosi aiemmilta palveluntarjoajilta, laboratoriojärjestelmistä, kuvantamiskeskuksista ja erikoislääkäreiltä yhdeksi ajantasaiseksi pitkittäiseksi rekisteriksi.</p>
+        </div>
+        <div class="split-image">
+          <img src="/assets/images/dashboard_3.png" alt="Foundation Clinic terveystiedon kojelauta" style="width:100%;height:100%;object-fit:contain;object-position:center;background:#fff;border-radius:var(--radius-2xl);" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- MITÄ TALLENNAMME -->
+<section class="section-sunken">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom: 56px;">
+      <span class="eyebrow">Mitä tietoja keräämme</span>
+      <h2>Täydellinen kuva terveydestäsi.</h2>
+      <p class="lead" style="margin-top: 16px; max-width: 560px;">Kaikki mitä lääkärisi tarvitsee tunteakseen sinut - tänään ja vuosikymmenien kuluttua.</p>
+    </div>
+    <div class="what-grid fade-up" style="grid-template-columns: repeat(4, 1fr);">
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/><path d="M9 12h6M9 16h4"/></svg>
+        <h3>Laboratoriotulokset</h3>
+        <p>Kaikkien laboratorioiden tulokset, viitearvot ja henkilökohtaiset optimiarvosi selkeästi visualisoituina.</p>
+      </div>
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        <h3>Terveyden osa-alueet</h3>
+        <p>Terveytesi kokonaiskuva jaettuna yhdeksään osa-alueeseen, sydämesi terveydestä syöpäriskiin.</p>
+      </div>
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <h3>Diagnoosit</h3>
+        <p>Aktiiviset ja aiemmat diagnoosit, hoitojaksot, ja perinnölliset alttiutesi.</p>
+      </div>
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><path d="M10.5 20.5 3.5 13.5a5 5 0 0 1 7.07-7.07l7 7a5 5 0 0 1-7.07 7.07z"/><line x1="8.5" y1="11.5" x2="15.5" y2="11.5"/></svg>
+        <h3>Lääkitys</h3>
+        <p>Nykyiset ja aiemmat reseptit, annokset, uusintahistoria ja käyttöaihe linkitettyinä diagnooseihisi.</p>
+      </div>
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <h3>Asiakirjat</h3>
+        <p>Erikoislääkäriraportit, lähetteet, kuvantamistulokset ja kotiutusyhteenvedot yhdessä hakuarkistossa.</p>
+      </div>
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <h3>Käynnit & suunnitelmat</h3>
+        <p>Konsultaatiomuistiinpanot, käyntiyhteenvedot ja henkilökohtainen vuotuinen hoitosuunnitelma, jota lääkärisi ylläpitää.</p>
+      </div>
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <h3>Biometriikka</h3>
+        <p>Pituus, paino, BMI, verenpaine ja muut kliiniset mittaukset seurattuina pitkäjänteisesti ajan yli.</p>
+      </div>
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <h3>Kansainväliset tiedot</h3>
+        <p>Ulkomailta peräisin oleva terveysdata integroitu rekisteriisi. Koko tarinasi on saatavilla riippumatta siitä, missä hoitoa on saatu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MITEN LÄÄKÄRISI KÄYTTÄÄ SITÄ -->
+<section class="section-ivory">
+  <div class="container">
+    <div class="split reverse fade-up" style="align-items: flex-start; grid-template-columns: 1fr 1.4fr;">
+      <div class="split-image" style="overflow: hidden;">
+        <img src="/assets/images/dashboard_5.png" alt="Doctor reviewing patient data" style="width: 100%; height: auto; object-fit: unset;" />
+      </div>
+      <div class="split-content">
+        <span class="eyebrow">Miten lääkärisi käyttää tietojasi</span>
+        <h2>Ykistyiskohdista kokonaiskuvaan.</h2>
+        <p>Lääkärisi käy läpi ajantasaisen profiilisi ennen jokaista konsultaatiota ja seuraa trendejä tunnistaakseen varhaiset muutokset.</p>
+        <p style="margin-top: 16px;">Otamme ennakoivasti yhteyttä, kun on aika tarkastukselle, laboratoriotestille tai erikoislääkärikäynnille. Kun jokin vaatii huomiota, hoitotiimisi saa hälytyksen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STANDARDIT & VAATIMUSTENMUKAISUUS -->
+<section class="section-cream">
+  <div class="container">
+    <div class="fade-up" style="max-width: 720px; margin: 0 auto;">
+      <span class="eyebrow">Standardit & regulaatio</span>
+      <h2>Rakennettu korkeimpien standardien mukaisesti.</h2>
+      <p style="margin-top: 20px;">Foundation Clinic on ISO 9001:2015 -sertifioitu. Teemme yhteistyötä ilmoitettujen laitosten (notified body) kanssa. Eurooppalaiseen sääntelyyn vastaaminen ja teknologian sertifiointi ovat olleet osa kehitystyötä alusta alkaen.</p>
+      <div style="margin-top: 40px; border: 1px solid var(--t-15); border-radius: var(--radius-xl); overflow: hidden;">
+        <table class="compliance-table" style="width: 100%; border-collapse: collapse; font-size: var(--body-sm);">
+          <thead>
+            <tr style="background: var(--surface-2); border-bottom: 1px solid var(--t-15);">
+              <th style="padding: 12px 20px; text-align: left; font-weight: 500; color: var(--fg-2); width: 200px;">Standardi</th>
+              <th style="padding: 12px 20px; text-align: left; font-weight: 500; color: var(--fg-2);">Mitä se kattaa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--t-15);">
+              <td style="padding: 14px 20px; font-weight: 500; color: var(--fg-2); white-space: nowrap;">ISO 9001:2015</td>
+              <td style="padding: 14px 20px; color: var(--fg-3); line-height: 1.6;">Laadunhallinta: Kliiniset prosessit, potilashoidon työnkulut ja jatkuva parantaminen.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--t-15);">
+              <td style="padding: 14px 20px; font-weight: 500; color: var(--fg-2); white-space: nowrap;">IEC 62304</td>
+              <td style="padding: 14px 20px; color: var(--fg-3); line-height: 1.6;">Lääkinnällisten laitteiden ohjelmiston elinkaari: Suunnittelu, kehitys, testaus ja ylläpito.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--t-15);">
+              <td style="padding: 14px 20px; font-weight: 500; color: var(--fg-2); white-space: nowrap;">EU MDR 2017/745</td>
+              <td style="padding: 14px 20px; color: var(--fg-3); line-height: 1.6;">EU:n lääkinnällisten laitteiden asetus: Sovelletaan siellä, missä ohjelmistomme täyttää lääkinnällisen laitteen määritelmän.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--t-15);">
+              <td style="padding: 14px 20px; font-weight: 500; color: var(--fg-2); white-space: nowrap;">EU AI Act</td>
+              <td style="padding: 14px 20px; color: var(--fg-3); line-height: 1.6;">Tekoälyavusteiset ominaisuudet luokiteltu ja kehitetty EU:n tekoälylain mukaisesti, pakollinen lääkärin tarkistus kaikille kliinisille ehdotuksille.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--t-15);">
+              <td style="padding: 14px 20px; font-weight: 500; color: var(--fg-2); white-space: nowrap;">GDPR & Suomen laki</td>
+              <td style="padding: 14px 20px; color: var(--fg-3); line-height: 1.6;">Potilastiedot käsitellään GDPR:n, Suomen tietosuojalain ja potilasasiakirjalain mukaisesti.</td>
+            </tr>
+            <tr>
+              <td style="padding: 14px 20px; font-weight: 500; color: var(--fg-2); white-space: nowrap;">HL7 FHIR & LOINC</td>
+              <td style="padding: 14px 20px; color: var(--fg-3); line-height: 1.6;">Kansainväliset yhteentoimivuusstandardit, jotka varmistavat, että terveysrekisterisi voi kulkea mukanasi eri järjestelmien ja rajojen yli.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- OIKEUTESI -->
+  <section class="section-sunken">
+    <div class="container">
+      <div class="fade-up" style="max-width: 720px; margin: 0 auto;">
+        <span class="eyebrow">Oikeutesi</span>
+        <h2>Tietosi kuuluvat sinulle.</h2>
+        <p style="margin-top: 20px;">Voit pyytää täydellisen koosteen terveystiedoistasi milloin tahansa. Tallennamme tietosi Suomen lain, EU:n GDPR:n ja sovellettavien terveystietosäädösten mukaisesti. Emme koskaan myy tai jaa tietojasi kolmansille osapuolille kaupallisiin tarkoituksiin.</p>
+        <div style="margin-top: 48px; display: flex; flex-direction: column; gap: 0;">
+          <div class="rights-row" style="padding: 24px 0; border-bottom: 1px solid var(--t-15);">
+            <div style="font-size: var(--body-sm); font-weight: 500; color: var(--fg-2);">Tiedonsaantioikeus</div>
+            <div style="font-size: var(--body-sm); color: var(--fg-3); line-height: 1.7;">Sinulla on oikeus saada milloin tahansa käyttöösi kaikki henkilö- ja terveystiedot, joita meillä on sinusta.</div>
+          </div>
+          <div class="rights-row" style="padding: 24px 0; border-bottom: 1px solid var(--t-15);">
+            <div style="font-size: var(--body-sm); font-weight: 500; color: var(--fg-2);">Siirto-oikeus</div>
+            <div style="font-size: var(--body-sm); color: var(--fg-3); line-height: 1.7;">Voit pyytää täydellisen koonnin terveysrekisteristäsi rakenteellisessa, koneellisesti luettavassa muodossa.</div>
+          </div>
+          <div class="rights-row" style="padding: 24px 0; border-bottom: 1px solid var(--t-15);">
+            <div style="font-size: var(--body-sm); font-weight: 500; color: var(--fg-2);">Oikeus tulla unohdetuksi</div>
+            <div style="font-size: var(--body-sm); color: var(--fg-3); line-height: 1.7;">Suomen lain mukaisten potilasrekisterin säilytysvelvoitteiden rajoissa voit pyytää henkilötietojesi poistamista.</div>
+          </div>
+          <div class="rights-row" style="padding: 24px 0; border-bottom: 1px solid var(--t-15);">
+            <div style="font-size: var(--body-sm); font-weight: 500; color: var(--fg-2);">Suostumus</div>
+            <div style="font-size: var(--body-sm); color: var(--fg-3); line-height: 1.7;">Keräämme ja käsittelemme terveystietojasi vain nimenomaisella suostumuksellasi. Voit peruuttaa suostumuksen milloin tahansa.</div>
+          </div>
+          <div class="rights-row" style="padding: 24px 0;">
+            <div style="font-size: var(--body-sm); font-weight: 500; color: var(--fg-2);">Tietojen säilytys</div>
+            <div style="font-size: var(--body-sm); color: var(--fg-3); line-height: 1.7;">Tietosi tallennetaan turvallisille palvelimille EU:n alueella, GDPR:n ja Suomen terveystietosäädösten mukaisesti.</div>
+          </div>
+        </div>
+        <div style="margin-top: 40px;">
+          <a href="/fi/legal/privacy-policy" class="btn btn-outline">Tietosuojaseloste →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Base>

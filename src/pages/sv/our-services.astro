@@ -1,23 +1,24 @@
 ---
 import Base from '../../layouts/Base.astro';
 ---
-<Base title="Våra tjänster" lang="sv">
+<Base title="Våra tjänster" description="Hälsa för hela ditt liv. Personlig vård för varje livsfas." lang="sv">
+
+<style is:global>
+  .hero-subpage .hero-bg {
+    background-position: 10% 70%;
+  }
+  .hero-subpage .hero-overlay {
+    background: linear-gradient(to top, rgba(46,31,20,0.88) 0%, rgba(46,31,20,0.4) 40%, rgba(46,31,20,0.1) 100%);
+  }
+</style>
 
 <section class="hero-subpage">
-    <div class="hero-bg" style="background-image: url('https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/6971fab5aaba75a1d791e909_oleg-kukharuk-pU2XzuGa9ro-unsplash%20(1).jpg');"></div>
+  <div class="hero-bg" style="background-image: url('/assets/images/glass-of-water.jpg'); background-position: center 50%;"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <span class="hero-eyebrow">Våra tjänster</span>
       <h1 class="hero-headline">Hälsa för hela ditt liv.</h1>
-      <p class="hero-lead">Alla gynnas av kontinuitet, samordning och en långsiktig relation med sin läkare.</p>
-    </div>
-  </section>
-
-  <section class="section-ivory">
-    <div class="container">
-      <div class="max-prose fade-up">
-        <p style="font-size: var(--body-lg); color: var(--fg-1); line-height: 1.7;">Patienter kommer till oss av olika skäl, men de delar ett gemensamt behov: en läkare som förstår deras hälsa i sitt sammanhang och följer dem över tid.</p>
-      </div>
+      <p class="hero-lead">Oavsett om ditt fokus är prestation, familj eller livskvalitet finns vi här för dig.</p>
     </div>
   </section>
 
@@ -25,14 +26,14 @@ import Base from '../../layouts/Base.astro';
     <div class="container">
       <div class="split fade-up">
         <div class="split-image">
-          <img src="https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/6971fab5aaba75a1d791e909_oleg-kukharuk-pU2XzuGa9ro-unsplash%20(1).jpg" alt="Förebyggande och prestation" />
+          <img src="/assets/images/open-water-swimmers.jpg" alt="Prestation och förebyggande" style="object-position: 70% 85%;" />
         </div>
         <div class="split-content">
-          <span class="eyebrow">Förebyggande & prestation</span>
-          <h2>Håll dig frisk, håll dig steget före.</h2>
-          <p>Hälso- och sjukvård handlar inte bara om att behandla sjukdom. Det borde handla om att förstå din medicinska historia, livsstil och mål.</p>
-          <p style="margin-top: 16px;">Genom regelbundna konsultationer, prover och löpande uppföljning kan vi identifiera tidiga förändringar och hantera risker proaktivt.</p>
-          <a href="/sv/contact" class="btn btn-outline" style="margin-top: 28px;">Starta din vård</a>
+          <span class="eyebrow">Prestation & förebyggande</span>
+          <h2>Håll dig frisk och ett steg före.</h2>
+          <p>De flesta vet inte vad deras kropp faktiskt klarar av — eller vad som tyst arbetar emot den.</p>
+          <p style="margin-top: 16px;">Det vet vi. Med omfattande laboratorietestning, löpande uppföljning och en läkare som förstår dina mål hjälper vi dig att prestera på bästa möjliga sätt under decennier.</p>
+          <a href="/sv/contact" class="btn btn-outline" style="margin-top: 28px;">→</a>
         </div>
       </div>
     </div>
@@ -42,13 +43,14 @@ import Base from '../../layouts/Base.astro';
     <div class="container">
       <div class="split reverse fade-up">
         <div class="split-image">
-          <img src="https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/69c1164a7313ff3a7daadc19_foundation-clinic-who7.webp" alt="Hälsosamt åldrande" />
+          <img src="/assets/images/elderly-man-profile-sunset.jpg" alt="Hälsosamt åldrande" />
         </div>
         <div class="split-content">
           <span class="eyebrow">Hälsosamt åldrande</span>
-          <h2>Trygghet inom åren som kommer.</h2>
-          <p>Hälsobehoven blir ofta mer komplexa med åldern. Din läkare fungerar som din huvudkontakt och säkerställer att din vård förblir tydlig och konsekvent.</p>
-          <a href="/sv/contact" class="btn btn-outline" style="margin-top: 28px;">Starta din vård</a>
+          <h2>Att åldras borde föra med sig visdom, inte oro.</h2>
+          <p>När hälsobehoven blir mer komplexa gör en personlig läkare all skillnad — för dig och för de som bryr sig om dig.</p>
+          <p style="margin-top: 16px;">Vi hanterar allt från genomgång av läkemedel till koordinering av specialistbesök och ser till att ingenting förbises.</p>
+          <a href="/sv/contact" class="btn btn-outline" style="margin-top: 28px;">→</a>
         </div>
       </div>
     </div>
@@ -58,14 +60,14 @@ import Base from '../../layouts/Base.astro';
     <div class="container">
       <div class="split fade-up">
         <div class="split-image">
-          <img src="https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/69c1164b3d23e55291cebba7_foundation-clinic-who11.webp" alt="Barn och familjer" />
+          <img src="/assets/images/child-arm-bandaids.jpg" alt="Barn och familjer" />
         </div>
         <div class="split-content">
           <span class="eyebrow">Barn & familjer</span>
-          <h2>En läkare för hela din familj.</h2>
-          <p>Vi stöder familjer med både förebyggande vård och vardagliga medicinska bekymmer. Vår modell kompletterar Finlands rådgivningssystem.</p>
-          <p style="margin-top: 16px;">Våra yngsta patienter uppskattar särskilt att de kan träffa sin läkare hemma istället för på klinik.</p>
-          <a href="/sv/contact" class="btn btn-outline" style="margin-top: 28px;">Starta din vård</a>
+          <h2>En läkare för dig och hela din familj.</h2>
+          <p>Vi stödjer familjer med både förebyggande vård och vardagliga medicinska frågor. När ett barn blir sjukt kan föräldrarna vända sig till familjeläkaren som redan känner till det medicinska sammanhanget.</p>
+          <p style="margin-top: 16px;">Vår modell kompletterar Finlands rådgivningssystem genom att erbjuda tillgång till en dedikerad läkare för medicinska frågor, akuta sjukdomar och mer komplexa situationer.</p>
+          <a href="/sv/contact" class="btn btn-outline" style="margin-top: 28px;">→</a>
         </div>
       </div>
     </div>
@@ -79,21 +81,11 @@ import Base from '../../layouts/Base.astro';
         </div>
         <div class="split-content">
           <span class="eyebrow">Komplexa hälsobehov</span>
-          <h2>Tryggt stöd genom svåra tider.</h2>
-          <p>Patienter med allvarliga medicinska tillstånd möter ofta ett fragmenterat vårdsystem. Många upplever att stödet försvinner när det värsta är överståndet.</p>
-          <p style="margin-top: 16px;">På Foundation sammanför din läkare dessa delar och säkerställer att behandlingsbeslut förblir i linje med den övergripande riktningen för din vård.</p>
-          <a href="/sv/contact" class="btn btn-outline" style="margin-top: 28px;">Starta din vård</a>
+          <h2>Pålitlig vägledning genom svåra tider.</h2>
+          <p>När något allvarligt inträffar ger en bekant läkare vid din sida klarhet och lugn. Din läkare fungerar som den primära kontaktpunkten inom vårdteamet, i Finland och globalt.</p>
+          <p style="margin-top: 16px;">När den akuta fasen är över tar återhämtningen tid. Din läkare stannar kvar vid din sida genom hela processen och ser till att du återfår full hälsa.</p>
+          <a href="/sv/contact" class="btn btn-outline" style="margin-top: 28px;">→</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-espresso">
-    <div class="container">
-      <div class="text-center fade-up" style="max-width: 600px; margin: 0 auto;">
-        <h2>Hör av dig – vi berättar gärna hur vi kan stödja din hälsa.</h2>
-        <p style="margin-top: 16px; margin-bottom: 32px;">Vi svarar på alla e-postmeddelanden inom 24 timmar.</p>
-        <a href="/sv/contact" class="btn" style="background: var(--cream); color: var(--espresso);">Kontakta oss</a>
       </div>
     </div>
   </section>

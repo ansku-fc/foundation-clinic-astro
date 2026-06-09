@@ -1,46 +1,179 @@
 ---
 import Base from '../../layouts/Base.astro';
 ---
-<Base title="Henkilökohtaista lääkäripalvelua" lang="fi">
+<Base title="Henkilökohtainen lääkäripalvelu" description="Jatkuvaa, omistautunutta lääkärihoitoa sinulle räätälöitynä." lang="fi">
 
+  <!-- HERO -->
   <section class="hero-fullbleed">
     <div class="hero-bg" style="background-image: url('/assets/images/hero-bg.jpg');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-eyebrow">Ratakatu 29 a 4 · Helsinki</p>
       <h1 class="hero-headline">Oma lääkärisi,<br>joka tuntee sinut nimeltä.</h1>
-      <p class="hero-lead">Sinulle räätälöityä akuuttia ja ennaltaehkäisevää hoitoa.<br>Aina tavoitettavissasi, Suomessa ja ulkomailla.</p>
+      <p class="hero-lead">Henkilökohtaista, laadukasta ja jatkuvaa hoitoa. Aina saatavilla, Suomessa ja ulkomailla.</p>
       <div class="hero-cta">
-        <a href="/fi/contact" class="btn hero-btn-primary">Ota yhteyttä</a>
-        <a href="/fi/our-approach" class="btn hero-btn-outline">Lue lisää</a>
+        <a href="/fi/contact" class="btn hero-btn-primary" style="padding: 10px 18px; font-size: 13px;">Liity jäseneksi</a>
+        <a href="/fi/our-approach" class="btn hero-btn-outline" style="padding: 10px 18px; font-size: 13px;">Lisää meistä</a>
       </div>
     </div>
   </section>
 
+  <!-- WHO WE ARE -->
+  <section style="background: var(--ivory); padding: 0;">
+    <div class="who-we-are">
+      <div class="who-we-are-image">
+        <img src="/assets/images/stilllife-figs.jpg" alt="Foundation Clinic" />
+      </div>
+      <div class="who-we-are-content fade-up">
+        <span class="eyebrow">Meistä</span>
+        <h2 style="margin-top: 0;">Otamme täyden vastuun terveydestäsi.</h2>
+        <p>Henkilökohtaista, jatkuvaa, ja sinua varten suunniteltua terveydenhuoltoa.</p>
+        <div class="who-we-are-cards">
+          <div class="who-card">
+            <h4>Kuukausijäsenyys</h4>
+            <p>Suora yhteys henkilökohtaiseen lääkäriisi, läpinäkyvästi hinnoiteltuna.</p>
+          </div>
+          <div class="who-card">
+            <h4>Koordinoitu hoito</h4>
+            <p>Akuuttihoito, erikoislääkärilähettet ja diagnostiikka saumattomasti kauttamme.</p>
+          </div>
+          <div class="who-card">
+            <h4>Helppo saatavuus</h4>
+            <p>Vastaanotot klinikalla, kotonasi tai etänä - miten sinulle parhaiten sopii.</p>
+          </div>
+          <div class="who-card">
+            <h4>Dataohjautuva terveys</h4>
+            <p>Terveyshistoriasi, tuloksesi ja hoito-<br>suunnitelmasi kootusti yhdessä paikassa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="section-sunken" style="padding-top: var(--s-20); padding-bottom: var(--s-20);">
+    <div class="container">
+      <div class="fade-up" style="margin-bottom: 56px;">
+        <span class="eyebrow">Palvelut</span>
+        <h2 style="margin-top: 0;">Oma lääkärisi jokaiseen elämänvaiheeseen.</h2>
+        <p class="lead" style="margin-top: 16px;">Oli kyse sitten sairauden hoidosta, terveyden optimoinnista tai läheistesi hyvinvoinnista, oma lääkärisi on aina saatavilla.</p>
+      </div>
+      <div class="what-grid">
+        <div class="what-card fade-up">
+          <div class="what-card-image">
+            <img src="/assets/images/open-water-swimmers.jpg" alt="Suorituskyky ja ennaltaehkäisy" />
+          </div>
+          <span class="eyebrow">01</span>
+          <h3 style="white-space: nowrap;">Suorituskyky ja <br>ennaltaehkäisy</h3>
+          <p>Kattavat testit, jatkuva seuranta ja lääkäri joka tuntee tavoitteesi. Tarjoamme kaiken mitä tarvitset suorituskykysi parantamiseen ja ylläpitoon.</p>
+          <a href="/fi/our-services" class="btn btn-ghost" style="margin-top: auto; margin-left: auto; width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: var(--radius-md);">→</a>
+        </div>
+        <div class="what-card fade-up" style="animation-delay: 0.08s">
+          <div class="what-card-image">
+            <img src="/assets/images/elderly-man-profile-sunset.jpg" alt="Terve ikääntyminen" />
+          </div>
+          <span class="eyebrow">02</span>
+          <h3>Ikääntyneiden terveys ja elämänlaatu</h3>
+          <p>Terveystarpeet usein monimutkaistuvat iän myötä. Lääkärisi toimii hoitosi koordinaattorina varmistaen, että sinulla ja omaisillasi on terveydestäsi aina ajantasainen kokonaiskuva.</p>
+          <a href="/fi/our-services" class="btn btn-ghost" style="margin-top: auto; margin-left: auto; width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: var(--radius-md);">→</a>
+        </div>
+        <div class="what-card fade-up" style="animation-delay: 0.16s">
+          <div class="what-card-image">
+            <img src="/assets/images/child-arm-bandaids.jpg" alt="Lapset ja perheet" />
+          </div>
+          <span class="eyebrow">03</span>
+          <h3>Lasten ja nuorten hyvinvointi</h3>
+          <p>Oma perhelääkärisi tukee ennaltaehkäisevässä hoidossa, akuuteissa huolissa ja arkisissa terveysasioissa, täydentäen Suomen neuvolajärjestelmää.</p>
+          <a href="/fi/our-services" class="btn btn-ghost" style="margin-top: auto; margin-left: auto; width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: var(--radius-md);">→</a>
+        </div>
+        <div class="what-card fade-up" style="animation-delay: 0.24s">
+          <div class="what-card-image">
+            <img src="/assets/images/woman-coast-sunset.jpg" alt="Monimutkaiset terveydenhaasteet" />
+          </div>
+          <span class="eyebrow">04</span>
+          <h3>Akuutit kriisit ja pitkäaikaissairaudet</h3>
+          <p>Vakava sairastuminen tuo mukanaan useita vastaanottoja, tutkimuksia ja ammattilaisia. Lääkärisi ottaa hoidostasi ja sen koordinoinnista kokonaisvastuun.</p>
+          <a href="/fi/our-services" class="btn btn-ghost" style="margin-top: auto; margin-left: auto; width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: var(--radius-md);">→</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- MEMBERSHIPS -->
   <section class="section-ivory">
     <div class="container">
       <div class="text-center fade-up" style="margin-bottom: 64px;">
-        <span class="eyebrow">Toimintatapamme</span>
-        <h2>Hyvä hoito vaatii lääkärin joka tuntee sinut.</h2>
-        <p class="lead" style="margin-top: 16px;">Terveydenhuolto on usein pirstaloitunutta. Lääkärit vaihtuvat, tieto ei kulje, ja kukaan ei vastaa potilaasta kokonaisuutena. Me Foundationilla teemme asiat eri tavalla.</p>
+        <span class="eyebrow">Jäsenyydet</span>
+        <h2>Tärkein jäsenyytesi.</h2>
       </div>
-      <div class="card-grid">
-        <div class="card fade-up">
-          <div style="font-size: 1.5rem; margin-bottom: 16px;">⬡</div>
-          <h4 style="margin-bottom: 8px;">Kuukausijäsenyys</h4>
-          <p style="font-size: var(--body-sm);">Taattu pääsy omaan lääkäriin, datavetoinen ennaltaehkäisy ja hoidon jatkuvuus yksittäisten käyntien sijaan.</p>
+      <div class="pricing-grid">
+        <div class="pricing-card fade-up">
+          <div class="pricing-tier">Taso 1</div>
+          <div class="price">€99</div>
+          <div class="price-label">kuukaudessa</div>
+          <ul class="pricing-features">
+            <li>Suora yhteys omaan lääkäriin</li>
+            <li>Lääkärijohtoinen terveysarvio ja laboratoriopaketti</li>
+            <li>1 etävastaanottoaika / kuukausi</li>
+            <li>Reseptien uusinnat</li>
+          </ul>
+          <a href="/fi/contact" class="btn btn-ghost" style="margin-top: auto; margin-left: auto; width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: var(--radius-md);">→</a>
         </div>
-        <div class="card fade-up" style="animation-delay: 0.08s">
-          <div style="font-size: 1.5rem; margin-bottom: 16px;">⬡</div>
-          <h4 style="margin-bottom: 8px;">Hoidon koordinointi</h4>
-          <p style="font-size: var(--body-sm);">Erikoislääkärilähetteet, diagnostiikka ja hoitopäätökset – yhden lääkärin johdolla.</p>
+        <div class="pricing-card featured fade-up" style="animation-delay: 0.08s">
+          <div class="pricing-tier">Taso 2</div>
+          <div class="price">€199</div>
+          <div class="price-label">kuukaudessa</div>
+          <ul class="pricing-features">
+            <li>Suora yhteys omaan lääkäriin</li>
+            <li>Vuosittainen lääkärijohtoinen terveysarvio ja laboratoriopaketti</li>
+            <li>3 etävastaanottoaikaa / kuukausi</li>
+            <li>1 lähivastaanottoaika / kuukausi</li>
+            <li>Reseptien uusinnat</li>
+            <li>Hoidon koordinointi, lähetteet ja ajanvaraukset</li>
+          </ul>
+          <a href="/fi/contact" class="btn hero-btn-primary" style="margin-top: auto; margin-left: auto; width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: var(--radius-md); background: #FDF6EE; color: #1C1410;">→</a>
         </div>
-        <div class="card fade-up" style="animation-delay: 0.16s">
-          <div style="font-size: 1.5rem; margin-bottom: 16px;">⬡</div>
-          <h4 style="margin-bottom: 8px;">Kotikäynnit</h4>
-          <p style="font-size: var(--body-sm);">Klinikkakäynnit, etävastaanotot, kotikäynnit ja kansainvälinen hoidon koordinointi – terveydenhuolto sinun ehdoillasi.</p>
+        <div class="pricing-card fade-up" style="animation-delay: 0.16s">
+          <div class="pricing-tier">Taso 3</div>
+          <div class="price">€399</div>
+          <div class="price-label">kuukaudessa</div>
+          <ul class="pricing-features">
+            <li>Suora yhteys omaan lääkäriin</li>
+            <li>Puolivuosittainen lääkärijohtoinen terveysarvio ja laboratoriopaketti</li>
+            <li>5 etävastaanottoaikaa / kuukausi</li>
+            <li>3 lähivastaanottoaikaa / kuukausi</li>
+            <li>Reseptien uusinnat</li>
+            <li>Hoidon koordinointi, lähetteet ja ajanvaraukset</li>
+          </ul>
+          <a href="/fi/contact" class="btn btn-ghost" style="margin-top: auto; margin-left: auto; width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: var(--radius-md);">→</a>
         </div>
-        <div class="card fade-up" style="animation-delay: 0.24s">
-          <div style="font-size: 1.5rem; margin-bottom: 16px;">⬡</div>
-          <h4 style="margin-bottom: 8px;">Terveysprofiilisi</h4>
-          <p style="font-size: var(--body-sm);">Koko terveyshistoriasi, laboratoriovastauksesi ja lääkärikäynt
+        <div class="pricing-card fade-up" style="animation-delay: 0.24s">
+          <div class="pricing-tier">Lapset</div>
+          <div class="price">€49</div>
+          <div class="price-label">kuukaudessa</div>
+          <ul class="pricing-features">
+            <li>Suora yhteys omaan lääkäriin</li>
+            <li>2 etävastaanottoaikaa / kuukausi</li>
+            <li>Reseptien uusinnat</li>
+          </ul>
+          <a href="/fi/contact" class="btn btn-ghost" style="margin-top: auto; margin-left: auto; width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: var(--radius-md);">→</a>
+        </div>
+      </div>
+      <p style="font-size: var(--body-sm); color: var(--fg-3); margin-top: 24px; text-align: center;"><a href="/fi/memberships" style="color: var(--fg-2); text-decoration: underline;">Hinnastomme →</a></p>
+    </div>
+  </section>
+
+<!-- CTA -->
+  <section class="cta-fullbleed">
+    <div class="cta-bg" style="background-image: url('/assets/images/river-evening.jpg'); background-size: cover; background-position: center;"></div>
+    <div class="cta-overlay"></div>
+    <div class="container cta-content fade-up">
+      <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+        <h2>Lähetä meille viesti, kerromme mielellämme lisää.</h2>
+        <p style="margin-top: 16px; margin-bottom: 32px;">Vastaamme kaikkiin sähköposteihin 24 tunnin sisällä.</p>
+        <a href="/fi/contact" class="btn" style="background: var(--cream); color: var(--espresso);">Ota yhteyttä</a>
+      </div>
+    </div>
+  </section>
+
+</Base>

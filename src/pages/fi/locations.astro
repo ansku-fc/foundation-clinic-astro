@@ -1,0 +1,78 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="Sijainnit" description="Foundation Clinicin toimipisteet Helsingissä ja Turussa." lang="fi">
+
+<style is:global>
+  .hero-subpage .hero-overlay {
+    background: linear-gradient(to top, rgba(46,31,20,0.87) 0%, rgba(46,31,20,0.55) 50%, rgba(46,31,20,0.25) 100%);
+  }
+</style>
+
+<section class="hero-subpage">
+  <div class="hero-bg" style="background-image: url('/assets/images/helsinki-cathedral2.jpg'); background-position: center 50%;"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Klinikkamme</span>
+    <h1 class="hero-headline">Lääkärisi, siellä missä sinäkin olet.</h1>
+    <p class="hero-lead">Helsinki, Turku, Pariisi tai Tokio.</p>
+  </div>
+</section>
+
+<section class="section-ivory">
+  <div class="container">
+    <div class="fade-up locations-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;">
+
+      <!-- Left: Helsinki + Turku -->
+      <div>
+        <div style="margin-bottom: var(--s-10);">
+          <span class="eyebrow">Helsinki</span>
+          <h2 style="margin-bottom: var(--s-4);">Helsingissä ja Turussa.</h2>
+          <p>Klinikamme on suunniteltu sekä lyhyille käynneille että pidemmille konsultaatioille, ja ne on varustettu täysin laboratoriotestejä varten.</p>
+
+          <div style="overflow: hidden; border-radius: var(--radius-lg); height: 360px; margin-top: var(--s-8);">
+            <img src="/assets/images/FoundationClinic_interior_7.jpg" alt="Foundation Clinic Helsinki" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+
+          <div style="margin-top: var(--s-6); display: flex; flex-direction: column; gap: var(--s-3);">
+            <div style="display: flex; gap: 12px;">
+              <span style="font-size: var(--caption); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-3); white-space: nowrap; padding-top: 2px;">Helsinki</span>
+              <span style="font-size: var(--body-sm); color: var(--fg-2);">Ratakatu 29 a 4</span>
+            </div>
+            <div style="display: flex; gap: 12px;">
+              <span style="font-size: var(--caption); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-3); white-space: nowrap; padding-top: 2px;">Turku</span>
+              <span style="font-size: var(--body-sm); color: var(--fg-2);">Kauppiaskatu 4, Forum</span>
+            </div>
+            <div style="margin-top: var(--s-5);">
+              <a href="/fi/contact" class="btn btn-outline">→</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: care abroad -->
+      <div>
+        <span class="eyebrow">Hoito ulkomailla</span>
+        <h2 style="margin-bottom: var(--s-4);">Zürichissä ja Lontoossa.</h2>
+        <p>Lääkärisi pystyy tarjoamaan ajantasaista ja henkilökohtaista hoitoa verkostomme kautta myös ulkomailla.</p>
+
+        <div style="overflow: hidden; border-radius: var(--radius-lg); height: 360px; margin-top: var(--s-8);">
+          <img src="/assets/images/new york.jpg" alt="Hoito ulkomailla" style="width: 100%; height: 100%; object-fit: cover; object-position: center 40%;" />
+        </div>
+
+        <div style="margin-top: var(--s-6);">
+  <span style="font-size: var(--caption); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-3); display: block; margin-bottom: var(--s-3);">Missä asiakkaamme ovat</span>
+  <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          {['🇩🇪 Saksa', '🇭🇰 Hongkong', '🇪🇸 Espanja', '🇨🇭 Sveitsi', '🇬🇧 Iso-Britannia', '🇺🇸 Yhdysvallat'].map(c => (
+            <span style="font-size: var(--body-sm); color: var(--fg-2); background: var(--bg-sunken); border: 1px solid var(--t-15); border-radius: var(--radius-sm); padding: 4px 10px;">{c}</span>
+          ))}
+        </div>
+        <div style="margin-top: var(--s-5);">
+          <a href="/fi/care-abroad" class="btn btn-outline">→</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</Base>

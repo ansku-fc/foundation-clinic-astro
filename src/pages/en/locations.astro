@@ -64,7 +64,9 @@ import Base from '../../layouts/Base.astro';
           <img src="/assets/images/new york.jpg" alt="Care abroad" style="width: 100%; height: 100%; object-fit: cover; object-position: center 40%;" />
         </div>
 
-<div style="margin-top: var(--s-6); display: flex; flex-wrap: wrap; gap: 8px;">
+<div style="margin-top: var(--s-6);">
+  <span style="font-size: var(--caption); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-3); display: block; margin-bottom: var(--s-3);">Where our customers are</span>
+  <div style="display: flex; flex-wrap: wrap; gap: 8px;">
   {['🇩🇪 Germany', '🇭🇰 Hong Kong', '🇪🇸 Spain', '🇨🇭 Switzerland', '🇬🇧 United Kingdom', '🇺🇸 United States'].map(c => (
     <span style="font-size: var(--body-sm); color: var(--fg-2); background: var(--bg-sunken); border: 1px solid var(--t-15); border-radius: var(--radius-sm); padding: 4px 10px;">{c}</span>
   ))}

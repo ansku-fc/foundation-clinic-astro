@@ -1,15 +1,15 @@
 ---
 import Base from '../../layouts/Base.astro';
 ---
-<Base title="Ota yhteyttä" lang="fi">
+<Base title="Yhteystiedot" description="Ota yhteyttä Foundation Cliniciin." lang="fi">
 
-<section class="hero-subpage">
-    <div class="hero-bg" style="background-image: url('https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/69b654aa5269f9cb772aecd8_FoundationClinic_interior_9.jpg');"></div>
+<section class="hero-subpage contact-hero">
+    <div class="hero-bg contact-hero-bg" style="background-image: url('/assets/images/avocados.jpg');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <span class="hero-eyebrow">Ota yhteyttä</span>
-      <h1 class="hero-headline">Ota yhteyttä – me hoidamme loput.</h1>
-      <p class="hero-lead">Vastaamme kaikkiin sähköposteihin vuorokaudessa.</p>
+      <span class="hero-eyebrow">Yhteystiedot</span>
+      <h1 class="hero-headline">Puhutaan terveydestäsi.</h1>
+      <p class="hero-lead">Vastaamme kaikkiin sähköposteihin 24 tunnin sisällä.</p>
     </div>
   </section>
 
@@ -18,25 +18,25 @@ import Base from '../../layouts/Base.astro';
       <div class="split fade-up">
         <div>
           <span class="eyebrow">Lähetä viesti</span>
-          <h2 style="margin-bottom: 32px;">Otetaan yhteyttä.</h2>
+          <h2 style="margin-bottom: 32px;">Ota yhteyttä.</h2>
           <form class="contact-form" action="https://formspree.io/f/hello@foundation.clinic" method="POST">
             <div class="form-row">
               <div class="form-group">
                 <label for="first-name">Etunimi</label>
-                <input type="text" id="first-name" name="first_name" placeholder="Anna" required />
+                <input type="text" id="first-name" name="first_name" required />
               </div>
               <div class="form-group">
                 <label for="last-name">Sukunimi</label>
-                <input type="text" id="last-name" name="last_name" placeholder="Virtanen" required />
+                <input type="text" id="last-name" name="last_name" required />
               </div>
             </div>
             <div class="form-group">
               <label for="email">Sähköposti</label>
-              <input type="email" id="email" name="email" placeholder="anna@esimerkki.fi" required />
+              <input type="email" id="email" name="email" required />
             </div>
             <div class="form-group">
-              <label for="phone">Puhelin (valinnainen)</label>
-              <input type="tel" id="phone" name="phone" placeholder="+358 40 123 4567" />
+              <label for="phone">Puhelinnumero (valinnainen)</label>
+              <input type="tel" id="phone" name="phone" />
             </div>
             <div class="form-group">
               <label for="interest">Olen kiinnostunut</label>
@@ -44,35 +44,31 @@ import Base from '../../layouts/Base.astro';
                 <option value="">Valitse vaihtoehto</option>
                 <option value="membership">Jäseneksi liittymisestä</option>
                 <option value="family">Perhejäsenyydestä</option>
-                <option value="corporate">Yritysyhteistyöstä</option>
-                <option value="other">Muusta</option>
+                <option value="corporate">Yritys- tai kumppaniyhteistyöstä</option>
+                <option value="other">Jostakin muusta</option>
               </select>
             </div>
             <div class="form-group">
               <label for="message">Viesti</label>
-              <textarea id="message" name="message" placeholder="Kerro meille, mitä etsit..."></textarea>
+              <textarea id="message" name="message" placeholder="Kerro lyhyesti, mitä etsit..."></textarea>
             </div>
             <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Lähetä viesti</button>
-            <p style="font-size: var(--caption); color: var(--fg-3); margin-top: 12px; text-align: center;">Vastaamme sinulle 24 tunnin sisällä.</p>
+            <p style="font-size: var(--caption); color: var(--fg-3); margin-top: 12px; text-align: center;">Palaamme asiaan 24 tunnin sisällä.</p>
           </form>
         </div>
         <div style="display: flex; flex-direction: column; gap: 16px;">
-          <span class="eyebrow">Yhteystiedot</span>
+          <span class="eyebrow">Suora yhteys</span>
           <div style="padding: 20px 24px; background: var(--bg-surface); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
             <p style="font-size: var(--caption); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--fg-3); margin-bottom: 6px;">Sähköposti</p>
             <a href="mailto:hello@foundation.clinic" style="font-size: var(--body); color: var(--teal); font-weight: 500;">hello@foundation.clinic</a>
           </div>
           <div style="padding: 20px 24px; background: var(--bg-surface); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
             <p style="font-size: var(--caption); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--fg-3); margin-bottom: 6px;">Puhelin</p>
-            <a href="tel:+358407268383" style="font-size: var(--body); color: var(--fg-1); font-weight: 500;">+358 40 726 8383</a>
+            <a href="tel:+358407268383" style="font-size: var(--body); color: var(--fg-1); font-weight: 500;">+358 44 902 5885</a>
           </div>
           <div style="padding: 20px 24px; background: var(--bg-surface); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
             <p style="font-size: var(--caption); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--fg-3); margin-bottom: 6px;">Osoite</p>
-            <p style="font-size: var(--body); color: var(--fg-1);">Ratakatu 29 a 4<br>00120 Helsinki</p>
-          </div>
-          <div style="padding: 20px 24px; background: var(--bg-surface); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
-            <p style="font-size: var(--caption); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--fg-3); margin-bottom: 6px;">Aukioloajat</p>
-            <p style="font-size: var(--body); color: var(--fg-1);">Maanantai–Perjantai<br>9:00–17:00</p>
+            <p style="font-size: var(--body); color: var(--fg-1);">Ratakatu 29 a 4<br>00120 Helsinki, Suomi</p>
           </div>
         </div>
       </div>

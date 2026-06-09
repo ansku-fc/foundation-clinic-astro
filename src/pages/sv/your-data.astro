@@ -1,0 +1,181 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="Din data" description="Hur vi samlar in, lagrar och använder dina hälsouppgifter på Foundation Clinic." lang="sv">
+
+  <section class="hero-subpage">
+    <div class="hero-bg" style="background-image: url('/assets/images/river-evening.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Din data</span>
+      <h1 class="hero-headline">Din data, din historia.</h1>
+      <p class="hero-lead">Vår teknik samlar din hälsodata och ger din läkare en fullständig och aktuell bild av dig.</p>
+    </div>
+  </section>
+
+  <section class="section-ivory">
+    <div class="container">
+      <div class="split fade-up">
+        <div class="split-content">
+          <span class="eyebrow">Ett kontinuerligt hälsoregister</span>
+          <h2>Mönster istället för enskilda datapunkter.</h2>
+          <p>De flesta människors hälsodata är spridd över kliniker, laboratorier, system och ofta länder.</p>
+          <p style="margin-top: 16px;">Med ditt samtycke samlar vi in och integrerar dina uppgifter från tidigare vårdgivare, laboratoriesystem, bilddiagnostikcentra och specialister till ett enda aktuellt longitudinellt register.</p>
+        </div>
+        <div class="split-image">
+          <img src="/assets/images/dashboard_3.png" alt="Foundation Clinic hälsodatapanel" style="width:100%;height:100%;object-fit:contain;object-position:center;background:#fff;border-radius:var(--radius-2xl);" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="section-sunken">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom: 56px;">
+      <span class="eyebrow">Vad vi lagrar</span>
+      <h2>En fullständig bild av din hälsa.</h2>
+      <p class="lead" style="margin-top: 16px; max-width: 560px;">Allt din läkare behöver för att förstå din hälsa i sitt fulla sammanhang — inte bara idag.</p>
+    </div>
+    <div class="what-grid fade-up" style="grid-template-columns: repeat(4, 1fr);">
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/><path d="M9 12h6M9 16h4"/></svg>
+        <h3>Laboratorieresultat</h3>
+        <p>Resultat från alla laboratorier lagrade som longitudinella trender — med optimala värden och referensvärden spårade över tid.</p>
+      </div>
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        <h3>Hälsodimensioner</h3>
+        <p>Nio hälsodimensioner poängsatta och övervakade kontinuerligt — från kardiovaskulär hälsa till psykisk hälsa och cancerrisk.</p>
+      </div>
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <h3>Diagnoser & vårdförlopp</h3>
+        <p>Aktiva och tidigare diagnoser, kopplade till läkemedel och vårdförlopp, med ICD-10-kodning genom hela registret.</p>
+      </div>
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><path d="M10.5 20.5 3.5 13.5a5 5 0 0 1 7.07-7.07l7 7a5 5 0 0 1-7.07 7.07z"/><line x1="8.5" y1="11.5" x2="15.5" y2="11.5"/></svg>
+        <h3>Läkemedel</h3>
+        <p>Aktuella och tidigare recept, doser, förnyningshistorik och indikation — alltid kopplat till dina diagnoser.</p>
+      </div>
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <h3>Dokument & bilddiagnostik</h3>
+        <p>Specialistrapporter, remissbrev, bilddiagnostikresultat och utskrivningssammanfattningar i ett sökbart arkiv.</p>
+      </div>
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <h3>Besök & vårdplaner</h3>
+        <p>Konsultationsanteckningar, besökssammanfattningar och din personliga årliga vårdplan granskad och uppdaterad av din läkare.</p>
+      </div>
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <h3>Biometri</h3>
+        <p>Längd, vikt, BMI, blodtryck och andra kliniska mätvärden spårade longitudinellt över tid.</p>
+      </div>
+      <div class="what-card" style="padding: var(--s-8);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E1F14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: var(--s-5);"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <h3>Internationella uppgifter</h3>
+        <p>Hälsodata från utlandet integrerad i ditt register. Din hela historia är tillgänglig oavsett var vård erhållits.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-ivory">
+  <div class="container">
+    <div class="split reverse fade-up" style="align-items: flex-start; grid-template-columns: 1fr 1.4fr;">
+      <div class="split-image" style="overflow: hidden;">
+        <img src="/assets/images/dashboard_5.png" alt="Läkare granskar patientdata" style="width: 100%; height: auto; object-fit: unset;" />
+      </div>
+      <div class="split-content">
+        <span class="eyebrow">Hur din läkare använder det</span>
+        <h2>Helhetsbilden istället för bara detaljer.</h2>
+        <p>Din läkare granskar ditt fullständiga register inför varje konsultation. Vår plattform spårar trender över tid, så tidiga förändringar identifieras innan de blir problem.</p>
+        <p style="margin-top: 16px;">Vi hör proaktivt av oss när det är dags för kontroll, laboratorietest eller specialistbesök. När något kräver uppmärksamhet får ditt vårdteam en varning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-cream">
+  <div class="container">
+    <div class="fade-up" style="max-width: 720px; margin: 0 auto;">
+      <span class="eyebrow">Standarder & efterlevnad</span>
+      <h2>Byggt enligt högsta standarder.</h2>
+      <p style="margin-top: 20px;">Foundation Clinic är ISO 9001:2015-certifierat. När vi bygger vår kliniska mjukvaruplattform utvecklar vi den från grunden i enlighet med de regulatoriska ramverk som kommer att styra dess certifiering — så att efterlevnad är inbyggd, inte påklistrad i efterhand.</p>
+      <div style="margin-top: 40px; border: 1px solid var(--t-15); border-radius: var(--radius-xl); overflow: hidden;">
+        <table class="compliance-table" style="width: 100%; border-collapse: collapse; font-size: var(--body-sm);">
+          <thead>
+            <tr style="background: var(--surface-2); border-bottom: 1px solid var(--t-15);">
+              <th style="padding: 12px 20px; text-align: left; font-weight: 500; color: var(--fg-2); width: 200px;">Standard</th>
+              <th style="padding: 12px 20px; text-align: left; font-weight: 500; color: var(--fg-2);">Vad det täcker</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--t-15);">
+              <td style="padding: 14px 20px; font-weight: 500; color: var(--fg-2); white-space: nowrap;">ISO 9001:2015</td>
+              <td style="padding: 14px 20px; color: var(--fg-3); line-height: 1.6;">Kvalitetsledning: Kliniska processer, patientvårdsarbetsflöden och kontinuerlig förbättring.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--t-15);">
+              <td style="padding: 14px 20px; font-weight: 500; color: var(--fg-2); white-space: nowrap;">IEC 62304</td>
+              <td style="padding: 14px 20px; color: var(--fg-3); line-height: 1.6;">Livscykel för medicinteknisk programvara: Design, utveckling, testning och underhåll.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--t-15);">
+              <td style="padding: 14px 20px; font-weight: 500; color: var(--fg-2); white-space: nowrap;">EU MDR 2017/745</td>
+              <td style="padding: 14px 20px; color: var(--fg-3); line-height: 1.6;">EU:s förordning om medicintekniska produkter: Tillämpas där vår programvara uppfyller definitionen av en medicinteknisk produkt.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--t-15);">
+              <td style="padding: 14px 20px; font-weight: 500; color: var(--fg-2); white-space: nowrap;">EU AI Act</td>
+              <td style="padding: 14px 20px; color: var(--fg-3); line-height: 1.6;">AI-assisterade funktioner klassificerade och utvecklade enligt EU:s AI-förordning, med obligatorisk läkargranskning för alla kliniska förslag.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--t-15);">
+              <td style="padding: 14px 20px; font-weight: 500; color: var(--fg-2); white-space: nowrap;">GDPR & finsk lag</td>
+              <td style="padding: 14px 20px; color: var(--fg-3); line-height: 1.6;">Patientdata behandlas i enlighet med GDPR, den finska dataskyddslagen och lagen om patientjournaler.</td>
+            </tr>
+            <tr>
+              <td style="padding: 14px 20px; font-weight: 500; color: var(--fg-2); white-space: nowrap;">HL7 FHIR & LOINC</td>
+              <td style="padding: 14px 20px; color: var(--fg-3); line-height: 1.6;">Internationella interoperabilitetsstandarder som säkerställer att ditt hälsoregister kan följa med dig över system och gränser.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="section-sunken">
+    <div class="container">
+      <div class="fade-up" style="max-width: 720px; margin: 0 auto;">
+        <span class="eyebrow">Dina rättigheter</span>
+        <h2>Din data tillhör dig.</h2>
+        <p style="margin-top: 20px;">Du kan när som helst begära en fullständig export av dina hälsouppgifter. Vi lagrar dina uppgifter i enlighet med finsk lag, EU:s GDPR och tillämpliga hälsodataförordningar. Vi säljer eller delar aldrig dina uppgifter med tredje part för kommersiella ändamål.</p>
+        <div style="margin-top: 48px; display: flex; flex-direction: column; gap: 0;">
+          <div class="rights-row" style="padding: 24px 0; border-bottom: 1px solid var(--t-15);">
+            <div style="font-size: var(--body-sm); font-weight: 500; color: var(--fg-2);">Rätt till tillgång</div>
+            <div style="font-size: var(--body-sm); color: var(--fg-3); line-height: 1.7;">Du har rätt att när som helst få tillgång till alla personuppgifter och hälsouppgifter vi innehar om dig.</div>
+          </div>
+          <div class="rights-row" style="padding: 24px 0; border-bottom: 1px solid var(--t-15);">
+            <div style="font-size: var(--body-sm); font-weight: 500; color: var(--fg-2);">Rätt till dataportabilitet</div>
+            <div style="font-size: var(--body-sm); color: var(--fg-3); line-height: 1.7;">Du kan begära en fullständig export av ditt hälsoregister i ett strukturerat, maskinläsbart format.</div>
+          </div>
+          <div class="rights-row" style="padding: 24px 0; border-bottom: 1px solid var(--t-15);">
+            <div style="font-size: var(--body-sm); font-weight: 500; color: var(--fg-2);">Rätt att bli glömd</div>
+            <div style="font-size: var(--body-sm); color: var(--fg-3); line-height: 1.7;">Med förbehåll för lagstadgade lagringstider för journaler enligt finsk lag kan du begära radering av dina personuppgifter.</div>
+          </div>
+          <div class="rights-row" style="padding: 24px 0; border-bottom: 1px solid var(--t-15);">
+            <div style="font-size: var(--body-sm); font-weight: 500; color: var(--fg-2);">Samtycke</div>
+            <div style="font-size: var(--body-sm); color: var(--fg-3); line-height: 1.7;">Vi samlar in och behandlar dina hälsouppgifter endast med ditt uttryckliga samtycke. Du kan återkalla samtycket när som helst.</div>
+          </div>
+          <div class="rights-row" style="padding: 24px 0;">
+            <div style="font-size: var(--body-sm); font-weight: 500; color: var(--fg-2);">Datalagring</div>
+            <div style="font-size: var(--body-sm); color: var(--fg-3); line-height: 1.7;">Dina uppgifter lagras på säkra servrar inom EU, i enlighet med GDPR och finsk hälsodatalagstiftning.</div>
+          </div>
+        </div>
+        <div style="margin-top: 40px;">
+          <a href="/sv/legal/privacy-policy" class="btn btn-outline">Integritetspolicy →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Base>

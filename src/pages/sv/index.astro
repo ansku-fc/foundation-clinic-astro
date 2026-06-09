@@ -1,123 +1,175 @@
 ---
 import Base from '../../layouts/Base.astro';
 ---
-<Base title="Personlig sjukvård" lang="sv">
+<Base title="Personlig läkartjänst" description="Kontinuerlig, dedikerad medicinsk vård skräddarsydd för dig." lang="sv">
 
+  <!-- HERO -->
   <section class="hero-fullbleed">
     <div class="hero-bg" style="background-image: url('/assets/images/hero-bg.jpg');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Personlig sjukvård · Helsingfors</p>
-      <h1 class="hero-headline">Din personliga läkare,<br>som känner dig vid namn.</h1>
-      <p class="hero-lead">Personlig, högkvalitativ och förebyggande vård.<br>Alltid tillgänglig, i Finland och utomlands.</p>
+      <p class="hero-eyebrow">Ratakatu 29 a 4 · Helsingfors</p>
+      <h1 class="hero-headline">Din personliga läkare<br>som känner dig vid namn.</h1>
+      <p class="hero-lead">Personlig, högkvalitativ och förebyggande vård. Alltid tillgänglig, i Finland och utomlands.</p>
       <div class="hero-cta">
-        <a href="/sv/contact" class="btn hero-btn-primary">Starta din vård</a>
-        <a href="/sv/our-approach" class="btn hero-btn-outline">Läs mer</a>
+        <a href="/sv/contact" class="btn hero-btn-primary" style="padding: 10px 18px; font-size: 13px;">Bli medlem</a>
+        <a href="/sv/our-approach" class="btn hero-btn-outline" style="padding: 10px 18px; font-size: 13px;">Hur det fungerar</a>
       </div>
     </div>
   </section>
 
-  <section class="section-ivory">
+  <!-- WHO WE ARE -->
+  <section style="background: var(--ivory); padding: 0;">
+    <div class="who-we-are">
+      <div class="who-we-are-image">
+        <img src="/assets/images/stilllife-figs.jpg" alt="Foundation Clinic" />
+      </div>
+      <div class="who-we-are-content fade-up">
+        <span class="eyebrow">Vilka vi är</span>
+        <h2 style="margin-top: 0;">Vi tar fullt ansvar för din hälsa.</h2>
+        <p>Vi erbjuder hälsovård som den borde vara.</p>
+        <div class="who-we-are-cards">
+          <div class="who-card">
+            <h4>Månadsmedlemskap</h4>
+            <p>Direktåtkomst till din personliga läkare, i Finland och utomlands.</p>
+          </div>
+          <div class="who-card">
+            <h4>Koordinerad vård</h4>
+            <p>Akutvård, specialistremissr och diagnostik sömlöst genom oss.</p>
+          </div>
+          <div class="who-card">
+            <h4>Enkel tillgång</h4>
+            <p>Besök på kliniken, hemma eller via vårt nätverk utomlands.</p>
+          </div>
+          <div class="who-card">
+            <h4>Datadriven hälsa</h4>
+            <p>Din historia, dina resultat och behandlingar i ett kontinuerligt hälsoregister.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="section-sunken" style="padding-top: var(--s-20); padding-bottom: var(--s-20);">
     <div class="container">
-      <div class="text-center fade-up" style="margin-bottom: 64px;">
-        <span class="eyebrow">Vårt förhållningssätt</span>
-        <h2>Bra vård börjar med en läkare som känner dig.</h2>
-        <p class="lead" style="margin-top: 16px;">De flesta har aldrig haft en läkare som verkligen känner dem. På Foundation gör vi det annorlunda.</p>
+      <div class="fade-up" style="margin-bottom: 56px;">
+        <span class="eyebrow">Vad vi gör</span>
+        <h2 style="margin-top: 0;">Hälsa för hela ditt liv.</h2>
+        <p class="lead" style="margin-top: 16px;">Oavsett om det handlar om att hantera ett tillstånd, optimera din hälsa eller ta hand om en familj — din läkare finns där för allt.</p>
       </div>
-      <div class="card-grid">
-        <div class="card fade-up">
-          <div style="font-size: 1.5rem; margin-bottom: 16px;">⬡</div>
-          <h4 style="margin-bottom: 8px;">Medlemskapsmodell</h4>
-          <p style="font-size: var(--body-sm);">Garanterad tillgång till din läkare, datadriven förebyggande vård och sömlös vårdsamordning.</p>
+      <div class="what-grid">
+        <div class="what-card fade-up">
+          <div class="what-card-image">
+            <img src="/assets/images/open-water-swimmers.jpg" alt="Prestation och förebyggande" />
+          </div>
+          <span class="eyebrow">01</span>
+          <h3 style="white-space: nowrap;">Prestation &amp; förebyggande</h3>
+          <p>Genom regelbundna konsultationer, laboratorietester och löpande uppföljning identifierar vi tidiga förändringar och hanterar risker proaktivt.</p>
+          <a href="/sv/our-services" class="btn btn-ghost" style="margin-top: auto; margin-left: auto; width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: var(--radius-md);">→</a>
         </div>
-        <div class="card fade-up" style="animation-delay: 0.08s">
-          <div style="font-size: 1.5rem; margin-bottom: 16px;">⬡</div>
-          <h4 style="margin-bottom: 8px;">Samordnad vård</h4>
-          <p style="font-size: var(--body-sm);">Specialistremisser, diagnostik och behandlingsbeslut — samlat i en sammanhängande plan.</p>
+        <div class="what-card fade-up" style="animation-delay: 0.08s">
+          <div class="what-card-image">
+            <img src="/assets/images/elderly-man-profile-sunset.jpg" alt="Hälsosamt åldrande" />
+          </div>
+          <span class="eyebrow">02</span>
+          <h3>Hälsosamt åldrande</h3>
+          <p>Hälsobehoven blir ofta mer komplexa med åldern. Din läkare fungerar som den primära kontaktpunkten och säkerställer att din vård förblir tydlig och konsekvent.</p>
+          <a href="/sv/our-services" class="btn btn-ghost" style="margin-top: auto; margin-left: auto; width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: var(--radius-md);">→</a>
         </div>
-        <div class="card fade-up" style="animation-delay: 0.16s">
-          <div style="font-size: 1.5rem; margin-bottom: 16px;">⬡</div>
-          <h4 style="margin-bottom: 8px;">Vård var du än är</h4>
-          <p style="font-size: var(--body-sm);">Klinikbesök, distansmöten, hembesök och internationell vårdsamordning.</p>
+        <div class="what-card fade-up" style="animation-delay: 0.16s">
+          <div class="what-card-image">
+            <img src="/assets/images/child-arm-bandaids.jpg" alt="Barn och familjer" />
+          </div>
+          <span class="eyebrow">03</span>
+          <h3>Barn &amp; familjer</h3>
+          <p>Vi stödjer familjer med både förebyggande vård och vardagliga medicinska frågor, och kompletterar Finlands rådgivningssystem med kontinuerlig personlig vård.</p>
+          <a href="/sv/our-services" class="btn btn-ghost" style="margin-top: auto; margin-left: auto; width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: var(--radius-md);">→</a>
         </div>
-        <div class="card fade-up" style="animation-delay: 0.24s">
-          <div style="font-size: 1.5rem; margin-bottom: 16px;">⬡</div>
-          <h4 style="margin-bottom: 8px;">Dina hälsodata</h4>
-          <p style="font-size: var(--body-sm);">Din hela hälsohistorik, provsvar och konsultationer samlad på ett ställe.</p>
+        <div class="what-card fade-up" style="animation-delay: 0.24s">
+          <div class="what-card-image">
+            <img src="/assets/images/woman-coast-sunset.jpg" alt="Komplexa hälsobehov" />
+          </div>
+          <span class="eyebrow">04</span>
+          <h3>Komplexa hälsobehov</h3>
+          <p>För patienter som hanterar kroniska tillstånd eller navigerar specialistvård erbjuder vi koordinering, kontinuitet och en läkare som känner hela bilden.</p>
+          <a href="/sv/our-services" class="btn btn-ghost" style="margin-top: auto; margin-left: auto; width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: var(--radius-md);">→</a>
         </div>
-      </div>
-      <div style="text-align: center; margin-top: 48px;">
-        <a href="/sv/our-approach" class="btn btn-outline">Läs mer om vårt förhållningssätt</a>
       </div>
     </div>
   </section>
 
+<!-- MEMBERSHIPS -->
   <section class="section-ivory">
     <div class="container">
       <div class="text-center fade-up" style="margin-bottom: 64px;">
         <span class="eyebrow">Medlemskap</span>
-        <h2>Vård byggd på relationer, inte enstaka möten.</h2>
+        <h2>Din viktigaste prenumeration.</h2>
       </div>
       <div class="pricing-grid">
         <div class="pricing-card fade-up">
           <div class="pricing-tier">Nivå 1</div>
           <div class="price">€99</div>
-          <div class="price-label">/ mån</div>
+          <div class="price-label">per månad</div>
           <ul class="pricing-features">
-            <li>Namngiven läkare</li>
-            <li>Receptförnyelse</li>
-            <li>1 distanskonsultation / mån</li>
-            <li>Influensavaccination</li>
+            <li>Direktåtkomst till personlig läkare</li>
+            <li>Läkarlett hälsobedömning med laboratoriepaket</li>
+            <li>1 distansbesök / månad</li>
+            <li>Receptförnyelser</li>
           </ul>
-          <a href="/sv/contact" class="btn btn-outline" style="width: 100%; justify-content: center;">Kom igång</a>
+          <a href="/sv/contact" class="btn btn-ghost" style="margin-top: auto; margin-left: auto; width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: var(--radius-md);">→</a>
         </div>
         <div class="pricing-card featured fade-up" style="animation-delay: 0.08s">
           <div class="pricing-tier">Nivå 2</div>
           <div class="price">€199</div>
-          <div class="price-label">/ mån</div>
+          <div class="price-label">per månad</div>
           <ul class="pricing-features">
-            <li>Namngiven läkare</li>
-            <li>Årlig hälsokontroll</li>
-            <li>3 distanskonsultationer / mån</li>
-            <li>1 personligt besök / mån</li>
-            <li>Remisser och samordning</li>
+            <li>Direktåtkomst till personlig läkare</li>
+            <li>Årlig läkarlett hälsobedömning med laboratoriepaket</li>
+            <li>3 distansbesök / månad</li>
+            <li>1 besök på plats / månad</li>
+            <li>Receptförnyelser</li>
+            <li>Vårdkoordinering, remisser och tidsbokning</li>
           </ul>
-          <a href="/sv/contact" class="btn" style="width: 100%; justify-content: center; background: var(--cream); color: var(--espresso);">Kom igång</a>
+          <a href="/sv/contact" class="btn hero-btn-primary" style="margin-top: auto; margin-left: auto; width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: var(--radius-md); background: #FDF6EE; color: #1C1410;">→</a>
         </div>
         <div class="pricing-card fade-up" style="animation-delay: 0.16s">
           <div class="pricing-tier">Nivå 3</div>
           <div class="price">€399</div>
-          <div class="price-label">/ mån</div>
+          <div class="price-label">per månad</div>
           <ul class="pricing-features">
-            <li>Namngiven läkare</li>
-            <li>Halvårlig hälsokontroll</li>
-            <li>5 distanskonsultationer / mån</li>
-            <li>3 personliga besök / mån</li>
-            <li>Remisser och samordning</li>
-            <li>Fakturahantering</li>
+            <li>Direktåtkomst till personlig läkare</li>
+            <li>Halvårlig läkarlett hälsobedömning med laboratoriepaket</li>
+            <li>5 distansbesök / månad</li>
+            <li>3 besök på plats / månad</li>
+            <li>Receptförnyelser</li>
+            <li>Vårdkoordinering, remisser och tidsbokning</li>
           </ul>
-          <a href="/sv/contact" class="btn btn-outline" style="width: 100%; justify-content: center;">Kom igång</a>
+          <a href="/sv/contact" class="btn btn-ghost" style="margin-top: auto; margin-left: auto; width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: var(--radius-md);">→</a>
         </div>
         <div class="pricing-card fade-up" style="animation-delay: 0.24s">
           <div class="pricing-tier">Barn</div>
           <div class="price">€49</div>
-          <div class="price-label">/ mån</div>
+          <div class="price-label">per månad</div>
           <ul class="pricing-features">
-            <li>Namngiven läkare</li>
-            <li>2 distanskonsultationer / mån</li>
-            <li>Influensavaccination</li>
+            <li>Direktåtkomst till personlig läkare</li>
+            <li>2 distansbesök / månad</li>
+            <li>Receptförnyelser</li>
           </ul>
-          <a href="/sv/contact" class="btn btn-outline" style="width: 100%; justify-content: center;">Kom igång</a>
+          <a href="/sv/contact" class="btn btn-ghost" style="margin-top: auto; margin-left: auto; width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: var(--radius-md);">→</a>
         </div>
       </div>
-      <p style="font-size: var(--body-sm); color: var(--fg-3); margin-top: 24px; text-align: center;">Inledande konsultation €599. <a href="/sv/memberships" style="color: var(--fg-2); text-decoration: underline;">Fullständig information →</a></p>
+      <p style="font-size: var(--body-sm); color: var(--fg-3); margin-top: 24px; text-align: center;">Introduktionskonsultation €599. Läkare tillgänglig dygnet runt från €899/mån. <a href="/sv/memberships" style="color: var(--fg-2); text-decoration: underline;">Fullständig information →</a></p>
     </div>
   </section>
 
-  <section class="section-espresso">
-    <div class="container">
-      <div class="text-center fade-up" style="max-width: 600px; margin: 0 auto;">
-        <h2>Hör av dig – vi berättar gärna hur vi kan stödja din hälsa.</h2>
+<!-- CTA -->
+  <section class="cta-fullbleed">
+    <div class="cta-bg" style="background-image: url('/assets/images/river-evening.jpg'); background-size: cover; background-position: center;"></div>
+    <div class="cta-overlay"></div>
+    <div class="container cta-content fade-up">
+      <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+        <h2>Kontakta oss för att utforska hur vi kan stödja din långsiktiga hälsa.</h2>
         <p style="margin-top: 16px; margin-bottom: 32px;">Vi svarar på alla e-postmeddelanden inom 24 timmar.</p>
         <a href="/sv/contact" class="btn" style="background: var(--cream); color: var(--espresso);">Kontakta oss</a>
       </div>

@@ -1,116 +1,677 @@
 ---
 import Base from '../../layouts/Base.astro';
 ---
-<Base title="Medlemskap" lang="sv">
+<Base title="Medlemskap" description="Långsiktig hälsovård byggd på relationer." lang="sv">
+
+<style is:global>
+  .hero-subpage .hero-overlay {
+    background: linear-gradient(to top, rgba(46,31,20,0.87) 0%, rgba(46,31,20,0.55) 50%, rgba(46,31,20,0.25) 100%);
+  }
+  .lab-tag {
+    font-size: 11px !important;
+    padding: 3px 7px !important;
+  }
+  .pkg-row {
+    padding: 10px 14px !important;
+  }
+  .pkg-row span {
+    font-size: 12px !important;
+  }
+  @media (max-width: 768px) {
+  .membership-onboarding-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .membership-services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .membership-services-image {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .service-card-inner {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .service-card-price {
+    text-align: left !important;
+  }
+}
+@media (max-width: 768px) {
+  .service-card-price br {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .tailored-cta {
+    margin: 0 !important;
+  }
+}
+  .price-drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(46,31,20,0.35);
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .price-drawer-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .price-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 520px;
+    max-width: 95vw;
+    background: #FDFAF7;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: -8px 0 40px rgba(46,31,20,0.12);
+  }
+  .price-drawer.open { transform: translateX(0); }
+  .price-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 32px 20px;
+    border-bottom: 1px solid #E7DCCD;
+    flex-shrink: 0;
+  }
+  .price-drawer-header h2 {
+    font-family: 'Belleza', Georgia, serif;
+    font-size: 1.4rem;
+    color: #2E1F14;
+    margin: 0;
+  }
+  .price-drawer-close {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: #F2E8D9;
+    border: none;
+    cursor: pointer;
+    color: #2E1F14;
+    font-size: 18px;
+    transition: background 0.15s ease;
+  }
+  .price-drawer-close:hover { background: #E7DCCD; }
+  .price-drawer-body {
+    overflow-y: auto;
+    flex: 1;
+    padding: 16px 32px 40px;
+  }
+  .drawer-section { border-bottom: 1px solid #E7DCCD; }
+  .drawer-section-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Belleza', Georgia, serif;
+    font-size: 1rem;
+    color: #2E1F14;
+  }
+  .drawer-section-btn:hover { color: #5A3E2B; }
+  .drawer-section-chevron {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+    color: #8C7866;
+  }
+  .drawer-section-btn.open .drawer-section-chevron { transform: rotate(180deg); }
+  .drawer-section-content { display: none; padding-bottom: 16px; }
+  .drawer-section-content.open { display: block; }
+  .drawer-note {
+    font-size: 11px;
+    color: #8C7866;
+    line-height: 1.6;
+    margin-top: 10px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .drawer-subtitle {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8C7866;
+    margin: 16px 0 6px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .drawer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 8px 0;
+    border-bottom: 1px solid #F2E8D9;
+    gap: 16px;
+  }
+  .drawer-row:last-child { border-bottom: none; }
+  .drawer-row-label {
+    font-size: 12px;
+    color: #5A4736;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.5;
+    flex: 1;
+  }
+  .drawer-row-price {
+    font-size: 12px;
+    font-weight: 500;
+    color: #2E1F14;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+</style>
 
 <section class="hero-subpage">
-    <div class="hero-bg" style="background-image: url('https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/69c11723fbd8abfea21d153a_031354cd315326fa864ff8e5f33fe118_foundation-clinic-approach2.webp'); background-position: center 30%;"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <span class="hero-eyebrow">Medlemskap</span>
-      <h1 class="hero-headline">Vård byggd på relationer, inte enstaka möten.</h1>
-      <p class="hero-lead">Vår medlemsmodell gör att vi kan ägna den tid och uppmärksamhet som krävs för att förstå varje patients hälsa över tid.</p>
-    </div>
-  </section>
+  <div class="hero-bg" style="background-image: url('/assets/images/stilllife-quince.jpg');"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Medlemskap</span>
+    <h1 class="hero-headline">Din viktigaste prenumeration.</h1>
+    <p class="hero-lead">Ett medlemskap. En läkare. Allt omhändertaget.</p>
+  </div>
+</section>
 
-  <section class="section-ivory">
-    <div class="container">
-      <div class="split fade-up">
-        <div class="split-image">
-          <img src="https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/69c11723fbd8abfea21d153a_031354cd315326fa864ff8e5f33fe118_foundation-clinic-approach2.webp" alt="Medlemskap" />
+<section class="section-cream">
+  <div class="container">
+    <div class="fade-up membership-onboarding-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;">
+      <div>
+        <span class="eyebrow">Introduktion</span>
+        <h2 style="margin-bottom: var(--s-4);">Din vård börjar från första dagen.</h2>
+        <p style="margin-top: 16px;">Vid ditt första besök går vi igenom din hälso- och familjehistoria, dina hälsoproblem och dina mål. Inom de följande två veckorna bjuds du in till ett uppföljningsbesök där vi går igenom en personlig hälsoplan för de kommande 6–12 månaderna.</p>
+        <div style="margin-top: 28px; background: var(--espresso); border-radius: var(--radius-lg); padding: var(--s-8);">
+          <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: var(--s-2);">
+            <span style="font-family: var(--font-display); font-size: 2.4rem; color: var(--cream);">€599</span>
+            <span style="font-size: var(--body-sm); color: var(--t-50);">engångsavgift</span>
+          </div>
+          <p style="font-size: var(--caption); color: var(--t-30); line-height: 1.7;">Inkluderar läkarintervju, genomgång av dina hälsodata, klinisk undersökning och ett omfattande laboratoriepaket.</p>
         </div>
-        <div class="split-content">
-          <span class="eyebrow">Hur fungerar det</span>
-          <h2>Din vård från dag ett.</h2>
-          <p>Varje medlemskap börjar med en inledande konsultation där din läkare går igenom din medicinska historia och upprättar en personlig hälsoplan.</p>
-          <div style="margin-top: 28px; padding: 20px 24px; background: var(--bg-sunken); border-radius: var(--radius-lg); border-left: 3px solid var(--teal);">
-            <p style="font-size: var(--body-sm); font-weight: 600; color: var(--fg-1); margin-bottom: 4px;">Inledande konsultation</p>
-            <p style="font-size: 1.4rem; font-family: var(--font-display); color: var(--fg-1);">€599</p>
-            <p style="font-size: var(--body-sm); color: var(--fg-3); margin-top: 4px;">Engångsavgift, inkluderar fullständig hälsoundersökning och personlig hälsoplan.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: var(--s-6);">
+        <div>
+          <span class="eyebrow">Introduktionslaboratorietester</span>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: var(--s-3);">
+            {['Chol', 'Trig', 'LDL-C', 'HDL-C', 'non-HDL', 'ESR', 'ALT', 'ALP', 'AST', 'Bili', 'GGT', 'Crea', 'eGFR', 'CysC', 'Na', 'K', 'Hb', 'WBC', 'Plt', 'MCV', 'MCH', 'RDW', 'RBC', 'sTfR', 'Ferritin', 'Alb', '25-OH-D', 'B12', 'TSH', 'HbA1c', 'fP-Gluc', 'Ca'].map(test => (
+              <span class="lab-tag" style="color: var(--fg-2); background: var(--bg-sunken); border: 1px solid var(--t-15); border-radius: var(--radius-sm);">{test}</span>
+            ))}
+          </div>
+        </div>
+        <div>
+          <span class="eyebrow">Utökade laboratoriepaket</span>
+          <div style="display: flex; flex-direction: column; gap: 6px; margin-top: var(--s-3);">
+            {[
+              { name: 'Utökat blodstatus', price: '€199' },
+              { name: 'Hjärta och cirkulation', price: '€99' },
+              { name: 'Hjärta och cirkulation, utökat', price: '€199' },
+              { name: 'Nutrition', price: '€99' },
+              { name: 'Prestation, män', price: '€99' },
+              { name: 'Prestation, kvinnor', price: '€99' },
+            ].map(pkg => (
+              <div class="pkg-row" style="display: flex; justify-content: space-between; align-items: center; background: var(--bg-elevated); border: 1px solid var(--t-15); border-radius: var(--radius-md);">
+                <span style="color: var(--fg-2);">{pkg.name}</span>
+                <span style="font-weight: 600; color: var(--fg-1); white-space: nowrap; margin-left: 12px;">{pkg.price}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section-sunken" id="pricing">
-    <div class="container">
-      <div class="text-center fade-up" style="margin-bottom: 56px;">
-        <span class="eyebrow">Priser</span>
-        <h2>Välj den nivå som passar dig bäst.</h2>
+<!-- MEDLEMSKAP -->
+<section class="section-ivory">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom: 64px;">
+      <span class="eyebrow">Medlemskap</span>
+      <h2>Välj den vårdnivå som passar dina behov.</h2>
+      <p class="lead" style="margin-top: 16px;">Varje medlemskapsnivå återspeglar en annan nivå av stöd och tillgänglighet.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card fade-up">
+        <div class="pricing-tier">Nivå 1</div>
+        <div class="price">€99</div>
+        <div class="price-label">per månad</div>
+        <ul class="pricing-features">
+          <li>Direktåtkomst till personlig läkare</li>
+          <li>Läkarlett hälsobedömning med laboratoriepaket</li>
+          <li>1 distansbesök / månad</li>
+          <li>Receptförnyelser</li>
+        </ul>
+        <a href="/sv/contact" class="btn btn-ghost" style="margin-top: auto; margin-left: auto; width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: var(--radius-md);">→</a>
       </div>
-      <div class="pricing-grid">
-        <div class="pricing-card fade-up">
-          <div class="pricing-tier">Nivå 1</div>
-          <div class="price">€99</div>
-          <div class="price-label">/ mån</div>
-          <ul class="pricing-features">
-            <li>Namngiven läkare</li>
-            <li>09–17 mån–fre</li>
-            <li>Receptförnyelse</li>
-            <li>1 distanskonsultation / mån</li>
-            <li>Influensavaccination</li>
-          </ul>
-          <a href="/sv/contact" class="btn btn-outline" style="width: 100%; justify-content: center;">Kom igång</a>
-        </div>
-        <div class="pricing-card featured fade-up" style="animation-delay: 0.08s">
-          <div class="pricing-tier">Nivå 2</div>
-          <div class="price">€199</div>
-          <div class="price-label">/ mån</div>
-          <ul class="pricing-features">
-            <li>Namngiven läkare</li>
-            <li>09–17 mån–fre</li>
-            <li>Receptförnyelse</li>
-            <li>Årlig hälsokontroll</li>
-            <li>3 distanskonsultationer / mån</li>
-            <li>1 personligt besök / mån</li>
-            <li>Influensavaccination</li>
-            <li>Remisser och samordning</li>
-          </ul>
-          <a href="/sv/contact" class="btn" style="width: 100%; justify-content: center; background: var(--cream); color: var(--espresso);">Kom igång</a>
-        </div>
-        <div class="pricing-card fade-up" style="animation-delay: 0.16s">
-          <div class="pricing-tier">Nivå 3</div>
-          <div class="price">€399</div>
-          <div class="price-label">/ mån</div>
-          <ul class="pricing-features">
-            <li>Namngiven läkare</li>
-            <li>09–17 mån–fre</li>
-            <li>Receptförnyelse</li>
-            <li>Halvårlig hälsokontroll</li>
-            <li>5 distanskonsultationer / mån</li>
-            <li>3 personliga besök / mån</li>
-            <li>Influensavaccination</li>
-            <li>Remisser och samordning</li>
-            <li>Fakturahantering</li>
-          </ul>
-          <a href="/sv/contact" class="btn btn-outline" style="width: 100%; justify-content: center;">Kom igång</a>
-        </div>
-        <div class="pricing-card fade-up" style="animation-delay: 0.24s">
-          <div class="pricing-tier">Barn</div>
-          <div class="price">€49</div>
-          <div class="price-label">/ mån</div>
-          <ul class="pricing-features">
-            <li>Namngiven läkare</li>
-            <li>09–17 mån–fre</li>
-            <li>Receptförnyelse</li>
-            <li>2 distanskonsultationer / mån</li>
-            <li>Influensavaccination</li>
-          </ul>
-          <a href="/sv/contact" class="btn btn-outline" style="width: 100%; justify-content: center;">Kom igång</a>
-        </div>
+      <div class="pricing-card featured fade-up" style="animation-delay: 0.08s">
+        <div class="pricing-tier">Nivå 2</div>
+        <div class="price">€199</div>
+        <div class="price-label">per månad</div>
+        <ul class="pricing-features">
+          <li>Direktåtkomst till personlig läkare</li>
+          <li>Årlig läkarlett hälsobedömning med laboratoriepaket</li>
+          <li>3 distansbesök / månad</li>
+          <li>1 besök på plats / månad</li>
+          <li>Receptförnyelser</li>
+          <li>Vårdkoordinering, remisser och tidsbokning</li>
+        </ul>
+        <a href="/sv/contact" class="btn hero-btn-primary" style="margin-top: auto; margin-left: auto; width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: var(--radius-md); background: #FDF6EE; color: #1C1410;">→</a>
+      </div>
+      <div class="pricing-card fade-up" style="animation-delay: 0.16s">
+        <div class="pricing-tier">Nivå 3</div>
+        <div class="price">€399</div>
+        <div class="price-label">per månad</div>
+        <ul class="pricing-features">
+          <li>Direktåtkomst till personlig läkare</li>
+          <li>Halvårlig läkarlett hälsobedömning med laboratoriepaket</li>
+          <li>5 distansbesök / månad</li>
+          <li>3 besök på plats / månad</li>
+          <li>Receptförnyelser</li>
+          <li>Vårdkoordinering, remisser och tidsbokning</li>
+        </ul>
+        <a href="/sv/contact" class="btn btn-ghost" style="margin-top: auto; margin-left: auto; width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: var(--radius-md);">→</a>
+      </div>
+      <div class="pricing-card fade-up" style="animation-delay: 0.24s">
+        <div class="pricing-tier">Barn</div>
+        <div class="price">€49</div>
+        <div class="price-label">per månad</div>
+        <ul class="pricing-features">
+          <li>Direktåtkomst till personlig läkare</li>
+          <li>2 distansbesök / månad</li>
+          <li>Receptförnyelser</li>
+        </ul>
+        <a href="/sv/contact" class="btn btn-ghost" style="margin-top: auto; margin-left: auto; width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: var(--radius-md);">→</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section-espresso">
-    <div class="container">
-      <div class="text-center fade-up" style="max-width: 600px; margin: 0 auto;">
-        <h2>Hör av dig – vi berättar gärna hur vi kan stödja din hälsa.</h2>
-        <p style="margin-top: 16px; margin-bottom: 32px;">Vi svarar på alla e-postmeddelanden inom 24 timmar.</p>
-        <a href="/sv/contact" class="btn" style="background: var(--cream); color: var(--espresso);">Kontakta oss</a>
+<!-- TILLÄGGSTJÄNSTER -->
+<section class="section-cream">
+  <div class="container">
+    <div class="membership-services-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+      <div class="fade-up">
+        <div style="margin-bottom: 48px;">
+          <span class="eyebrow">Tilläggstjänster</span>
+          <h2>Utöver ditt medlemskap.</h2>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div class="service-card-inner" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 24px 28px; background: var(--bg-elevated); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
+            <div>
+              <h3 style="font-size: var(--h4); margin-bottom: 6px;">Läkare tillgänglig dygnet runt</h3>
+              <p style="font-size: var(--body-sm); color: var(--fg-3); margin: 0;">Tillgång dygnet runt, även på helger och helgdagar.</p>
+            </div>
+            <div class="service-card-price" style="text-align: right; flex-shrink: 0;">
+              <div style="font-family: var(--font-display); font-size: 1.4rem; color: var(--fg-1);">€899</div>
+              <div style="font-size: var(--caption); color: var(--fg-3);">första medlemmen</div>
+              <div style="font-size: var(--caption); color: var(--fg-3); margin-top: 4px;">€299 andra medlemmen</div>
+            </div>
+          </div>
+          <div class="service-card-inner" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 24px 28px; background: var(--bg-elevated); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
+            <div>
+              <h3 style="font-size: var(--h4); margin-bottom: 6px;">Specialistbesök</h3>
+              <p style="font-size: var(--body-sm); color: var(--fg-3); margin: 0;">Externa konsultationer, diagnostik och ingrepp.</p>
+            </div>
+            <div class="service-card-price" style="text-align: right; flex-shrink: 0;">
+              <div style="font-size: var(--caption); color: var(--fg-3);">Faktureras enligt <br/>partnerns prislista.</div>
+            </div>
+          </div>
+          <div class="service-card-inner" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 24px 28px; background: var(--bg-elevated); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
+            <div>
+              <h3 style="font-size: var(--h4); margin-bottom: 6px;">Hembesök av läkare och sjuksköterska</h3>
+              <p style="font-size: var(--body-sm); color: var(--fg-3); margin: 0;">Din läkare eller sjuksköterska kommer till dig — hemma, på kontoret eller var du än behöver dem.</p>
+            </div>
+            <div class="service-card-price" style="text-align: right; flex-shrink: 0;">
+              <div style="font-size: var(--caption); color: var(--fg-3);">Faktureras enligt <br/>Foundation Clinics prislista.</div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 28px;">
+          <button onclick="openPriceDrawer()" class="btn btn-outline">Fullständig prislista →</button>
+        </div>
+      </div>
+      <div class="fade-up membership-services-image" style="overflow: hidden; border-radius: var(--radius-lg); height: 520px;">
+        <img src="https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/69c11723fbd8abfea21d153a_031354cd315326fa864ff8e5f33fe118_foundation-clinic-approach2.webp" alt="Foundation Clinic" style="width: 100%; height: 100%; object-fit: cover;" />
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<section class="tailored-cta" style="position: relative; min-height: 400px; display: flex; align-items: center; justify-content: center; text-align: center; margin: 0 calc(-1 * var(--s-8)); padding: var(--s-24) var(--s-8);">
+  <div style="position: absolute; inset: 0; background-image: url('/assets/images/hikers-mountain-trail.jpg'); background-size: cover; background-position: center 85%;"></div>
+  <div style="position: absolute; inset: 0; background: rgba(46,31,20,0.55);"></div>
+  <div style="position: relative; z-index: 1; max-width: 560px;">
+    <span class="eyebrow" style="color: rgba(255,255,255,0.6);">Skräddarsydd vård</span>
+    <h2 style="color: var(--cream);">Behöver du något annat?</h2>
+    <p style="margin-top: 16px; margin-bottom: 32px; color: rgba(253,246,238,0.75);">Vi skräddarsyr gärna ett medlemskap för dig. Hör av dig för att diskutera din specifika situation och dina behov.</p>
+    <a href="/sv/contact" class="btn btn-primary" style="background: var(--cream); color: var(--espresso);">Kontakta oss</a>
+  </div>
+</section>
+
+<!-- PRISLÅDA -->
+<div class="price-drawer-overlay" id="priceDrawerOverlay" onclick="closePriceDrawer()"></div>
+<div class="price-drawer" id="priceDrawer">
+  <div class="price-drawer-header">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <h2>Fullständig prislista</h2>
+      <a href="/assets/docs/Foundation-Clinic-Price-List.pdf" download style="display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 500; color: var(--fg-3); font-family: 'Plus Jakarta Sans', sans-serif; text-decoration: none; margin-top: 2px;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Ladda ner PDF
+      </a>
+    </div>
+    <button class="price-drawer-close" onclick="closePriceDrawer()">✕</button>
+  </div>
+  <div class="price-drawer-body">
+
+<div class="drawer-section">
+  <button class="drawer-section-btn" onclick="toggleSection(this)">
+    Medlemskap
+    <svg class="drawer-section-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="drawer-section-content">
+    <div class="drawer-row"><span class="drawer-row-label">Introduktionskonsultation</span><span class="drawer-row-price">€599</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Nivå 1</span><span class="drawer-row-price">€99 / mån</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Nivå 2</span><span class="drawer-row-price">€199 / mån</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Nivå 3</span><span class="drawer-row-price">€399 / mån</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Barn</span><span class="drawer-row-price">€49 / mån</span></div>
+  </div>
+</div>
+
+<div class="drawer-section">
+  <button class="drawer-section-btn" onclick="toggleSection(this)">
+    Konsultationer
+    <svg class="drawer-section-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="drawer-section-content">
+    <p class="drawer-note" style="margin-bottom: 12px;">Grundpriser gäller mån–fre 7–21. Tidsberoende tillägg gäller utanför dessa timmar.</p>
+    <div class="drawer-subtitle">Besök på plats, video- och telefonkonsultationer</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; margin-top: 8px;">
+      <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 6px 4px; border-bottom: 1px solid #E7DCCD;">Längd</span>
+      <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 6px 4px; border-bottom: 1px solid #E7DCCD; text-align: right;">Mån–Fre</span>
+      <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 6px 4px; border-bottom: 1px solid #E7DCCD; text-align: right;">Lör 7–18</span>
+      <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 6px 4px; border-bottom: 1px solid #E7DCCD; text-align: right;">Lör / Sön / natt</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px; border-bottom: 1px solid #F2E8D9;">10 min</span>
+      <span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€118</span>
+      <span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€154</span>
+      <span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€236</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px; border-bottom: 1px solid #F2E8D9;">20 min</span>
+      <span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€145</span>
+      <span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€188</span>
+      <span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€289</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px; border-bottom: 1px solid #F2E8D9;">30 min</span>
+      <span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€198</span>
+      <span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€257</span>
+      <span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€395</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px; border-bottom: 1px solid #F2E8D9;">45 min</span>
+      <span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€234</span>
+      <span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€304</span>
+      <span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€467</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px;">60 min</span>
+      <span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px; text-align: right;">€289</span>
+      <span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px; text-align: right;">€375</span>
+      <span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px; text-align: right;">€577</span>
+    </div>
+    <div class="drawer-subtitle" style="margin-top: 14px;">Chattkonsultation (akut)</div>
+    <div class="drawer-row"><span class="drawer-row-label">Läkarkonsultation (mån–fre)</span><span class="drawer-row-price">€56</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Läkarkonsultation (lör–sön)</span><span class="drawer-row-price">€72</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Receptförnyelser</span><span class="drawer-row-price">€36</span></div>
+    <div class="drawer-subtitle" style="margin-top: 14px;">Tidsberoende tillägg</div>
+    <p class="drawer-note">Vardagar 21–7: +100% · Lördag 7–18: +30% · Lördag efter 18: +100% · Söndagar och helgdagar: +100%</p>
+    <div class="drawer-subtitle" style="margin-top: 14px;">Serviceavgifter</div>
+    <div class="drawer-row"><span class="drawer-row-label">Läkarens serviceavgift</span><span class="drawer-row-price">€39.90</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Sjuksköterskans serviceavgift</span><span class="drawer-row-price">€9.50</span></div>
+    <p class="drawer-note">Serviceavgifter gäller konsultationer utanför medlemskapet och täcker administrativa och digitala tjänster.</p>
+  </div>
+</div>
+
+<div class="drawer-section">
+  <button class="drawer-section-btn" onclick="toggleSection(this)">
+    Hembesök
+    <svg class="drawer-section-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="drawer-section-content">
+    <div class="drawer-row"><span class="drawer-row-label">Läkarens hembesök (Helsingfors och Esbo)</span><span class="drawer-row-price">Enligt längd inkl. resa (min. 1h)</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Sjuksköterskans hembesök (Helsingfors och Esbo)</span><span class="drawer-row-price">€175 / h inkl. resa</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Övriga hembesök</span><span class="drawer-row-price">Pris på begäran</span></div>
+  </div>
+</div>
+
+<div class="drawer-section">
+  <button class="drawer-section-btn" onclick="toggleSection(this)">
+    Läkare tillgänglig dygnet runt
+    <svg class="drawer-section-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="drawer-section-content">
+    <div class="drawer-row"><span class="drawer-row-label">Första vuxen</span><span class="drawer-row-price">€899 / mån</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Andra vuxen eller barn från samma hushåll</span><span class="drawer-row-price">€299 / mån</span></div>
+  </div>
+</div>
+
+<div class="drawer-section">
+  <button class="drawer-section-btn" onclick="toggleSection(this)">
+    Utökade laboratoriepaket
+    <svg class="drawer-section-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="drawer-section-content">
+    <div class="drawer-row"><span class="drawer-row-label">Utökat blodstatus</span><span class="drawer-row-price">€199</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Hjärta och cirkulation</span><span class="drawer-row-price">€99</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Hjärta och cirkulation, utökat</span><span class="drawer-row-price">€199</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Nutrition</span><span class="drawer-row-price">€99</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Prestation, kvinnor</span><span class="drawer-row-price">€99</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Prestation, män</span><span class="drawer-row-price">€99</span></div>
+  </div>
+</div>
+
+<div class="drawer-section">
+  <button class="drawer-section-btn" onclick="toggleSection(this)">
+    Enskilda laboratorietester
+    <svg class="drawer-section-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="drawer-section-content">
+    <div class="drawer-subtitle">Provtagning</div>
+    <div class="drawer-row"><span class="drawer-row-label">Hemma eller på kontoret (Helsingfors och Esbo)</span><span class="drawer-row-price">€99</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">På Foundation Clinic</span><span class="drawer-row-price">€49</span></div>
+    <div class="drawer-subtitle" style="margin-top: 14px;">Laboratorietester</div>
+    <div style="display: grid; grid-template-columns: 1fr auto auto; gap: 0; margin-top: 8px;">
+      <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 6px 4px 6px 0; border-bottom: 1px solid #E7DCCD;">Markör</span>
+      <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 6px 12px; border-bottom: 1px solid #E7DCCD;">Kod</span>
+      <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 6px 0 6px 4px; border-bottom: 1px solid #E7DCCD; text-align: right;">Från</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Alaninaminotransferas (ALT)</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-ALAT</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€39.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Alkaliskt fosfatas (ALP)</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-AFOS</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€39.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Aspartataminotransferas (AST)</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-ASAT</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€39.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Amylas</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-Amyl</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€39.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">B12-vitamin</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-B12-Vit</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€74.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Bilirubin</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-Bil</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€39.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">C-reaktivt protein (CRP)</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-CRP</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€52.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">D-vitamin (25-OH)</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-D-25</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€97.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Ferritin</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-Ferrit</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€74.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Serumiron</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">fS-Fe</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€58.10</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Transferrinmättnad</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">fS-TrFeSat</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€62.80</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Transferrin</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">fS-Transf</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€50.10</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Fasteblodsocker</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">fP-Gluk</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€39.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Gammaglutamyltransferas (GGT)</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-GT</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€40.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">HbA1c</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">B-HbA1c</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€77.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Kalium</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-K</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€42.20</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Kalcium</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-Ca</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€39.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">SR (sänka)</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">B-La</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€51.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Lipidprofil</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-Lipidit</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€93.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Natrium</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-Na</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€39.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Fullständigt blodstatus</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">B-PVK+T</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€55.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Hemoglobin</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">B-Hb</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€26.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Testosteron (totalt & fritt) + SHBG</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-Testo</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€110.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">TSH</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-TSH</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€79.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Fritt tyroxin (fT4)</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-T4-V</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€87.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Sköldkörtelpaket</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-KIPA</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€89.00</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Högkänsligt CRP (hs-CRP)</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-hs-CRP</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€74.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Lipoprotein(a)</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">fS-Lipo(a)</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€127.00</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Apolipoprotein A1</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">fS-LipoA1</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€156.00</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Apolipoprotein B</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">fS-LipoB</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€156.00</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Homocystein</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">P-Hcyst</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€99.20</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Kreatinin</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-Krea</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€51.50</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Cystatin C</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-KysC</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€87.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Magnesium</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-Mg</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€45.70</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">PSA</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-PSA</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€89.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Östradiol</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-Estradioli</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€99.20</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">FSH</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-FSH</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€99.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Prolaktin</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-PRL</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€94.20</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Folat</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">fS-Folaat</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€72.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">HIV-test</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">S-HivAgAb</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€67.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0; border-bottom: 1px solid #F2E8D9;">Kalprotektin</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px; border-bottom: 1px solid #F2E8D9;">F-Calpro</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; border-bottom: 1px solid #F2E8D9; text-align: right;">€149.90</span>
+      <span style="font-size: 12px; color: #5A4736; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 4px 8px 0;">Urinsticka</span><span style="font-size: 12px; color: #8C7866; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 12px;">U-KemSeul</span><span style="font-size: 12px; color: #2E1F14; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 8px 0 8px 4px; text-align: right;">€49.90</span>
+    </div>
+  </div>
+</div>
+
+<div class="drawer-section">
+  <button class="drawer-section-btn" onclick="toggleSection(this)">
+    Bilddiagnostik
+    <svg class="drawer-section-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="drawer-section-content">
+    <div class="drawer-subtitle">MRI, priser från</div>
+    <div class="drawer-row"><span class="drawer-row-label">Huvud</span><span class="drawer-row-price">€454</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Hals-, bröst- eller ländrygg</span><span class="drawer-row-price">€454</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Övre buk</span><span class="drawer-row-price">€454</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Utökad övre buk</span><span class="drawer-row-price">€679</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Led eller extremitet (t.ex. knä, fotled)</span><span class="drawer-row-price">€454</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Axel</span><span class="drawer-row-price">€717</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Prostata, utökad</span><span class="drawer-row-price">€679</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Bröst, utökad</span><span class="drawer-row-price">€707</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Hjärta, utökad</span><span class="drawer-row-price">€879</span></div>
+    <div class="drawer-subtitle" style="margin-top: 14px;">Röntgen, priser från</div>
+    <div class="drawer-row"><span class="drawer-row-label">Lungröntgen</span><span class="drawer-row-price">€169</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Bihålor</span><span class="drawer-row-price">€165</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Extremiteter</span><span class="drawer-row-price">€184</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Mammografi + ultraljud</span><span class="drawer-row-price">€332</span></div>
+    <div class="drawer-subtitle" style="margin-top: 14px;">Ultraljud, priser från</div>
+    <div class="drawer-row"><span class="drawer-row-label">Sköldkörtel</span><span class="drawer-row-price">€351</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Ledulltraljud</span><span class="drawer-row-price">€369</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Övre eller nedre buk</span><span class="drawer-row-price">€359</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Utökad buk</span><span class="drawer-row-price">€489</span></div>
+    <div class="drawer-subtitle" style="margin-top: 14px;">DT, priser från</div>
+    <div class="drawer-row"><span class="drawer-row-label">Huvud</span><span class="drawer-row-price">€530</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Ryggrad</span><span class="drawer-row-price">€619</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Buk</span><span class="drawer-row-price">€695</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Kranskärl</span><span class="drawer-row-price">€935</span></div>
+  </div>
+</div>
+
+<div class="drawer-section">
+  <button class="drawer-section-btn" onclick="toggleSection(this)">
+    Klinisk fysiologi och konditionstestning
+    <svg class="drawer-section-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="drawer-section-content">
+    <div class="drawer-subtitle">Klinisk fysiologi, priser från</div>
+    <div class="drawer-row"><span class="drawer-row-label">EKG (12-avledning)</span><span class="drawer-row-price">€99</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Spirometri</span><span class="drawer-row-price">€30</span></div>
+    <div class="drawer-subtitle" style="margin-top: 14px;">Konditionstestning</div>
+    <p class="drawer-note" style="margin-bottom: 10px;">Priserna inkluderar 25,5 % moms.</p>
+    <div class="drawer-row"><span class="drawer-row-label">VO2max, laktat- och ventilationströsklar, med kliniker-bedömning</span><span class="drawer-row-price">€500</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">VO2max, laktat- och ventilationströsklar</span><span class="drawer-row-price">€295</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">VO2max, ventilationströsklar</span><span class="drawer-row-price">€275</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Maximalt aerobt test, laktattrösklar</span><span class="drawer-row-price">€250</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Submaximalt 3–5-stegstest (modifierat WHO)</span><span class="drawer-row-price">€185</span></div>
+  </div>
+</div>
+
+<div class="drawer-section">
+  <button class="drawer-section-btn" onclick="toggleSection(this)">
+    Vaccinationer
+    <svg class="drawer-section-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="drawer-section-content">
+    <p class="drawer-note" style="margin-bottom: 10px;">Priserna inkluderar 13,5 % moms.</p>
+    <div class="drawer-row"><span class="drawer-row-label">Bexsero (meningokock B)</span><span class="drawer-row-price">€151.70</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Boostrix (dTpa-boost)</span><span class="drawer-row-price">€39.67</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Fluenz (nasal influensa)</span><span class="drawer-row-price">€41.27</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Gardasil 9 (HPV)</span><span class="drawer-row-price">€228.82</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Nimenrix (meningokock ACWY)</span><span class="drawer-row-price">€74.08</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Prevenar 20 (pneumokock)</span><span class="drawer-row-price">€96.50</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Shingrix (bältros)</span><span class="drawer-row-price">€246.75</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Ticovac (fästingburen encefalit)</span><span class="drawer-row-price">€36.94</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Ticovac Jr.</span><span class="drawer-row-price">€33.62</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Vaxigrip (influensa)</span><span class="drawer-row-price">€8.33</span></div>
+  </div>
+</div>
+
+<div class="drawer-section">
+  <button class="drawer-section-btn" onclick="toggleSection(this)">
+    Genetiska tester
+    <svg class="drawer-section-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="drawer-section-content">
+    <div class="drawer-row"><span class="drawer-row-label">HERTTA kardiovaskulär screening (CREST)</span><span class="drawer-row-price">€160</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Farmakogenetikpanel</span><span class="drawer-row-price">€389</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Stockholm3 prostatacancertest</span><span class="drawer-row-price">€400</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Laktosintoleranstest</span><span class="drawer-row-price">€110.90</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Brett förebyggande genpanel (181 gener)</span><span class="drawer-row-price">€900</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Brett cancerdispositionspanel (62 gener)</span><span class="drawer-row-price">€800</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Riktat test för enstaka gen</span><span class="drawer-row-price">€900</span></div>
+  </div>
+</div>
+
+<div class="drawer-section">
+  <button class="drawer-section-btn" onclick="toggleSection(this)">
+    Avbokningar och övriga avgifter
+    <svg class="drawer-section-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="drawer-section-content">
+    <p class="drawer-note">Tider kan avbokas kostnadsfritt upp till 24 timmar i förväg. Sen avbokning eller uteblivet besök kan debiteras hela besöksavgiften.</p>
+    <div class="drawer-subtitle" style="margin-top: 12px;">Faktureras separat utöver konsultationsavgifter</div>
+    <p class="drawer-note">Åtgärder under besöket · Intyg och recept · Telefonkontakter · Laboratorietester, biopsier och vävnadsprover · Receptförnyelser · Hjälpmedel · Vaccinationer · Bilddiagnostik</p>
+    <div class="drawer-subtitle" style="margin-top: 12px;">FPA-ersättningar (finsk socialförsäkring)</div>
+    <div class="drawer-row"><span class="drawer-row-label">Besök på plats</span><span class="drawer-row-price">€30.00</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Videobesök</span><span class="drawer-row-price">€25.00</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Telefon- / chattbesök</span><span class="drawer-row-price">€8.00</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Läkarintyg B</span><span class="drawer-row-price">€9.00–€15.00</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Läkarintyg A eller D</span><span class="drawer-row-price">€5.00</span></div>
+  </div>
+</div>
+
+    <p class="drawer-note" style="margin-top: 24px;">Alla priser för hälso- och sjukvårdstjänster är momsbefriade (0 % moms) om inget annat anges. Läkare är självständiga yrkesutövare och sätter sina egna avgifter; visade priser är vägledande.</p>
+
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    const drawer = document.getElementById('priceDrawer');
+    const overlay = document.getElementById('priceDrawerOverlay');
+    document.body.appendChild(overlay);
+    document.body.appendChild(drawer);
+  });
+  function openPriceDrawer() {
+    document.getElementById('priceDrawer').classList.add('open');
+    document.getElementById('priceDrawerOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePriceDrawer() {
+    document.getElementById('priceDrawer').classList.remove('open');
+    document.getElementById('priceDrawerOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function toggleSection(btn) {
+    const content = btn.nextElementSibling;
+    const isOpen = content.classList.contains('open');
+    content.classList.toggle('open', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+  }
+</script>
 
 </Base>
