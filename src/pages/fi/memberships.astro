@@ -247,7 +247,7 @@ import Base from '../../layouts/Base.astro';
             <span style="font-family: var(--font-display); font-size: 2.4rem; color: var(--cream);">€599</span>
             <span style="font-size: var(--body-sm); color: var(--t-50);">Alkukartoitus</span>
           </div>
-          <p style="font-size: var(--caption); color: var(--t-30); line-height: 1.7;">Sisältää lääkärin haastattelun, terveystietojen läpikäynnin, kliinisen tutkimuksen ja kattavan laboratoriopaketin.</p>
+          <p style="font-size: var(--caption); color: var(--t-30); line-height: 1.7;">Sisältää kattavan lääkärin haastattelun ja terveyshistorian läpikäynnin, EKG:n, spirometrian, dermatoskopian, laajan laboratoriopaketin, henkilökohtaisen terveyssuunnitelman sekä suunnitelman läpikäynnin lääkärin kanssa.</p>
         </div>
       </div>
       <div style="display: flex; flex-direction: column; gap: var(--s-6);">
@@ -262,19 +262,31 @@ import Base from '../../layouts/Base.astro';
         <div>
           <span class="eyebrow">Laajennetut laboratoriopaketit</span>
           <div style="display: flex; flex-direction: column; gap: 6px; margin-top: var(--s-3);">
-            {[
-              { name: 'Laajennettu verenkuva', price: '€199' },
-              { name: 'Sydän ja verenkierto', price: '€99' },
-              { name: 'Sydän ja verenkierto, laajennettu', price: '€199' },
-              { name: 'Ravitsemus', price: '€99' },
-              { name: 'Suorituskyky, miehet', price: '€99' },
-              { name: 'Suorituskyky, naiset', price: '€99' },
-            ].map(pkg => (
-              <div class="pkg-row" style="display: flex; justify-content: space-between; align-items: center; background: var(--bg-elevated); border: 1px solid var(--t-15); border-radius: var(--radius-md);">
-                <span style="color: var(--fg-2);">{pkg.name}</span>
-                <span style="font-weight: 600; color: var(--fg-1); white-space: nowrap; margin-left: 12px;">{pkg.price}</span>
-              </div>
-            ))}
+            <div>
+  <div style="display: flex; flex-direction: column; gap: 6px; margin-top: var(--s-3);">
+    {[
+      { name: 'Alkukartoitus, laajennettu', price: '€199', tests: 'Lp(a) · Apolipoproteiinit A1 & B · Herkkä-CRP · Homokysteiini · Bilirubiini · Konjugoitu bilirubiini · PSA · TSH · T4V · Kokonais- ja vapaa testosteroni · SHBG · Folaatti · Magnesium · Tansferriini · Transferriinisaturaatio ja -reseptori · Ferritiini · Fosfaatti · Kokonaisproteiini · Prealbumiini · Virtsan albumiini-kreatiniini -suhde' },
+      { name: 'Sydän ja verenkierto', price: '€99', tests: 'Lp(a) · Apolipoproteiinit A1 & B · Herkkä-CRP · Homokysteiini' },
+      { name: 'Sydän ja verenkierto, laajennettu', price: '€199', tests: 'Lp(a) · Apolipoproteiinit A1 & B · Herkkä-CRP · Homokysteiini · Keramidit (HERTTA)' },
+      { name: 'Ravitsemus', price: '€99', tests: 'CDT · Folaatti · Magnesium · Transferriini · Transferriinisaturaatio ja -reseptori · Ferritiini · T4V · Fosfaatti · Kokonaisproteiini · Pre-albumiini' },
+      { name: 'Suorituskyky, miehet', price: '€99', tests: 'T4V · Magnesium · Transferriini · Transferriinisaturaatio ja -reseptori · Kokonais- ja vapaa testosteroni · SHBG · Lasko' },
+      { name: 'Suorituskyky, naiset', price: '€99', tests: 'T4V · Magnesium · Transferriini · Transferriinisaturaatio ja -reseptori · FSH · Estradioli · Prolaktiini · Lasko' },
+    ].map((pkg, i) => (
+      <div class="pkg-accordion" style="background: var(--bg-elevated); border: 1px solid var(--t-15); border-radius: var(--radius-md);">
+        <button class="pkg-row" onclick={`togglePkg(${i})`} style="display: flex; justify-content: space-between; align-items: center; width: 100%; background: none; border: none; cursor: pointer; text-align: left;">
+          <span style="color: var(--fg-2);">{pkg.name}</span>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="font-weight: 600; color: var(--fg-1); white-space: nowrap;">{pkg.price}</span>
+            <svg class={`pkg-chevron pkg-chevron-${i}`} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--fg-3); flex-shrink: 0; transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </button>
+        <div class={`pkg-content pkg-content-${i}`} style="display: none; padding: 0 14px 12px; font-size: 11px; color: var(--fg-3); line-height: 1.7;">
+          {pkg.tests}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
           </div>
         </div>
       </div>
@@ -363,8 +375,8 @@ import Base from '../../layouts/Base.astro';
             </div>
             <div class="service-card-price" style="text-align: right; flex-shrink: 0;">
               <div style="font-family: var(--font-display); font-size: 1.4rem; color: var(--fg-1);">€899</div>
-              <div style="font-size: var(--caption); color: var(--fg-3);">ensimmäinen jäsen</div>
-              <div style="font-size: var(--caption); color: var(--fg-3); margin-top: 4px;">€299 toinen jäsen</div>
+              <div style="font-size: var(--caption); color: var(--fg-3);">ensimmäinen perheenjäsen</div>
+              <div style="font-size: var(--caption); color: var(--fg-3); margin-top: 4px;">€299 toinen perheenjäsen</div>
             </div>
           </div>
           <div class="service-card-inner" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 24px 28px; background: var(--bg-elevated); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
@@ -513,7 +525,7 @@ import Base from '../../layouts/Base.astro';
     <svg class="drawer-section-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
   </button>
   <div class="drawer-section-content">
-    <div class="drawer-row"><span class="drawer-row-label">Laajennettu verenkuva</span><span class="drawer-row-price">€199</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Alkukartoitus, laajennettu</span><span class="drawer-row-price">€199</span></div>
     <div class="drawer-row"><span class="drawer-row-label">Sydän ja verenkierto</span><span class="drawer-row-price">€99</span></div>
     <div class="drawer-row"><span class="drawer-row-label">Sydän ja verenkierto, laajennettu</span><span class="drawer-row-price">€199</span></div>
     <div class="drawer-row"><span class="drawer-row-label">Ravitsemus</span><span class="drawer-row-price">€99</span></div>
@@ -718,5 +730,13 @@ import Base from '../../layouts/Base.astro';
     btn.classList.toggle('open', !isOpen);
   }
 </script>
-
+<script is:inline>
+  function togglePkg(i) {
+    const content = document.querySelector(`.pkg-content-${i}`);
+    const chevron = document.querySelector(`.pkg-chevron-${i}`);
+    const isOpen = content.style.display === 'block';
+    content.style.display = isOpen ? 'none' : 'block';
+    chevron.style.transform = isOpen ? '' : 'rotate(180deg)';
+  }
+</script>
 </Base>

@@ -251,7 +251,7 @@ import Base from '../../layouts/Base.astro';
             <span style="font-family: var(--font-display); font-size: 2.4rem; color: var(--cream);">€599</span>
             <span style="font-size: var(--body-sm); color: var(--t-50);">one-time fee</span>
           </div>
-          <p style="font-size: var(--caption); color: var(--t-30); line-height: 1.7;">Includes a doctor interview, review of your health data, clinical examination, and a comprehensive laboratory panel.</p>
+          <p style="font-size: var(--caption); color: var(--t-30); line-height: 1.7;">Includes a comprehensive doctor interview and health history review, ECG, spirometry, dermatoscopy, full laboratory panel, a personalised health plan, and a follow-up appointment to review the plan together with your doctor.</p>
         </div>
       </div>
       <div style="display: flex; flex-direction: column; gap: var(--s-6);">
@@ -267,18 +267,26 @@ import Base from '../../layouts/Base.astro';
           <span class="eyebrow">Extended laboratory packages</span>
           <div style="display: flex; flex-direction: column; gap: 6px; margin-top: var(--s-3);">
             {[
-              { name: 'Extended blood count', price: '€199' },
-              { name: 'Heart and circulation', price: '€99' },
-              { name: 'Heart and circulation, extended', price: '€199' },
-              { name: 'Nutrition', price: '€99' },
-              { name: 'Performance, men', price: '€99' },
-              { name: 'Performance, women', price: '€99' },
-            ].map(pkg => (
-              <div class="pkg-row" style="display: flex; justify-content: space-between; align-items: center; background: var(--bg-elevated); border: 1px solid var(--t-15); border-radius: var(--radius-md);">
-                <span style="color: var(--fg-2);">{pkg.name}</span>
-                <span style="font-weight: 600; color: var(--fg-1); white-space: nowrap; margin-left: 12px;">{pkg.price}</span>
-              </div>
-            ))}
+  { name: 'Onboarding, extended', price: '€199', tests: 'Lp(a) · Apolipoproteins A1 & B · High-sensitivity CRP · Homocysteine · Bilirubin · Conjugated bilirubin · PSA · TSH · fT4 · Total and free testosterone · SHBG · Folate · Magnesium · Transferrin · Transferrin saturation and receptor · Ferritin · Phosphate · Total protein · Prealbumin · Urine albumin-creatinine ratio' },
+  { name: 'Heart and circulation', price: '€99', tests: 'Lp(a) · Apolipoproteins A1 & B · High-sensitivity CRP · Homocysteine' },
+  { name: 'Heart and circulation, extended', price: '€199', tests: 'Lp(a) · Apolipoproteins A1 & B · High-sensitivity CRP · Homocysteine · Ceramides (HERTTA)' },
+  { name: 'Nutrition', price: '€99', tests: 'CDT · Folate · Magnesium · Transferrin · Transferrin saturation and receptor · Ferritin · fT4 · Phosphate · Total protein · Prealbumin' },
+  { name: 'Performance, men', price: '€99', tests: 'fT4 · Magnesium · Transferrin · Transferrin saturation and receptor · Total and free testosterone · SHBG · ESR' },
+  { name: 'Performance, women', price: '€99', tests: 'fT4 · Magnesium · Transferrin · Transferrin saturation and receptor · FSH · Oestradiol · Prolactin · ESR' },
+].map((pkg, i) => (
+  <div class="pkg-accordion" style="background: var(--bg-elevated); border: 1px solid var(--t-15); border-radius: var(--radius-md);">
+    <button class="pkg-row" onclick={`togglePkg(${i})`} style="display: flex; justify-content: space-between; align-items: center; width: 100%; background: none; border: none; cursor: pointer; text-align: left;">
+      <span style="color: var(--fg-2);">{pkg.name}</span>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-weight: 600; color: var(--fg-1); white-space: nowrap;">{pkg.price}</span>
+        <svg class={`pkg-chevron pkg-chevron-${i}`} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--fg-3); flex-shrink: 0; transition: transform 0.2s ease;"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+    </button>
+    <div class={`pkg-content pkg-content-${i}`} style="display: none; padding: 0 14px 12px; font-size: 11px; color: var(--fg-3); line-height: 1.7;">
+      {pkg.tests}
+    </div>
+  </div>
+))}
           </div>
         </div>
       </div>
@@ -367,8 +375,8 @@ import Base from '../../layouts/Base.astro';
             </div>
             <div class="service-card-price" style="text-align: right; flex-shrink: 0;">
               <div style="font-family: var(--font-display); font-size: 1.4rem; color: var(--fg-1);">€899</div>
-              <div style="font-size: var(--caption); color: var(--fg-3);">first member</div>
-              <div style="font-size: var(--caption); color: var(--fg-3); margin-top: 4px;">€299 second member</div>
+              <div style="font-size: var(--caption); color: var(--fg-3);">first family member</div>
+              <div style="font-size: var(--caption); color: var(--fg-3); margin-top: 4px;">€299 second family member</div>
             </div>
           </div>
           <div class="service-card-inner" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 24px 28px; background: var(--bg-elevated); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
@@ -522,7 +530,7 @@ import Base from '../../layouts/Base.astro';
     <svg class="drawer-section-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
   </button>
   <div class="drawer-section-content">
-    <div class="drawer-row"><span class="drawer-row-label">Extended blood count</span><span class="drawer-row-price">€199</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Onboarding package, extended</span><span class="drawer-row-price">€199</span></div>
     <div class="drawer-row"><span class="drawer-row-label">Heart and circulation</span><span class="drawer-row-price">€99</span></div>
     <div class="drawer-row"><span class="drawer-row-label">Heart and circulation, extended</span><span class="drawer-row-price">€199</span></div>
     <div class="drawer-row"><span class="drawer-row-label">Nutrition</span><span class="drawer-row-price">€99</span></div>
@@ -728,5 +736,13 @@ import Base from '../../layouts/Base.astro';
     btn.classList.toggle('open', !isOpen);
   }
 </script>
-
+<script is:inline>
+  function togglePkg(i) {
+    const content = document.querySelector(`.pkg-content-${i}`);
+    const chevron = document.querySelector(`.pkg-chevron-${i}`);
+    const isOpen = content.style.display === 'block';
+    content.style.display = isOpen ? 'none' : 'block';
+    chevron.style.transform = isOpen ? '' : 'rotate(180deg)';
+  }
+</script>
 </Base>

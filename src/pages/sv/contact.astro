@@ -1,14 +1,14 @@
 ---
 import Base from '../../layouts/Base.astro';
 ---
-<Base title="Kontakta oss" lang="sv">
+<Base title="Kontakt" description="Kontakta Foundation Clinic." lang="sv">
 
-<section class="hero-subpage">
-    <div class="hero-bg" style="background-image: url('https://cdn.prod.website-files.com/67812a141d8f2465fe6175eb/69b654aa5269f9cb772aecd8_FoundationClinic_interior_9.jpg');"></div>
+<section class="hero-subpage contact-hero">
+    <div class="hero-bg contact-hero-bg" style="background-image: url('/assets/images/avocados.jpg');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <span class="hero-eyebrow">Kontakta oss</span>
-      <h1 class="hero-headline">Hör av dig – vi hjälper dig gärna.</h1>
+      <span class="hero-eyebrow">Kontakt</span>
+      <h1 class="hero-headline">Låt oss prata om din hälsa.</h1>
       <p class="hero-lead">Vi svarar på alla e-postmeddelanden inom 24 timmar.</p>
     </div>
   </section>
@@ -18,25 +18,25 @@ import Base from '../../layouts/Base.astro';
       <div class="split fade-up">
         <div>
           <span class="eyebrow">Skicka ett meddelande</span>
-          <h2 style="margin-bottom: 32px;">Kom i kontakt.</h2>
+          <h2 style="margin-bottom: 32px;">Hör av dig.</h2>
           <form class="contact-form" action="https://formspree.io/f/hello@foundation.clinic" method="POST">
             <div class="form-row">
               <div class="form-group">
                 <label for="first-name">Förnamn</label>
-                <input type="text" id="first-name" name="first_name" placeholder="Anna" required />
+                <input type="text" id="first-name" name="first_name" required />
               </div>
               <div class="form-group">
                 <label for="last-name">Efternamn</label>
-                <input type="text" id="last-name" name="last_name" placeholder="Virtanen" required />
+                <input type="text" id="last-name" name="last_name" required />
               </div>
             </div>
             <div class="form-group">
               <label for="email">E-post</label>
-              <input type="email" id="email" name="email" placeholder="anna@exempel.fi" required />
+              <input type="email" id="email" name="email" required />
             </div>
             <div class="form-group">
               <label for="phone">Telefon (valfritt)</label>
-              <input type="tel" id="phone" name="phone" placeholder="+358 40 123 4567" />
+              <input type="tel" id="phone" name="phone" />
             </div>
             <div class="form-group">
               <label for="interest">Jag är intresserad av</label>
@@ -44,35 +44,31 @@ import Base from '../../layouts/Base.astro';
                 <option value="">Välj ett alternativ</option>
                 <option value="membership">Att bli medlem</option>
                 <option value="family">Familjemedlemskap</option>
-                <option value="corporate">Företagssamarbete</option>
-                <option value="other">Annat</option>
+                <option value="corporate">Företags- eller partnerförfrågan</option>
+                <option value="other">Något annat</option>
               </select>
             </div>
             <div class="form-group">
               <label for="message">Meddelande</label>
-              <textarea id="message" name="message" placeholder="Berätta vad du letar efter..."></textarea>
+              <textarea id="message" name="message" placeholder="Berätta kort vad du söker..."></textarea>
             </div>
             <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Skicka meddelande</button>
             <p style="font-size: var(--caption); color: var(--fg-3); margin-top: 12px; text-align: center;">Vi återkommer inom 24 timmar.</p>
           </form>
         </div>
         <div style="display: flex; flex-direction: column; gap: 16px;">
-          <span class="eyebrow">Direkt kontakt</span>
+          <span class="eyebrow">Direktkontakt</span>
           <div style="padding: 20px 24px; background: var(--bg-surface); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
             <p style="font-size: var(--caption); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--fg-3); margin-bottom: 6px;">E-post</p>
             <a href="mailto:hello@foundation.clinic" style="font-size: var(--body); color: var(--teal); font-weight: 500;">hello@foundation.clinic</a>
           </div>
           <div style="padding: 20px 24px; background: var(--bg-surface); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
             <p style="font-size: var(--caption); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--fg-3); margin-bottom: 6px;">Telefon</p>
-            <a href="tel:+358407268383" style="font-size: var(--body); color: var(--fg-1); font-weight: 500;">+358 40 726 8383</a>
+            <a href="tel:+358407268383" style="font-size: var(--body); color: var(--fg-1); font-weight: 500;">+358 44 902 5885</a>
           </div>
           <div style="padding: 20px 24px; background: var(--bg-surface); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
             <p style="font-size: var(--caption); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--fg-3); margin-bottom: 6px;">Adress</p>
             <p style="font-size: var(--body); color: var(--fg-1);">Ratakatu 29 a 4<br>00120 Helsingfors, Finland</p>
-          </div>
-          <div style="padding: 20px 24px; background: var(--bg-surface); border: 1px solid var(--t-15); border-radius: var(--radius-lg);">
-            <p style="font-size: var(--caption); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--fg-3); margin-bottom: 6px;">Öppettider</p>
-            <p style="font-size: var(--body); color: var(--fg-1);">Måndag–Fredag<br>9:00–17:00</p>
           </div>
         </div>
       </div>

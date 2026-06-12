@@ -2,6 +2,8 @@
 const { lang = 'en' } = Astro.props;
 const base = lang === 'fi' ? '/fi' : lang === 'sv' ? '/sv' : '/en';
 const langLabel = lang === 'fi' ? 'FI' : lang === 'sv' ? 'SV' : 'EN';
+const currentPath = Astro.url.pathname;
+const basePath = currentPath.replace(/^\/(fi|sv|en)/, '') || '/';
 ---
 <nav class="nav" id="nav">
   <div class="nav-inner">
@@ -45,9 +47,9 @@ const langLabel = lang === 'fi' ? 'FI' : lang === 'sv' ? 'SV' : 'EN';
     </div>
     <div class="nav-right">
       <div class="lang-switcher lang-switcher-desktop">
-        <a href="/en/" class={lang === 'en' ? 'active' : ''}>EN</a>
-        <a href="/fi/" class={lang === 'fi' ? 'active' : ''}>FI</a>
-        <a href="/sv/" class={lang === 'sv' ? 'active' : ''}>SV</a>
+        <a href={`/en${basePath}`} class={lang === 'en' ? 'active' : ''}>EN</a>
+<a href={`/fi${basePath}`} class={lang === 'fi' ? 'active' : ''}>FI</a>
+<a href={`/sv${basePath}`} class={lang === 'sv' ? 'active' : ''}>SV</a>
       </div>
       <a href={`${base}/contact`} class="nav-cta nav-cta-desktop-only">
         <span>{ lang === 'fi' ? 'Ota yhteyttä' : lang === 'sv' ? 'Kontakta oss' : 'Contact Us' }</span>

@@ -13,9 +13,9 @@ import Base from '../../layouts/Base.astro';
   <div class="hero-bg" style="background-image: url('/assets/images/helsinki-cathedral2.jpg'); background-position: center 50%;"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <span class="hero-eyebrow">Platser</span>
-    <h1 class="hero-headline">Var du hittar oss.</h1>
-    <p class="hero-lead">Två kliniker, global räckvidd.</p>
+    <span class="hero-eyebrow">Våra kliniker</span>
+    <h1 class="hero-headline">Din läkare, där du är.</h1>
+    <p class="hero-lead">Helsingfors, Åbo, Paris eller Tokyo.</p>
   </div>
 </section>
 
@@ -51,20 +51,23 @@ import Base from '../../layouts/Base.astro';
 
       <div>
         <span class="eyebrow">Vård utomlands</span>
-        <h2 style="margin-bottom: var(--s-4);">Eller var du än befinner dig.</h2>
-        <p>Även där vi inte har en egen klinik kan din läkare erbjuda bästa möjliga vård via vårt nätverk.</p>
+        <h2 style="margin-bottom: var(--s-4);">I Zürich och London.</h2>
+        <p>Din läkare kan erbjuda aktuell och personlig vård via vårt nätverk även utomlands.</p>
 
         <div style="overflow: hidden; border-radius: var(--radius-lg); height: 360px; margin-top: var(--s-8);">
           <img src="/assets/images/new york.jpg" alt="Vård utomlands" style="width: 100%; height: 100%; object-fit: cover; object-position: center 40%;" />
         </div>
 
-        <div style="margin-top: var(--s-6); display: flex; flex-wrap: wrap; gap: 8px;">
-          {['🇩🇪 Tyskland', '🇭🇰 Hongkong', '🇪🇸 Spanien', '🇨🇭 Schweiz', '🇬🇧 Storbritannien', '🇺🇸 USA'].map(c => (
-            <span style="font-size: var(--body-sm); color: var(--fg-2); background: var(--bg-sunken); border: 1px solid var(--t-15); border-radius: var(--radius-sm); padding: 4px 10px;">{c}</span>
-          ))}
-        </div>
-        <div style="margin-top: var(--s-5);">
-          <a href="/sv/care-abroad" class="btn btn-outline">→</a>
+        <div style="margin-top: var(--s-6);">
+          <span style="font-size: var(--caption); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-3); display: block; margin-bottom: var(--s-3);">Var våra klienter finns</span>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            {['🇩🇪 Tyskland', '🇭🇰 Hongkong', '🇪🇸 Spanien', '🇨🇭 Schweiz', '🇬🇧 Storbritannien', '🇺🇸 USA'].map(c => (
+              <span style="font-size: var(--body-sm); color: var(--fg-2); background: var(--bg-sunken); border: 1px solid var(--t-15); border-radius: var(--radius-sm); padding: 4px 10px;">{c}</span>
+            ))}
+          </div>
+          <div style="margin-top: var(--s-5);">
+            <a href="/sv/care-abroad" class="btn btn-outline">→</a>
+          </div>
         </div>
       </div>
     </div>
