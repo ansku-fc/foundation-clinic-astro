@@ -13,6 +13,9 @@ const { title, description, lang = 'en' } = Astro.props;
   <title>{title} | Foundation Clinic</title>
   {description && <meta name="description" content={description} />}
   <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 </head>
 <body>
   <Nav lang={lang} />
