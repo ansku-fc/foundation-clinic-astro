@@ -1,3 +1,24 @@
 ---
-return Astro.redirect('/en/', 301);
 ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Medical Care | Foundation Clinic</title>
+  <meta name="description" content="Dedicated medical care, tailored to you." />
+  <meta property="og:title" content="Personal Medical Care | Foundation Clinic" />
+  <meta property="og:description" content="Dedicated medical care, tailored to you." />
+  <meta property="og:url" content="https://foundation.clinic/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://foundation.clinic/assets/images/hero-bg.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script>
+    const lang = navigator.language?.slice(0, 2);
+    if (lang === 'fi') window.location.replace('/fi/');
+    else if (lang === 'sv') window.location.replace('/sv/');
+    else window.location.replace('/en/');
+  </script>
+</head>
+<body></body>
+</html>
