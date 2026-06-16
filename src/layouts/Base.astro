@@ -12,6 +12,12 @@ const { title, description, lang = 'en' } = Astro.props;
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title} | Foundation Clinic</title>
   {description && <meta name="description" content={description} />}
+  <meta property="og:title" content={`${title} | Foundation Clinic`} />
+  {description && <meta property="og:description" content={description} />}
+  <meta property="og:url" content={`https://foundation.clinic/${lang !== 'en' ? lang + '/' : ''}`} />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://foundation.clinic/assets/images/hero-bg.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="/assets/css/style.css" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
