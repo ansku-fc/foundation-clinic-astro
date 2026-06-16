@@ -264,8 +264,8 @@ import Base from '../../layouts/Base.astro';
               { name: 'Hjärta och cirkulation', price: '€99', tests: 'Lp(a) · Apolipoproteiner A1 & B · Högkänsligt CRP · Homocystein' },
               { name: 'Hjärta och cirkulation, utökat', price: '€199', tests: 'Lp(a) · Apolipoproteiner A1 & B · Högkänsligt CRP · Homocystein · Ceramider (HERTTA)' },
               { name: 'Näring', price: '€99', tests: 'CDT · Folat · Magnesium · Transferrin · Transferrinmättnad och -receptor · Ferritin · fT4 · Fosfat · Totalprotein · Prealbumin' },
-              { name: 'Prestation, män', price: '€99', tests: 'fT4 · Magnesium · Transferrin · Transferrinmättnad och -receptor · Totalt och fritt testosteron · SHBG · SR' },
-              { name: 'Prestation, kvinnor', price: '€99', tests: 'fT4 · Magnesium · Transferrin · Transferrinmättnad och -receptor · FSH · Östradiol · Prolaktin · SR' },
+              { name: 'Prestatanda, män', price: '€99', tests: 'fT4 · Magnesium · Transferrin · Transferrinmättnad och -receptor · Totalt och fritt testosteron · SHBG · SR' },
+              { name: 'Prestanda, kvinnor', price: '€99', tests: 'fT4 · Magnesium · Transferrin · Transferrinmättnad och -receptor · FSH · Östradiol · Prolaktin · SR' },
             ].map((pkg, i) => (
               <div class="pkg-accordion" style="background: var(--bg-elevated); border: 1px solid var(--t-15); border-radius: var(--radius-md);">
                 <button class="pkg-row" onclick={`togglePkg(${i})`} style="display: flex; justify-content: space-between; align-items: center; width: 100%; background: none; border: none; cursor: pointer; text-align: left;">
@@ -519,8 +519,8 @@ import Base from '../../layouts/Base.astro';
     <div class="drawer-row"><span class="drawer-row-label">Hjärta och cirkulation</span><span class="drawer-row-price">€99</span></div>
     <div class="drawer-row"><span class="drawer-row-label">Hjärta och cirkulation, utökat</span><span class="drawer-row-price">€199</span></div>
     <div class="drawer-row"><span class="drawer-row-label">Näring</span><span class="drawer-row-price">€99</span></div>
-    <div class="drawer-row"><span class="drawer-row-label">Prestation, kvinnor</span><span class="drawer-row-price">€99</span></div>
-    <div class="drawer-row"><span class="drawer-row-label">Prestation, män</span><span class="drawer-row-price">€99</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Prestanda, kvinnor</span><span class="drawer-row-price">€99</span></div>
+    <div class="drawer-row"><span class="drawer-row-label">Prestanda, män</span><span class="drawer-row-price">€99</span></div>
   </div>
 </div>
 
