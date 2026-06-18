@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro';
 import WhatsApp from '../components/WhatsApp.astro';
 
 const { title, description, lang = 'en' } = Astro.props;
+const path = Astro.url.pathname.replace(/^\/(en|fi|sv)/, '') || '/';
 ---
 <!DOCTYPE html>
 <html lang={lang}>
@@ -18,6 +19,10 @@ const { title, description, lang = 'en' } = Astro.props;
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://foundation.clinic/assets/images/hero-bg.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="en" href={`https://foundation.clinic/en${path}`} />
+  <link rel="alternate" hreflang="fi" href={`https://foundation.clinic/fi${path}`} />
+  <link rel="alternate" hreflang="sv" href={`https://foundation.clinic/sv${path}`} />
+  <link rel="alternate" hreflang="x-default" href={`https://foundation.clinic/en${path}`} />
   <link rel="stylesheet" href="/assets/css/style.css" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
