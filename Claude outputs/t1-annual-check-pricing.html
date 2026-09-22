@@ -1,0 +1,202 @@
+<title>T1 Annual Check Pricing</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+  :root{
+    --surface-1:#fcfcfb; --surface-2:#f4f3ef; --border:#e5e3dc;
+    --ink:#161512; --ink-2:#57554e; --ink-3:#8f8d84;
+    --free:#eb6834; --c99:#2a78d6; --c149:#1baf7a; --ref:#9a988f; --target:#c0392b;
+    --good:#1baf7a; --warn:#eda100;
+    color-scheme:light;
+  }
+  :root:not([data-theme="light"]){ @media (prefers-color-scheme:dark){
+    --surface-1:#191917; --surface-2:#222220; --border:#33322e;
+    --ink:#f4f3ee; --ink-2:#c3c2b7; --ink-3:#8f8d84;
+    --free:#d95926; --c99:#3987e5; --c149:#199e70; --ref:#7d7b73; --target:#e5675a;
+    color-scheme:dark;
+  }}
+  :root[data-theme="dark"]{
+    --surface-1:#191917; --surface-2:#222220; --border:#33322e;
+    --ink:#f4f3ee; --ink-2:#c3c2b7; --ink-3:#8f8d84;
+    --free:#d95926; --c99:#3987e5; --c149:#199e70; --ref:#7d7b73; --target:#e5675a;
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--surface-1);color:var(--ink);
+    font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:820px;margin:0 auto;padding-block:32px;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right));}
+  h1{font-size:23px;line-height:1.25;margin:0 0 2px;letter-spacing:-.01em;}
+  .sub{color:var(--ink-3);font-size:13px;margin:0 0 22px;}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);margin:30px 0 10px;font-weight:600;}
+  p{margin:0 0 12px;}
+  .tldr{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin:0 0 6px;}
+  .tldr b{color:var(--ink);}
+  .pill{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:20px;vertical-align:middle;}
+  .pill.rec{background:color-mix(in srgb,var(--good) 16%,transparent);color:var(--c149);}
+  table{width:100%;border-collapse:collapse;font-size:14px;margin:2px 0 6px;}
+  th,td{text-align:right;padding:8px 10px;border-bottom:1px solid var(--border);}
+  th:first-child,td:first-child{text-align:left;}
+  thead th{color:var(--ink-3);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em;border-bottom:1.5px solid var(--border);}
+  tbody tr:last-child td{border-bottom:none;}
+  td.pos{color:var(--c149);font-weight:600;} td.mid{color:var(--warn);font-weight:600;} td.neg{color:var(--free);font-weight:600;}
+  .dot{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:7px;vertical-align:middle;}
+  .chartcard{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:14px 12px 6px;margin:6px 0 4px;}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--ink-2);padding:2px 6px 10px;}
+  .legend span{display:inline-flex;align-items:center;}
+  svg{display:block;width:100%;height:auto;overflow:visible;}
+  .gl{stroke:var(--border);stroke-width:1;}
+  .axtx{fill:var(--ink-3);font-size:11px;}
+  .axttl{fill:var(--ink-2);font-size:11.5px;font-weight:600;}
+  .lbl{font-size:11.5px;font-weight:600;}
+  .note{font-size:12.5px;color:var(--ink-3);margin-top:10px;}
+  .trig{border-left:3px solid var(--warn);padding:2px 0 2px 14px;margin:10px 0;}
+  .trig b{color:var(--ink);}
+  ul{margin:6px 0 12px;padding-left:20px;} li{margin:4px 0;}
+  code{background:var(--surface-2);border:1px solid var(--border);border-radius:5px;padding:1px 5px;font-size:12.5px;}
+  .foot{color:var(--ink-3);font-size:12px;border-top:1px solid var(--border);margin-top:26px;padding-top:14px;}
+  #tip{position:fixed;pointer-events:none;opacity:0;transition:opacity .08s;background:var(--ink);color:var(--surface-1);
+    font-size:12px;padding:7px 9px;border-radius:7px;white-space:nowrap;z-index:9;box-shadow:0 4px 14px rgba(0,0,0,.22);}
+  #tip b{color:var(--surface-1);}
+</style>
+
+<div class="wrap">
+  <h1>Tier 1 annual health check — pricing options</h1>
+  <p class="sub">Decision memo for the Medical Director · Foundation Clinic · Sep 2026 · new (hourly) doctor-comp model</p>
+
+  <div class="tldr">
+    <p style="margin-bottom:8px"><span class="pill rec">RECOMMENDATION</span></p>
+    <p style="margin-bottom:0">Include the annual check as a <b>member benefit at a discounted co-pay of ~€149</b> — not free at T1.
+    A free check cuts T1 clinical margin from ~78% to ~57% today and, more importantly, removes the low-utilization
+    cushion that makes T1 profitable. A €149 co-pay covers most of the ~€251 marginal cost, still reads as a strong perk
+    (à la carte ≈ €300+), and keeps T1 above the 45% target across any realistic utilization. Reserve a genuinely free
+    check for T2 (€199), where the fee absorbs it — and use it as the T1→T2 upsell.</p>
+  </div>
+
+  <h2>What the check costs us (marginal, per member)</h2>
+  <table>
+    <thead><tr><th>Component</th><th>Basis</th><th>Cost</th></tr></thead>
+    <tbody>
+      <tr><td>Labs</td><td>hard cost</td><td>€70.00</td></tr>
+      <tr><td>Doctor 60 min — clinical</td><td>€118.50/h</td><td>€118.50</td></tr>
+      <tr><td>Doctor 30 min — analysis/report</td><td>€80/h</td><td>€40.00</td></tr>
+      <tr><td>Nurse 30 min</td><td>€45/h</td><td>€22.50</td></tr>
+      <tr><td><b>Total marginal cost / check</b></td><td></td><td><b>€251.00</b></td></tr>
+    </tbody>
+  </table>
+  <p class="note">Doctor time split per the actual protocol: 60 min clinical exam + 30 min analysis/report. Costed at the respective new-model rates.</p>
+
+  <h2>The options, at today's utilization (48% of pool)</h2>
+  <table>
+    <thead><tr><th>Option</th><th>Member pays</th><th>Net cost to us</th><th>T1 gross margin</th><th>vs today</th></tr></thead>
+    <tbody>
+      <tr><td><span class="dot" style="background:var(--ref)"></span>À la carte (not in membership)</td><td>full price</td><td>€0</td><td class="pos">78%</td><td>—</td></tr>
+      <tr><td><span class="dot" style="background:var(--c149)"></span>Co-pay €149 <b>(recommended)</b></td><td>€149</td><td>€102</td><td class="pos">62%</td><td>−16pp</td></tr>
+      <tr><td><span class="dot" style="background:var(--c99)"></span>Co-pay €99</td><td>€99</td><td>€152</td><td class="pos">60%</td><td>−18pp</td></tr>
+      <tr><td><span class="dot" style="background:var(--free)"></span>Free</td><td>€0</td><td>€251</td><td class="mid">57%</td><td>−21pp</td></tr>
+    </tbody>
+  </table>
+
+  <h2>When does rising pool usage force a change?</h2>
+  <p>T1's ~78% margin exists <b>only because members underuse their 20-min pool</b> — today they average <b>9.6 min/month (48%)</b>,
+  so ~87% aren't using their full pool. The chart shows T1 gross margin as that average utilization climbs. The horizontal line
+  is the 45% clinic target; where a curve crosses it is the point to act (move the member to T2, or raise the co-pay).</p>
+
+  <div class="chartcard">
+    <div class="legend">
+      <span><span class="dot" style="background:var(--ref)"></span>À la carte</span>
+      <span><span class="dot" style="background:var(--c149)"></span>Co-pay €149</span>
+      <span><span class="dot" style="background:var(--c99)"></span>Co-pay €99</span>
+      <span><span class="dot" style="background:var(--free)"></span>Free check</span>
+      <span><span class="dot" style="background:var(--target);width:14px;height:0;border-top:2px dashed var(--target);border-radius:0"></span>45% target</span>
+    </div>
+    <svg id="chart" viewBox="0 0 720 380" role="img" aria-label="T1 gross margin versus pool utilization for each pricing option"></svg>
+  </div>
+
+  <div class="trig">
+    <p style="margin-bottom:4px"><b>Free check:</b> stays above the 45% target until average pool use reaches <b>~79%</b> (~16 of 20 min).
+    In plain terms — act when the share <b>not</b> using their full pool falls to about <b>35%</b> (i.e. ~65% of T1 members maxing out).</p>
+    <p style="margin-bottom:4px"><b>€99 co-pay:</b> viable to ~90% utilization; <b>€149 co-pay:</b> to ~96% — i.e. any realistic level.</p>
+    <p style="margin-bottom:0"><b>Fully utilization-proof</b> (≥45% even at 100% pool use) needs a co-pay of ~€185; à la carte is proof by construction.</p>
+  </div>
+
+  <h2>Why not free at T1</h2>
+  <ul>
+    <li><b>It's really T2 economics.</b> To give a free check and hold today's ~78% margin, T1 would need to be priced at ~€193/month — i.e. T2.</li>
+    <li><b>It removes the deductible on our most expensive service.</b> Today T1 is cheap because most members use little. A free check is a guaranteed €251 event every taker consumes — you trade a favourable "most use little" spread for a fixed high cost.</li>
+    <li><b>Induced demand.</b> Annual checks surface findings → follow-up visits → more doctor time, eroding margin beyond the €213.</li>
+  </ul>
+
+  <p class="foot">Assumptions: T1 €99/mo (€1,188/yr), 20-min doctor pool/mo. Doctor pool costed at clinical €118.50/h; annual-check doctor time = 60 min clinical €118.50/h + 30 min analysis €80/h; nurse €45/h; labs €70. T1 utilization from blended-CM actuals Apr–Aug 2026 (9.6 min/member/mo pooled). "Share not using full pool" maps average utilization via a two-group split (light users ≈8 min, heavy users =20 min); it's indicative, not a fitted distribution. Margins are clinical/delivered-cost basis, the dashboard number of record.</p>
+</div>
+
+<div id="tip"></div>
+<script>
+(function(){
+  var REV=1188, POOL=474, FIX=30, CHK=251; // POOL = full-pool annual doctor cost (240 min x €1.975); CHK = 70 labs + 158.5 doctor (60min clin + 30min analysis) + 22.5 nurse
+  // gross margin % at utilization u (0..1) for each scenario
+  function gm(u, copay, includeCheck){
+    var rev = REV + copay;
+    var cost = POOL*u + FIX + (includeCheck ? CHK : 0);
+    return (rev-cost)/rev*100;
+  }
+  var SERIES=[
+    {key:'ref', name:'À la carte', color:'var(--ref)', dash:'5 4', f:function(u){return gm(u,0,false);}},
+    {key:'c149',name:'Co-pay €149',color:'var(--c149)',f:function(u){return gm(u,149,true);}},
+    {key:'c99', name:'Co-pay €99', color:'var(--c99)', f:function(u){return gm(u,99,true);}},
+    {key:'free',name:'Free check', color:'var(--free)',f:function(u){return gm(u,0,true);}}
+  ];
+  var svg=document.getElementById('chart'), NS='http://www.w3.org/2000/svg';
+  var W=720,H=380, L=52,R=118,T=16,B=44;            // plot padding (R wide for right-end labels)
+  var x0=L, x1=W-R, y0=H-B, y1=T;
+  var YMIN=30, YMAX=100, XMIN=0, XMAX=100;           // util 0-100%, margin 30-100%
+  function X(u){ return x0 + (u-XMIN)/(XMAX-XMIN)*(x1-x0); }       // u in %
+  function Y(m){ return y0 + (m-YMIN)/(YMAX-YMIN)*(y1-y0); }
+  function el(t,a){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);return e;}
+
+  // gridlines + y labels
+  [30,45,60,75,90,100].forEach(function(m){
+    svg.appendChild(el('line',{x1:x0,y1:Y(m),x2:x1,y2:Y(m),class:'gl'}));
+    var tx=el('text',{x:x0-8,y:Y(m)+3.5,class:'axtx','text-anchor':'end'}); tx.textContent=m+'%'; svg.appendChild(tx);
+  });
+  // x labels
+  [0,20,40,60,80,100].forEach(function(u){
+    var tx=el('text',{x:X(u),y:y0+18,class:'axtx','text-anchor':'middle'}); tx.textContent=u+'%'; svg.appendChild(tx);
+  });
+  var xt=el('text',{x:(x0+x1)/2,y:y0+36,class:'axttl','text-anchor':'middle'}); xt.textContent='Average T1 doctor-pool utilisation'; svg.appendChild(xt);
+  var yt=el('text',{x:0,y:0,class:'axttl','text-anchor':'middle',transform:'translate(14 '+((y0+y1)/2)+') rotate(-90)'}); yt.textContent='T1 gross margin'; svg.appendChild(yt);
+
+  // 45% target line
+  svg.appendChild(el('line',{x1:x0,y1:Y(45),x2:x1,y2:Y(45),stroke:'var(--target)','stroke-width':1.5,'stroke-dasharray':'5 4'}));
+
+  // current utilisation marker (48%)
+  svg.appendChild(el('line',{x1:X(48),y1:y1,x2:X(48),y2:y0,stroke:'var(--ink-3)','stroke-width':1,'stroke-dasharray':'2 4',opacity:.7}));
+  var ct=el('text',{x:X(48),y:y1-4,class:'axtx','text-anchor':'middle'}); ct.textContent='today 48%'; svg.appendChild(ct);
+
+  // series paths
+  SERIES.forEach(function(s){
+    var d='',N=120;
+    for(var i=0;i<=N;i++){ var u=i/N*100; var m=s.f(u/100); d+=(i?'L':'M')+X(u).toFixed(1)+' '+Y(m).toFixed(1)+' '; }
+    svg.appendChild(el('path',{d:d,fill:'none',stroke:s.color,'stroke-width':2.5,'stroke-dasharray':(s.dash||''),'stroke-linejoin':'round','stroke-linecap':'round'}));
+    // direct label at right end (u=100)
+    var my=s.f(1);
+    var lt=el('text',{x:x1+8,y:Y(my)+4,class:'lbl',fill:s.color}); lt.textContent=s.name+'  '+Math.round(my)+'%'; svg.appendChild(lt);
+    // marker at today (48%)
+    svg.appendChild(el('circle',{cx:X(48),cy:Y(s.f(.48)),r:3.5,fill:s.color,stroke:'var(--surface-2)','stroke-width':1.5}));
+  });
+
+  // hover crosshair + tooltip
+  var tip=document.getElementById('tip');
+  var vline=el('line',{x1:0,y1:y1,x2:0,y2:y0,stroke:'var(--ink-3)','stroke-width':1,opacity:0}); svg.appendChild(vline);
+  var hits=el('rect',{x:x0,y:y1,width:(x1-x0),height:(y0-y1),fill:'transparent'}); svg.appendChild(hits);
+  hits.addEventListener('mousemove',function(ev){
+    var r=svg.getBoundingClientRect(), sx=(W)/r.width;
+    var px=(ev.clientX-r.left)*sx; px=Math.max(x0,Math.min(x1,px));
+    var u=(px-x0)/(x1-x0)*100;
+    vline.setAttribute('x1',px); vline.setAttribute('x2',px); vline.setAttribute('opacity','.5');
+    tip.innerHTML='<b>'+u.toFixed(0)+'% pool used</b><br>À la carte: '+SERIES[0].f(u/100).toFixed(0)+'% · €149: '+SERIES[1].f(u/100).toFixed(0)+'% · €99: '+SERIES[2].f(u/100).toFixed(0)+'% · Free: '+SERIES[3].f(u/100).toFixed(0)+'%';
+    tip.style.left=(ev.clientX+12)+'px'; tip.style.top=(ev.clientY+12)+'px'; tip.style.opacity=1;
+  });
+  hits.addEventListener('mouseleave',function(){ tip.style.opacity=0; vline.setAttribute('opacity',0); });
+})();
+</script>

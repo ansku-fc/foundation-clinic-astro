@@ -1,0 +1,133 @@
+<title>Tier Cards Prototype</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+  :root{
+    --bg:#FAFAF8; --card:#fff; --border:#E8E4DE; --ink:#2E1F14; --ink2:#6b6459; --ink3:#9b9488;
+    --teal:#0EA5A0; --teal-soft:rgba(14,165,160,0.42); --sand:#C8A98A; --sand-soft:rgba(200,169,138,0.5);
+    --espresso:#2E1F14; --esp-soft:rgba(46,31,20,0.22); --amber:#F59E0B; --blush:#E8446A;
+    color-scheme:light;
+  }
+  :root:not([data-theme="light"]){ @media (prefers-color-scheme:dark){
+    --bg:#161412; --card:#1f1c18; --border:#33302b; --ink:#f4f1ea; --ink2:#bdb6a8; --ink3:#878175;
+    --esp-soft:rgba(244,241,234,0.20);
+    color-scheme:dark;
+  }}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:24px max(16px,env(safe-area-inset-left))}
+  h1{font-size:20px;margin:0 0 2px;letter-spacing:-.01em}
+  .sub{color:var(--ink3);font-size:12.5px;margin:0 0 20px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .chd{display:flex;align-items:center;gap:10px;padding:12px 14px;border-left:4px solid var(--teal)}
+  .badge{font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;background:var(--teal);color:#fff;letter-spacing:.02em}
+  .members{font-size:17px;font-weight:600}
+  .gmwrap{margin-left:auto;text-align:right;line-height:1.15}
+  .gm{font-size:17px;font-weight:700}
+  .gmlab{font-size:8.5px;text-transform:uppercase;letter-spacing:.13em;color:var(--ink3)}
+  .gmsub{font-size:9.5px;color:var(--ink2)}
+  .body{padding:4px 14px 14px;display:flex;flex-direction:column;gap:14px}
+  .sec{}
+  .shdr{font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--ink3);font-weight:600;margin-bottom:5px;display:flex;justify-content:space-between;align-items:baseline}
+  .shdr .win{font-weight:500;letter-spacing:.02em;text-transform:none}
+  .barrow{display:flex;height:20px;border-radius:5px;overflow:hidden;background:var(--border)}
+  .seg{display:flex;align-items:center;min-width:0;font-size:9px;color:#fff;font-weight:600;white-space:nowrap}
+  .seg.dk{color:#fff}
+  .legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:5px;font-size:10px;color:var(--ink2)}
+  .dot{width:8px;height:8px;border-radius:2px;display:inline-block;margin-right:4px;vertical-align:middle}
+  .poolnote{font-size:11px;color:var(--ink2);background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:7px 9px;line-height:1.4}
+  .chk{font-size:9px;font-weight:600;color:var(--teal);margin-left:5px}
+  .util{display:flex;align-items:flex-end;gap:6px;margin-top:2px}
+  .ucol{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;min-width:0}
+  .ubar-track{width:100%;height:42px;background:var(--border);border-radius:3px;position:relative;display:flex;align-items:flex-end;overflow:hidden}
+  .ubar{width:100%;border-radius:3px 3px 0 0;background:var(--teal);transition:none}
+  .ubar.over{background:var(--amber)}
+  .uval{font-size:8.5px;font-weight:600;color:var(--ink2);line-height:1}
+  .umo{font-size:8px;color:var(--ink3)}
+  .over50{font-size:11px;color:var(--ink);margin-top:8px}
+  .over50 b{color:var(--espresso)}
+  .over50 .mut{color:var(--ink3)}
+  .empty{font-size:11px;color:var(--ink3);font-style:italic}
+  .note-top{font-size:12px;color:var(--ink2);background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 12px;margin-bottom:16px}
+</style>
+<div class="wrap">
+  <h1>Tiers &amp; Margins — tier cards</h1>
+  <p class="sub">Prototype · driven by <code>tierCards</code> (margin_export.json) · window Apr–Aug 2026 · delivered-cost basis</p>
+  <div class="note-top">Design preview for approval before porting into <b>margins.tsx</b>. Every number here is live from the export. Pool utilisation is <b>capped at 100%</b> — minutes drawn from the pool ÷ allowance; overage beyond the pool is billed as clinical and shown as an overflow-member count, not as >100%. T1's pool shows 10 min (Apr–Jul) → 20 min (Aug).</div>
+  <div class="grid" id="grid"></div>
+</div>
+<script>
+const TC = {"T1":{"tier":"T1","memberCount":9,"gmInclAvailPct":73.66,"gmExclAvailPct":73.66,"revMix":{"mrr":2388.94,"clinical":1145.53,"mrrPct":67.59},"doctorTimeByTypePct":{"in_person":22.22,"home":0,"remote":77.78},"poolIncluded":{"combined":20,"remote":0,"inPerson":0,"careCoord":0,"checkupAnnual":false,"note":"Single combined pool: 20 min/mo doctor/nurse time (from Aug 2026)"},"poolUtilByMonth":[{"month":"2026-04","util":0,"poolMin":10,"overflowMembers":0},{"month":"2026-05","util":0.75,"poolMin":10,"overflowMembers":3},{"month":"2026-06","util":0.7143,"poolMin":10,"overflowMembers":5},{"month":"2026-07","util":0.1667,"poolMin":10,"overflowMembers":1},{"month":"2026-08","util":0.1667,"poolMin":20,"overflowMembers":0}],"poolOver50":{"x":1,"y":9,"month":"2026-08","overflow":0}},"T2":{"tier":"T2","memberCount":22,"gmInclAvailPct":40.45,"gmExclAvailPct":40.43,"revMix":{"mrr":18493.95,"clinical":7971.31,"mrrPct":69.88},"doctorTimeByTypePct":{"in_person":31.74,"home":0,"remote":68.26},"poolIncluded":{"combined":0,"remote":30,"inPerson":20,"careCoord":30,"checkupAnnual":true,"note":"Remote 30 min + in-person 20 min + care coord 30 min; 1x annual health check"},"poolUtilByMonth":[{"month":"2026-04","util":0.1654,"poolMin":80,"overflowMembers":0},{"month":"2026-05","util":0.2533,"poolMin":80,"overflowMembers":1},{"month":"2026-06","util":0.3281,"poolMin":80,"overflowMembers":1},{"month":"2026-07","util":0.1875,"poolMin":80,"overflowMembers":0},{"month":"2026-08","util":0.375,"poolMin":80,"overflowMembers":2}],"poolOver50":{"x":6,"y":22,"month":"2026-08","overflow":2}},"T3":{"tier":"T3","memberCount":15,"gmInclAvailPct":56.42,"gmExclAvailPct":59.21,"revMix":{"mrr":29215.1,"clinical":7069.35,"mrrPct":80.52},"doctorTimeByTypePct":{"in_person":22.04,"home":19.01,"remote":58.95},"poolIncluded":{"combined":0,"remote":50,"inPerson":40,"careCoord":45,"checkupAnnual":true,"note":"Remote 50 min + in-person 40 min + care coord 45 min; 1x comprehensive annual check"},"poolUtilByMonth":[{"month":"2026-04","util":0.1556,"poolMin":135,"overflowMembers":0},{"month":"2026-05","util":0.0952,"poolMin":135,"overflowMembers":0},{"month":"2026-06","util":0.0855,"poolMin":135,"overflowMembers":0},{"month":"2026-07","util":0.1883,"poolMin":135,"overflowMembers":1},{"month":"2026-08","util":0.1877,"poolMin":135,"overflowMembers":0}],"poolOver50":{"x":1,"y":15,"month":"2026-08","overflow":0}},"T4":{"tier":"T4","memberCount":3,"gmInclAvailPct":50.43,"gmExclAvailPct":57.96,"revMix":{"mrr":25470,"clinical":24683.06,"mrrPct":50.78},"doctorTimeByTypePct":{"in_person":0.86,"home":9.46,"remote":89.68},"poolIncluded":{"combined":0,"remote":60,"inPerson":60,"careCoord":90,"checkupAnnual":true,"note":"Remote 60 min + in-person 60 min + care coord 90 min; 1x premium annual check"},"poolUtilByMonth":[{"month":"2026-04","util":0.2381,"poolMin":210,"overflowMembers":0},{"month":"2026-05","util":0.2054,"poolMin":210,"overflowMembers":1},{"month":"2026-06","util":0.2589,"poolMin":210,"overflowMembers":1},{"month":"2026-07","util":0.1458,"poolMin":210,"overflowMembers":0},{"month":"2026-08","util":0.6667,"poolMin":210,"overflowMembers":2}],"poolOver50":{"x":2,"y":3,"month":"2026-08","overflow":2}},"child":{"tier":"child","memberCount":9,"gmInclAvailPct":68.54,"gmExclAvailPct":68.54,"revMix":{"mrr":1982.13,"clinical":2627.15,"mrrPct":43},"doctorTimeByTypePct":{"in_person":6.45,"home":64.52,"remote":29.03},"poolIncluded":{"combined":20,"remote":0,"inPerson":0,"careCoord":0,"checkupAnnual":false,"note":"20 min/mo combined; covered by household membership; no standalone checkup"},"poolUtilByMonth":[{"month":"2026-04","util":0,"poolMin":20,"overflowMembers":0},{"month":"2026-05","util":0,"poolMin":20,"overflowMembers":0},{"month":"2026-06","util":0.3125,"poolMin":20,"overflowMembers":1},{"month":"2026-07","util":0.125,"poolMin":20,"overflowMembers":1},{"month":"2026-08","util":0.1667,"poolMin":20,"overflowMembers":0}],"poolOver50":{"x":1,"y":9,"month":"2026-08","overflow":0}},"custom":{"tier":"custom","memberCount":7,"gmInclAvailPct":7.63,"gmExclAvailPct":7.63,"revMix":{"mrr":2774.97,"clinical":113.8,"mrrPct":96.06},"doctorTimeByTypePct":{"in_person":4.49,"home":47.19,"remote":48.31},"poolIncluded":{"combined":0,"remote":0,"inPerson":0,"careCoord":0,"checkupAnnual":false,"note":"Bespoke: included minutes vary by contract; Phase 2 must read individual contract record"},"poolUtilByMonth":[],"poolOver50":null}};
+const TIER_LABEL = {T1:'T1',T2:'T2',T3:'T3',T4:'T4',child:'Child',custom:'Custom'};
+const MABBR = {'01':'Jan','02':'Feb','03':'Mar','04':'Apr','05':'May','06':'Jun','07':'Jul','08':'Aug','09':'Sep','10':'Oct','11':'Nov','12':'Dec'};
+const mo = m => MABBR[m.slice(5)] || m;
+const eur = n => '€'+Math.round(n).toLocaleString('en-US');
+
+function seg(pct,color,label){
+  if(pct<=0) return '';
+  return `<div class="seg" style="width:${pct}%;background:${color}">${pct>=14?Math.round(pct)+'%':''}</div>`;
+}
+function card(t){
+  const d=TC[t]; if(!d) return '';
+  const hasAvail = Math.abs((d.gmInclAvailPct||0)-(d.gmExclAvailPct||0))>0.05;
+  const dm=d.doctorTimeByTypePct||{in_person:0,home:0,remote:0};
+  // pool util bars
+  let bars='';
+  if((d.poolUtilByMonth||[]).length){
+    bars = d.poolUtilByMonth.map(p=>{
+      const pct=Math.min((p.util||0)*100,100);
+      return `<div class="ucol">
+        <div class="uval">${pct>=1?Math.round(pct)+'%':(pct>0?'<1%':'0')}</div>
+        <div class="ubar-track"><div class="ubar" style="height:${Math.max(pct,pct>0?4:0)}%"></div></div>
+        <div class="umo">${mo(p.month)}<br><span style="color:var(--ink3)">${p.poolMin}m</span></div>
+      </div>`;
+    }).join('');
+  } else { bars = '<div class="empty">Bespoke pools — utilisation not tracked</div>'; }
+  const o50 = d.poolOver50
+    ? `<div class="over50"><b>${d.poolOver50.x} of ${d.poolOver50.y}</b> members used &gt;50% of pool${d.poolOver50.overflow?` · <b>${d.poolOver50.overflow}</b> exceeded pool (overflow billed clinical)`:''} <span class="mut">· ${mo(d.poolOver50.month)}</span></div>`
+    : '';
+  const pool = d.poolIncluded||{};
+  return `<div class="card">
+    <div class="chd">
+      <span class="badge">${TIER_LABEL[t]}</span>
+      <span class="members">${d.memberCount} members</span>
+      <div class="gmwrap">
+        <div class="gm">${(d.gmInclAvailPct??0).toFixed(1)}%</div>
+        <div class="gmlab">Gross margin${hasAvail?' · incl 24/7':''}</div>
+        ${hasAvail?`<div class="gmsub">${(d.gmExclAvailPct??0).toFixed(1)}% excl 24/7</div>`:`<div class="gmsub" style="color:var(--ink3)">no 24/7 availability</div>`}
+      </div>
+    </div>
+    <div class="body">
+      <div class="sec">
+        <div class="shdr"><span>Revenue mix</span><span class="win">Apr–Aug avg</span></div>
+        <div class="barrow">
+          ${seg(d.revMix.mrrPct,'var(--espresso)')}
+          ${seg(100-d.revMix.mrrPct,'var(--teal)')}
+        </div>
+        <div class="legend"><span><span class="dot" style="background:var(--espresso)"></span>MRR ${eur(d.revMix.mrr)}</span><span><span class="dot" style="background:var(--teal)"></span>Clinical ${eur(d.revMix.clinical)}</span></div>
+      </div>
+      <div class="sec">
+        <div class="shdr"><span>Doctor time by service type</span><span class="win">Apr–Aug avg</span></div>
+        <div class="barrow">
+          ${seg(dm.in_person,'var(--espresso)')}
+          ${seg(dm.home,'var(--sand)')}
+          ${seg(dm.remote,'var(--teal)')}
+        </div>
+        <div class="legend"><span><span class="dot" style="background:var(--espresso)"></span>In-person ${Math.round(dm.in_person)}%</span><span><span class="dot" style="background:var(--sand)"></span>Home ${Math.round(dm.home)}%</span><span><span class="dot" style="background:var(--teal)"></span>Remote ${Math.round(dm.remote)}%</span></div>
+      </div>
+      <div class="sec">
+        <div class="shdr"><span>Membership pool</span>${pool.checkupAnnual?'<span class="chk">+ annual check</span>':''}</div>
+        <div class="poolnote">${pool.note||'—'}</div>
+      </div>
+      <div class="sec">
+        <div class="shdr"><span>Pool utilisation by month</span><span class="win">used ÷ allowance</span></div>
+        <div class="util">${bars}</div>
+        ${o50}
+      </div>
+    </div>
+  </div>`;
+}
+document.getElementById('grid').innerHTML = ['T1','T2','T3','T4','child','custom'].map(card).join('');
+</script>
