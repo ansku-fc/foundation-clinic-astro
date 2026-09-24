@@ -1015,6 +1015,29 @@ section { padding: var(--s-20) 0; }
   margin-bottom: var(--s-4);
   background: var(--bg-sunken);
 }
+.team-photo-wrap {
+  position: relative;
+  margin-bottom: var(--s-4);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.team-photo-wrap .team-photo {
+  margin-bottom: 0;
+  border-radius: 0;
+  display: block;
+}
+.team-photo-note {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: var(--s-2) var(--s-3);
+  background: color-mix(in srgb, var(--espresso) 75%, transparent);
+  color: rgba(255, 255, 255, 0.9);
+  font-style: normal;
+  font-size: var(--caption);
+  text-align: center;
+}
 .team-name { font-family: var(--font-display); font-size: var(--body-lg); font-weight: 400; color: var(--fg-1); margin-bottom: var(--s-1); }
 .team-role { font-size: var(--body-sm); color: var(--fg-3); line-height: 1.4; margin-bottom: var(--s-1); }
 .team-email { font-size: var(--caption); color: var(--teal); }
